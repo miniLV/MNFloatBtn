@@ -22,10 +22,10 @@
     UINavigationController *navi = [[UINavigationController alloc]initWithRootViewController:vc];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.rootViewController = navi;
-    
     [self.window makeKeyAndVisible];
     
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    //延迟加载VersionBtn - 避免wimdow还没出现就往上加控件造成的crash
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self setVersionBtn];
     });
     
@@ -47,15 +47,17 @@
     NSString *title = [NSString stringWithFormat:@"Ver:%@ 测试\nBuild:%@",versionStr,buildStr];
     CGRect frame = CGRectMake(touchX, touchY, touchW, touchH);
 
-    MNAssistiveBtn *btn = [MNAssistiveBtn mn_touchWithFrame:frame];
+    //基础控件 - 没有任何属性
+    //MNAssistiveBtn *btn = [MNAssistiveBtn mn_touchWithFrame:frame];
     
-//    MNAssistiveBtn *btn = [MNAssistiveBtn mn_touchWithType:MNAssistiveTouchTypeVerticalScroll
-//                                                     Frame:frame
-//                                                     title:title
-//                                                titleColor:[UIColor whiteColor]
-//                                                 titleFont:[UIFont systemFontOfSize:11]
-//                                           backgroundColor:nil
-//                                           backgroundImage:[UIImage imageNamed:@"test"]];
+    //示例demo样式
+    MNAssistiveBtn *btn = [MNAssistiveBtn mn_touchWithType:MNAssistiveTouchTypeHorizontalScroll
+                                                     Frame:frame
+                                                     title:title
+                                                titleColor:[UIColor whiteColor]
+                                                 titleFont:[UIFont systemFontOfSize:11]
+                                           backgroundColor:nil
+                                           backgroundImage:[UIImage imageNamed:@"test"]];
     [self.window addSubview:btn];
 
 }

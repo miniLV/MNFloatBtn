@@ -6,6 +6,6 @@ target 'LevitationButtonDemo' do
   # use_frameworks!
 
   # Pods for LevitationButtonDemo
-pod 'Masonry'
+#pod 'Masonry'
 
 end

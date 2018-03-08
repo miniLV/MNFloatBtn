@@ -54,22 +54,17 @@
     self = [super initWithFrame:frame];
     if (self) {
         _type = type;
-        self.backgroundColor = [UIColor clearColor];
-        
-        UIButton *button = [[UIButton alloc]init];
         //UIbutton的换行显示
-        button.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
-        button.backgroundColor = backgroundColor;
-        button.frame = CGRectMake(0, 0, frame.size.width, frame.size.height);
-        button.titleLabel.font = titleFont;
-        [button setTitle:title forState:UIControlStateNormal];
-        [button setBackgroundImage:backgroundImage forState:UIControlStateNormal];
-        [button setBackgroundColor:backgroundColor];
+        self.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
+        self.backgroundColor = backgroundColor;
+        self.titleLabel.font = titleFont;
+        [self setTitle:title forState:UIControlStateNormal];
+        [self setBackgroundImage:backgroundImage forState:UIControlStateNormal];
+        [self setBackgroundColor:backgroundColor];
         
-        [self addSubview:button];
         //添加拖拽手势-改变控件的位置
         UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(changePostion:)];
-        [button addGestureRecognizer:pan];
+        [self addGestureRecognizer:pan];
     }
     return self;
 }
@@ -103,46 +98,32 @@
     if (pan.state == UIGestureRecognizerStateBegan) {
         button.enabled = NO;
     }else if (pan.state == UIGestureRecognizerStateChanged){
-        
     } else {
         CGRect frame = self.frame;
         
-        //记录是否越界
+        //记录该button是否屏幕越界
         BOOL isOver = NO;
         if (frame.origin.x < 0) {
-            
             frame.origin.x = 0;
-            
             isOver = YES;
             
-        } else if (frame.origin.x+frame.size.width > screenW) {
-            
+        } else if (frame.origin.x + frame.size.width > screenW) {
             frame.origin.x = screenW - frame.size.width;
-            
             isOver = YES;
-            
         }
-        
-        
-        
+
         if (frame.origin.y < 0) {
-            
             frame.origin.y = 0;
-            
             isOver = YES;
             
         } else if (frame.origin.y+frame.size.height > screenH) {
-            
             frame.origin.y = screenH - frame.size.height;
-            
             isOver = YES;
-            
         }
         
         if (isOver) {
-            
+            //如果越界-跑回来
             [UIView animateWithDuration:0.3 animations:^{
-                
                 self.frame = frame;
             }];
         }
@@ -150,6 +131,7 @@
     }
 }
 
+//拖动改变控件的水平方向x值
 - (CGRect)changeXWithFrame:(CGRect)originalFrame point:(CGPoint)point{
     BOOL q1 = originalFrame.origin.x >= 0;
     BOOL q2 = originalFrame.origin.x + originalFrame.size.width <= screenW;
@@ -160,6 +142,7 @@
     return originalFrame;
 }
 
+//拖动改变控件的竖直方向y值
 - (CGRect)changeYWithFrame:(CGRect)originalFrame point:(CGPoint)point{
     
     BOOL q1 = originalFrame.origin.y >= 0;

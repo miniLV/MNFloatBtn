@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "MNAssistiveTouch.h"
+#import "MNAssistiveBtn.h"
 #import "ViewController.h"
 
 @interface AppDelegate ()
@@ -23,17 +23,17 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.rootViewController = navi;
     
-    // 这句话很重要，要先将rootview加载完成之后在显示悬浮框，如没有这句话，将可能造成程序崩溃
-    [self performSelector:@selector(setNew) withObject:nil afterDelay:1];
-
     [self.window makeKeyAndVisible];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self setVersionBtn];
+    });
     
     return YES;
 }
 
--(void)setNew
+-(void)setVersionBtn
 {
-
     CGFloat touchW = 120;
     CGFloat touchX = 375 - touchW;
     CGFloat touchY = 43;
@@ -45,29 +45,19 @@
        mainBundle]infoDictionary]valueForKey:@"CFBundleVersion"];
     
     NSString *title = [NSString stringWithFormat:@"Ver:%@ 测试\nBuild:%@",versionStr,buildStr];
-    //最基础的框框
-//    MNAssistiveTouch *win = [MNAssistiveTouch mn_touchWithFrame:CGRectMake(touchX, touchY, touchW, touchH)];
-//    MNAssistiveTouch *win = [MNAssistiveTouch mn_touchWithTouchX:touchX
-//                                                          touchY:touchY
-//                                                          touchW:touchW
-//                                                          touchH:touchH
-//                                                           title:title
-//                                                      titleColor:[UIColor whiteColor]
-//                                                       titleFont:[UIFont systemFontOfSize:11]
-//                                                 backgroundColor:[UIColor lightGrayColor]
-//                                                 backgroundImage:nil];
+    CGRect frame = CGRectMake(touchX, touchY, touchW, touchH);
 
-    MNAssistiveTouch *win = [MNAssistiveTouch mn_touchWithTouchX:touchX
-                                                          touchY:touchY
-                                                          touchW:touchW
-                                                          touchH:touchH
-                                                           title:title
-                                                      titleColor:[UIColor whiteColor]
-                                                       titleFont:[UIFont systemFontOfSize:11]
-                                                 backgroundColor:nil
-                                                 backgroundImage:[UIImage imageNamed:@"test"]];
+    MNAssistiveBtn *btn = [MNAssistiveBtn mn_touchWithFrame:frame];
     
-    [self.window addSubview:win];
+//    MNAssistiveBtn *btn = [MNAssistiveBtn mn_touchWithType:MNAssistiveTouchTypeVerticalScroll
+//                                                     Frame:frame
+//                                                     title:title
+//                                                titleColor:[UIColor whiteColor]
+//                                                 titleFont:[UIFont systemFontOfSize:11]
+//                                           backgroundColor:nil
+//                                           backgroundImage:[UIImage imageNamed:@"test"]];
+    [self.window addSubview:btn];
+
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

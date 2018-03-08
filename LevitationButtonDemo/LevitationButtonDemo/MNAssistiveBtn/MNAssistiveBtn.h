@@ -17,8 +17,22 @@ typedef NS_ENUM(NSInteger, MNAssistiveTouchType)
 
 @interface MNAssistiveBtn : UIButton
 
+///简单创建一个普通按钮
 + (instancetype)mn_touchWithFrame:(CGRect)frame;
 
+
+/**
+ 创建一个可拖动按钮
+
+ @param type 滑动类型
+ @param frame 按钮的frame
+ @param title 按钮的标题内容
+ @param titleColor 按钮的标题颜色
+ @param titleFont 按钮的标题文字大小
+ @param backgroundColor 按钮的背景色
+ @param backgroundImage 按钮的背景图片
+ @return 可拖动按钮
+ */
 + (instancetype)mn_touchWithType:(MNAssistiveTouchType)type
                            Frame:(CGRect)frame
                            title:(NSString *)title

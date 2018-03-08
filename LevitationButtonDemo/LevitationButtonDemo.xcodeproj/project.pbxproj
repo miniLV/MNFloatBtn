@@ -8,32 +8,32 @@
 
 /* Begin PBXBuildFile section */
 		14DA4E8C2051225000718635 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 14DA4E8B2051225000718635 /* AppDelegate.m */; };
-		14DA4E8F2051225000718635 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14DA4E8E2051225000718635 /* ViewController.m */; };
 		14DA4E942051225000718635 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14DA4E932051225000718635 /* Assets.xcassets */; };
 		14DA4E972051225000718635 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14DA4E952051225000718635 /* LaunchScreen.storyboard */; };
 		14DA4E9A2051225000718635 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 14DA4E992051225000718635 /* main.m */; };
-		14DA4EA52051284600718635 /* OneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14DA4EA42051284600718635 /* OneViewController.m */; };
 		8F1CA55DBA5330CACC0CC55D /* libPods-LevitationButtonDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F29027719965039620E4E88 /* libPods-LevitationButtonDemo.a */; };
-		A71B871C20516B9300D804CC /* MNAssistiveBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = A71B871B20516B9300D804CC /* MNAssistiveBtn.m */; };
+		A71B87222051810900D804CC /* OneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A71B871F2051810900D804CC /* OneViewController.m */; };
+		A71B87232051810900D804CC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A71B87212051810900D804CC /* ViewController.m */; };
+		A71B87272051811000D804CC /* MNAssistiveBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = A71B87262051811000D804CC /* MNAssistiveBtn.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		14DA4E872051225000718635 /* LevitationButtonDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LevitationButtonDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14DA4E8A2051225000718635 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		14DA4E8B2051225000718635 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		14DA4E8D2051225000718635 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		14DA4E8E2051225000718635 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		14DA4E932051225000718635 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		14DA4E962051225000718635 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		14DA4E982051225000718635 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		14DA4E992051225000718635 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		14DA4EA32051284600718635 /* OneViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OneViewController.h; sourceTree = "<group>"; };
-		14DA4EA42051284600718635 /* OneViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OneViewController.m; sourceTree = "<group>"; };
 		4D9D56C9A91F28328F2857F9 /* Pods-LevitationButtonDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LevitationButtonDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-LevitationButtonDemo/Pods-LevitationButtonDemo.release.xcconfig"; sourceTree = "<group>"; };
 		4F29027719965039620E4E88 /* libPods-LevitationButtonDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LevitationButtonDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52878DF776927C72723AC53A /* Pods-LevitationButtonDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LevitationButtonDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LevitationButtonDemo/Pods-LevitationButtonDemo.debug.xcconfig"; sourceTree = "<group>"; };
-		A71B871A20516B9300D804CC /* MNAssistiveBtn.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MNAssistiveBtn.h; sourceTree = "<group>"; };
-		A71B871B20516B9300D804CC /* MNAssistiveBtn.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MNAssistiveBtn.m; sourceTree = "<group>"; };
+		A71B871E2051810900D804CC /* OneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneViewController.h; sourceTree = "<group>"; };
+		A71B871F2051810900D804CC /* OneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneViewController.m; sourceTree = "<group>"; };
+		A71B87202051810900D804CC /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		A71B87212051810900D804CC /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		A71B87252051811000D804CC /* MNAssistiveBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNAssistiveBtn.h; sourceTree = "<group>"; };
+		A71B87262051811000D804CC /* MNAssistiveBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNAssistiveBtn.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,18 +77,14 @@
 		14DA4E892051225000718635 /* LevitationButtonDemo */ = {
 			isa = PBXGroup;
 			children = (
+				A71B87242051811000D804CC /* MNAssistiveBtn */,
+				A71B871D2051810900D804CC /* DemoController */,
 				14DA4E8A2051225000718635 /* AppDelegate.h */,
 				14DA4E8B2051225000718635 /* AppDelegate.m */,
-				14DA4E8D2051225000718635 /* ViewController.h */,
-				14DA4E8E2051225000718635 /* ViewController.m */,
 				14DA4E932051225000718635 /* Assets.xcassets */,
 				14DA4E952051225000718635 /* LaunchScreen.storyboard */,
 				14DA4E982051225000718635 /* Info.plist */,
 				14DA4E992051225000718635 /* main.m */,
-				14DA4EA32051284600718635 /* OneViewController.h */,
-				14DA4EA42051284600718635 /* OneViewController.m */,
-				A71B871A20516B9300D804CC /* MNAssistiveBtn.h */,
-				A71B871B20516B9300D804CC /* MNAssistiveBtn.m */,
 			);
 			path = LevitationButtonDemo;
 			sourceTree = "<group>";
@@ -100,6 +96,26 @@
 				4D9D56C9A91F28328F2857F9 /* Pods-LevitationButtonDemo.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		A71B871D2051810900D804CC /* DemoController */ = {
+			isa = PBXGroup;
+			children = (
+				A71B871E2051810900D804CC /* OneViewController.h */,
+				A71B871F2051810900D804CC /* OneViewController.m */,
+				A71B87202051810900D804CC /* ViewController.h */,
+				A71B87212051810900D804CC /* ViewController.m */,
+			);
+			path = DemoController;
+			sourceTree = "<group>";
+		};
+		A71B87242051811000D804CC /* MNAssistiveBtn */ = {
+			isa = PBXGroup;
+			children = (
+				A71B87252051811000D804CC /* MNAssistiveBtn.h */,
+				A71B87262051811000D804CC /* MNAssistiveBtn.m */,
+			);
+			path = MNAssistiveBtn;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -226,10 +242,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14DA4E8F2051225000718635 /* ViewController.m in Sources */,
-				14DA4EA52051284600718635 /* OneViewController.m in Sources */,
-				A71B871C20516B9300D804CC /* MNAssistiveBtn.m in Sources */,
+				A71B87272051811000D804CC /* MNAssistiveBtn.m in Sources */,
+				A71B87222051810900D804CC /* OneViewController.m in Sources */,
 				14DA4E9A2051225000718635 /* main.m in Sources */,
+				A71B87232051810900D804CC /* ViewController.m in Sources */,
 				14DA4E8C2051225000718635 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

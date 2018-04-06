@@ -81,11 +81,11 @@
             originalFrame = [self changeYWithFrame:originalFrame point:point];
             break;
         }case MNAssistiveTouchTypeHorizontalScroll:{
-            originalFrame = [self changeYWithFrame:originalFrame point:point];
+            originalFrame = [self changeXWithFrame:originalFrame point:point];
             break;
         }
         case MNAssistiveTouchTypeVerticalScroll:{
-            originalFrame = [self changeXWithFrame:originalFrame point:point];
+            originalFrame = [self changeYWithFrame:originalFrame point:point];
             break;
         }
     }

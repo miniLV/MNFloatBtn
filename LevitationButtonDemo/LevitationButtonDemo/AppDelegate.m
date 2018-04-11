@@ -51,7 +51,7 @@
     //MNAssistiveBtn *btn = [MNAssistiveBtn mn_touchWithFrame:frame];
     
     //示例demo样式
-    MNAssistiveBtn *btn = [MNAssistiveBtn mn_touchWithType:MNAssistiveTouchTypeHorizontalScroll
+    MNAssistiveBtn *btn = [MNAssistiveBtn mn_touchWithType:MNAssistiveTouchTypeVerticalScroll
                                                      Frame:frame
                                                      title:title
                                                 titleColor:[UIColor whiteColor]

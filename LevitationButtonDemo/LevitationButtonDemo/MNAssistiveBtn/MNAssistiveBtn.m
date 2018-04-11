@@ -8,7 +8,7 @@
 
 #import "MNAssistiveBtn.h"
 
-#define screenW   [UIScreen mainScreen].bounds.size.width
+#define screenW  [UIScreen mainScreen].bounds.size.width
 #define screenH  [UIScreen mainScreen].bounds.size.height
 
 @implementation MNAssistiveBtn{
@@ -54,6 +54,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         _type = type;
+        
         //UIbutton的换行显示
         self.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
         self.backgroundColor = backgroundColor;
@@ -80,11 +81,11 @@
             originalFrame = [self changeXWithFrame:originalFrame point:point];
             originalFrame = [self changeYWithFrame:originalFrame point:point];
             break;
-        }case MNAssistiveTouchTypeHorizontalScroll:{
+        }case MNAssistiveTouchTypeVerticalScroll:{
             originalFrame = [self changeYWithFrame:originalFrame point:point];
             break;
         }
-        case MNAssistiveTouchTypeVerticalScroll:{
+        case MNAssistiveTouchTypeHorizontalScroll:{
             originalFrame = [self changeXWithFrame:originalFrame point:point];
             break;
         }

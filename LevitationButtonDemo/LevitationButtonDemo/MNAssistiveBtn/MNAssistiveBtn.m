@@ -14,6 +14,8 @@
 @implementation MNAssistiveBtn{
     
     MNAssistiveTouchType  _type;
+    //拖动按钮的起始坐标点
+    CGPoint _touchPoint;
 }
 
 + (instancetype)mn_touchWithFrame:(CGRect)frame{
@@ -63,95 +65,93 @@
         [self setBackgroundImage:backgroundImage forState:UIControlStateNormal];
         [self setBackgroundColor:backgroundColor];
         
-        //添加拖拽手势-改变控件的位置
-        UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(changePostion:)];
-        [self addGestureRecognizer:pan];
     }
     return self;
 }
 
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    
+    //按钮刚按下的时候，获取此时的起始坐标
+    UITouch *touch = [touches anyObject];
+    _touchPoint = [touch locationInView:self];
+}
 
-- (void)changePostion:(UIPanGestureRecognizer *)pan{
-    CGPoint point = [pan translationInView:self];
+- (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
 
-    CGRect originalFrame = self.frame;
-    switch (_type) {
-        case MNAssistiveTouchTypeNone:
-        {
-            originalFrame = [self changeXWithFrame:originalFrame point:point];
-            originalFrame = [self changeYWithFrame:originalFrame point:point];
-            break;
-        }case MNAssistiveTouchTypeVerticalScroll:{
-            originalFrame = [self changeYWithFrame:originalFrame point:point];
-            break;
-        }
-        case MNAssistiveTouchTypeHorizontalScroll:{
-            originalFrame = [self changeXWithFrame:originalFrame point:point];
-            break;
-        }
+    //获取当前移动过程中的按钮坐标
+    UITouch *touch = [touches anyObject];
+    CGPoint currentPosition = [touch locationInView:self];
+    
+    //偏移量(当前坐标 - 起始坐标 = 偏移量)
+    CGFloat offsetX = currentPosition.x - _touchPoint.x;
+    CGFloat offsetY = currentPosition.y - _touchPoint.y;
+    
+    //移动后的按钮中心坐标
+    CGFloat centerX = self.center.x + offsetX;
+    CGFloat centerY = self.center.y + offsetY;
+    self.center = CGPointMake(centerX, centerY);
+    
+    //父试图的宽高
+    CGFloat superViewWidth = self.superview.frame.size.width;
+    CGFloat superViewHeight = self.superview.frame.size.height;
+    CGFloat btnX = self.frame.origin.x;
+    CGFloat btnY = self.frame.origin.y;
+    CGFloat btnW = self.frame.size.width;
+    CGFloat btnH = self.frame.size.height;
+    
+    //x轴左右极限坐标
+    if (btnX > superViewWidth){
+        //按钮右侧越界
+        CGFloat centerX = superViewWidth - btnW/2;
+        self.center = CGPointMake(centerX, centerY);
+    }else if (btnX < 0){
+        //按钮左侧越界
+        CGFloat centerX = btnW * 0.5;
+        self.center = CGPointMake(centerX, centerY);
     }
-
-    self.frame = originalFrame;
     
-    [pan setTranslation:CGPointZero inView:self];
+    //默认都是有导航条的，有导航条的，父试图高度就要被导航条占据，固高度不够
+    CGFloat defaultNaviHeight = 64;
+    CGFloat judgeSuperViewHeight = superViewHeight - defaultNaviHeight;
     
-    UIButton *button = (UIButton *)pan.view;
-    if (pan.state == UIGestureRecognizerStateBegan) {
-        button.enabled = NO;
-    }else if (pan.state == UIGestureRecognizerStateChanged){
-    } else {
-        CGRect frame = self.frame;
-        
-        //记录该button是否屏幕越界
-        BOOL isOver = NO;
-        if (frame.origin.x < 0) {
-            frame.origin.x = 0;
-            isOver = YES;
-            
-        } else if (frame.origin.x + frame.size.width > screenW) {
-            frame.origin.x = screenW - frame.size.width;
-            isOver = YES;
-        }
-
-        if (frame.origin.y < 0) {
-            frame.origin.y = 0;
-            isOver = YES;
-            
-        } else if (frame.origin.y+frame.size.height > screenH) {
-            frame.origin.y = screenH - frame.size.height;
-            isOver = YES;
-        }
-        
-        if (isOver) {
-            //如果越界-跑回来
-            [UIView animateWithDuration:0.3 animations:^{
-                self.frame = frame;
-            }];
-        }
-        button.enabled = YES;
+    //y轴上下极限坐标
+    if (btnY <= 0){
+        //按钮顶部越界
+        centerY = btnH * 0.7;
+        self.center = CGPointMake(centerX, centerY);
+    }
+    else if (btnY > judgeSuperViewHeight){
+        //按钮底部越界
+        CGFloat y = superViewHeight - btnH * 0.5;
+        self.center = CGPointMake(btnX, y);
     }
 }
 
-//拖动改变控件的水平方向x值
-- (CGRect)changeXWithFrame:(CGRect)originalFrame point:(CGPoint)point{
-    BOOL q1 = originalFrame.origin.x >= 0;
-    BOOL q2 = originalFrame.origin.x + originalFrame.size.width <= screenW;
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
     
-    if (q1 && q2) {
-        originalFrame.origin.x += point.x;
+    CGFloat btnWidth = self.frame.size.width;
+    CGFloat btnHeight = self.frame.size.height;
+    CGFloat btnY = self.frame.origin.y;
+    
+    //按钮靠近右侧
+    if (self.center.x >= self.superview.frame.size.width/2) {
+
+        [UIView animateWithDuration:0.5 animations:^{
+            //按钮靠右自动吸边
+            CGFloat btnX = self.superview.frame.size.width - btnWidth;
+            self.frame = CGRectMake(btnX, btnY, btnWidth, btnHeight);
+        }];
+    }else{
+
+        [UIView animateWithDuration:0.5 animations:^{
+            //按钮靠左吸边
+            CGFloat btnX = 0;
+            self.frame = CGRectMake(btnX, btnY, btnWidth, btnHeight);
+        }];
     }
-    return originalFrame;
 }
 
-//拖动改变控件的竖直方向y值
-- (CGRect)changeYWithFrame:(CGRect)originalFrame point:(CGPoint)point{
-    
-    BOOL q1 = originalFrame.origin.y >= 0;
-    BOOL q2 = originalFrame.origin.y + originalFrame.size.height <= screenH;
-    if (q1 && q2) {
-        originalFrame.origin.y += point.y;
-    }
-    return originalFrame;
-}
+
+
 
 @end

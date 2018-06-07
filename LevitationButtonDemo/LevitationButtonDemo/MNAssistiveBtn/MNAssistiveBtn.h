@@ -10,9 +10,9 @@
 
 typedef NS_ENUM(NSInteger, MNAssistiveTouchType)
 {
-    MNAssistiveTouchTypeNone = 0,         //没可以随便移动
-    MNAssistiveTouchTypeVerticalScroll,   //只能垂直移动
-    MNAssistiveTouchTypeHorizontalScroll, //只能水平移动
+    MNAssistiveTypeNone = 0,   //自动识别贴边
+    MNAssistiveTypeNearLeft,   //拖动停止之后，自动向左贴边
+    MNAssistiveTypeNearRight,  //拖动停止之后，自动向右贴边
 };
 
 @interface MNAssistiveBtn : UIButton

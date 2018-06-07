@@ -19,7 +19,7 @@
 }
 
 + (instancetype)mn_touchWithFrame:(CGRect)frame{
-    return [self mn_touchWithType:MNAssistiveTouchTypeNone
+    return [self mn_touchWithType:MNAssistiveTypeNone
                             Frame:frame
                             title:nil
                        titleColor:nil
@@ -134,21 +134,46 @@
     CGFloat btnY = self.frame.origin.y;
     
     //按钮靠近右侧
-    if (self.center.x >= self.superview.frame.size.width/2) {
-
-        [UIView animateWithDuration:0.5 animations:^{
-            //按钮靠右自动吸边
-            CGFloat btnX = self.superview.frame.size.width - btnWidth;
-            self.frame = CGRectMake(btnX, btnY, btnWidth, btnHeight);
-        }];
-    }else{
-
-        [UIView animateWithDuration:0.5 animations:^{
-            //按钮靠左吸边
-            CGFloat btnX = 0;
-            self.frame = CGRectMake(btnX, btnY, btnWidth, btnHeight);
-        }];
+    switch (_type) {
+            
+        case MNAssistiveTypeNone:{
+            
+            //自动识别贴边
+            if (self.center.x >= self.superview.frame.size.width/2) {
+                
+                [UIView animateWithDuration:0.5 animations:^{
+                    //按钮靠右自动吸边
+                    CGFloat btnX = self.superview.frame.size.width - btnWidth;
+                    self.frame = CGRectMake(btnX, btnY, btnWidth, btnHeight);
+                }];
+            }else{
+                
+                [UIView animateWithDuration:0.5 animations:^{
+                    //按钮靠左吸边
+                    CGFloat btnX = 0;
+                    self.frame = CGRectMake(btnX, btnY, btnWidth, btnHeight);
+                }];
+            }
+            break;
+        }
+        case MNAssistiveTypeNearLeft:{
+            [UIView animateWithDuration:0.5 animations:^{
+                //按钮靠左吸边
+                CGFloat btnX = 0;
+                self.frame = CGRectMake(btnX, btnY, btnWidth, btnHeight);
+            }];
+            break;
+        }
+        case MNAssistiveTypeNearRight:{
+            [UIView animateWithDuration:0.5 animations:^{
+                //按钮靠右自动吸边
+                CGFloat btnX = self.superview.frame.size.width - btnWidth;
+                self.frame = CGRectMake(btnX, btnY, btnWidth, btnHeight);
+            }];
+        }
     }
+    
+    
 }
 
 

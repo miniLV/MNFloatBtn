@@ -51,7 +51,7 @@
     //MNAssistiveBtn *btn = [MNAssistiveBtn mn_touchWithFrame:frame];
     
     //示例demo样式
-    MNAssistiveBtn *btn = [MNAssistiveBtn mn_touchWithType:MNAssistiveTouchTypeHorizontalScroll
+    MNAssistiveBtn *btn = [MNAssistiveBtn mn_touchWithType:MNAssistiveTypeNone
                                                      Frame:frame
                                                      title:title
                                                 titleColor:[UIColor whiteColor]
@@ -60,7 +60,16 @@
                                            backgroundImage:[UIImage imageNamed:@"test"]];
     [self.window addSubview:btn];
 
+    [btn addTarget:self action:@selector(p_clickBtn) forControlEvents:UIControlEventTouchUpInside];
 }
+
+
+//显示 隐藏 tabbar
+- (void)p_clickBtn{
+    NSLog(@"p_clickBtn");
+    
+}
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

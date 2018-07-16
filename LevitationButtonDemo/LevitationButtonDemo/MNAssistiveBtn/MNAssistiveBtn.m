@@ -16,6 +16,10 @@
     MNAssistiveTouchType  _type;
     //拖动按钮的起始坐标点
     CGPoint _touchPoint;
+    
+    //起始按钮的x,y值
+    CGFloat _touchBtnX;
+    CGFloat _touchBtnY;
 }
 
 
@@ -74,10 +78,13 @@
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     
     [super touchesBegan:touches withEvent:event];
-    
+
     //按钮刚按下的时候，获取此时的起始坐标
     UITouch *touch = [touches anyObject];
     _touchPoint = [touch locationInView:self];
+    
+    _touchBtnX = self.frame.origin.x;
+    _touchBtnY = self.frame.origin.y;
 }
 
 - (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
@@ -90,6 +97,7 @@
     CGFloat offsetX = currentPosition.x - _touchPoint.x;
     CGFloat offsetY = currentPosition.y - _touchPoint.y;
     
+
     //移动后的按钮中心坐标
     CGFloat centerX = self.center.x + offsetX;
     CGFloat centerY = self.center.y + offsetY;
@@ -132,13 +140,25 @@
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
-    
-    [super touchesEnded:touches withEvent:event];
-    
+
     CGFloat btnWidth = self.frame.size.width;
     CGFloat btnHeight = self.frame.size.height;
     CGFloat btnY = self.frame.origin.y;
+    CGFloat btnX = self.frame.origin.x;
     
+    CGFloat minDistance = 2;
+
+    //结束move的时候，计算移动的距离是>最低要求，如果没有，就调用按钮点击事件
+    BOOL isOverX = fabs(btnX - _touchBtnX) > minDistance;
+    BOOL isOverY = fabs(btnY - _touchBtnY) > minDistance;
+
+    if (isOverX || isOverY) {
+        //超过移动范围就不响应点击 - 只做移动操作
+        [self touchesCancelled:touches withEvent:event];
+    }else{
+        [super touchesEnded:touches withEvent:event];
+    }
+
     //按钮靠近右侧
     switch (_type) {
             
@@ -178,7 +198,6 @@
             }];
         }
     }
-    
 }
 
 

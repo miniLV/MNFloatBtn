@@ -6,12 +6,12 @@
 //  Copyright © 2018年 xmhccf. All rights reserved.
 //
 
-#import "MNAssistiveBtn.h"
+#import "MNFloatBtn.h"
 
 #define screenW  [UIScreen mainScreen].bounds.size.width
 #define screenH  [UIScreen mainScreen].bounds.size.height
 
-@implementation MNAssistiveBtn{
+@implementation MNFloatBtn{
     
     MNAssistiveTouchType  _type;
     //拖动按钮的起始坐标点
@@ -22,34 +22,76 @@
     CGFloat _touchBtnY;
 }
 
+static MNFloatBtn *_floatBtn;
 
+static CGFloat floatBtnW = 120;
+static CGFloat floatBtnH = 49;
 
-+ (instancetype)mn_touchWithFrame:(CGRect)frame{
-    return [self mn_touchWithType:MNAssistiveTypeNone
-                            Frame:frame
-                            title:nil
-                       titleColor:nil
-                        titleFont:nil
-                  backgroundColor:[UIColor orangeColor]
-                  backgroundImage:nil];
++ (instancetype)getFloatBtn{
+    if (!_floatBtn) {
+        _floatBtn = [[self alloc]initWithType:MNAssistiveTypeNearRight frame:CGRectZero];
+    }
+    return _floatBtn;
+}
+
++ (void)show{
+    
+    [self showWithType:MNAssistiveTypeNearRight];
+}
+
++ (void)hidden{
+    
+    [_floatBtn removeFromSuperview];
+}
+
++ (void)showDebugMode{
+    
+#ifdef DEBUG
+[self show];
+#else
+#endif
+}
+
++ (void)showWithType:(MNAssistiveTouchType)type{
+    
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        
+        _floatBtn = [[MNFloatBtn alloc] initWithType:MNAssistiveTypeNearRight frame:CGRectZero];
+    });
+    
+    if (!_floatBtn.superview) {
+        
+        [[UIApplication sharedApplication].keyWindow addSubview:_floatBtn];
+        //让floatBtn在最上层(即便以后还有keywindow add subView，也会在 floatBtn下)
+        [[UIApplication sharedApplication].keyWindow bringSubviewToFront:_floatBtn];
+    }
 }
 
 
-+ (instancetype)mn_touchWithType:(MNAssistiveTouchType)type
-                           Frame:(CGRect)frame
-                           title:(NSString *)title
-                      titleColor:(UIColor *)titleColor
-                       titleFont:(UIFont *)titleFont
-                 backgroundColor:(UIColor *)backgroundColor
-                 backgroundImage:(UIImage *)backgroundImage{
+- (instancetype)initWithType:(MNAssistiveTouchType)type
+                       frame:(CGRect)frame{
     
-    return [[self alloc]initWithType:type
-                               frame:frame
-                               title:title
-                          titleColor:titleColor
-                           titleFont:titleFont
-                     backgroundColor:backgroundColor
-                     backgroundImage:backgroundImage];
+    if (CGRectEqualToRect(frame, CGRectZero)) {
+        CGFloat floatBtnX = screenW - floatBtnW;
+        CGFloat floatBtnY = 60;
+        
+        frame = CGRectMake(floatBtnX, floatBtnY, floatBtnW, floatBtnH);
+    }
+    NSString *versionStr = [[[NSBundle
+                              mainBundle]infoDictionary]valueForKey:@"CFBundleShortVersionString"];
+    NSString *buildStr = [[[NSBundle
+                            mainBundle]infoDictionary]valueForKey:@"CFBundleVersion"];
+    
+    NSString *title = [NSString stringWithFormat:@"Ver:%@ 测试\nBuild:%@",versionStr,buildStr];
+    
+    return [self initWithType:type
+                        frame:frame
+                        title:title
+                   titleColor:[UIColor whiteColor]
+                    titleFont:[UIFont systemFontOfSize:11]
+              backgroundColor:nil
+              backgroundImage:[UIImage imageNamed:@"test"]];
 }
 
 - (instancetype)initWithType:(MNAssistiveTouchType)type
@@ -59,8 +101,8 @@
                    titleFont:(UIFont *)titleFont
              backgroundColor:(UIColor *)backgroundColor
              backgroundImage:(UIImage *)backgroundImage{
-    self = [super initWithFrame:frame];
-    if (self) {
+    
+    if (self = [super initWithFrame:frame]) {
         _type = type;
         
         //UIbutton的换行显示
@@ -71,10 +113,21 @@
         [self setBackgroundImage:backgroundImage forState:UIControlStateNormal];
         [self setBackgroundColor:backgroundColor];
         
+        [self addTarget:self action:@selector(p_clickBtn:) forControlEvents:UIControlEventTouchUpInside];
+        
     }
     return self;
 }
 
+- (void)p_clickBtn:(UIButton *)sender{
+    
+    if (_btnClick) {
+        _btnClick(sender);
+    }
+}
+
+
+#pragma mark - button move
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     
     [super touchesBegan:touches withEvent:event];
@@ -89,7 +142,6 @@
 
 - (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
 
-    //获取当前移动过程中的按钮坐标
     UITouch *touch = [touches anyObject];
     CGPoint currentPosition = [touch locationInView:self];
     
@@ -97,7 +149,6 @@
     CGFloat offsetX = currentPosition.x - _touchPoint.x;
     CGFloat offsetY = currentPosition.y - _touchPoint.y;
     
-
     //移动后的按钮中心坐标
     CGFloat centerX = self.center.x + offsetX;
     CGFloat centerY = self.center.y + offsetY;

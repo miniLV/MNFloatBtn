@@ -14,7 +14,7 @@
 		8F1CA55DBA5330CACC0CC55D /* libPods-LevitationButtonDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F29027719965039620E4E88 /* libPods-LevitationButtonDemo.a */; };
 		A71B87222051810900D804CC /* OneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A71B871F2051810900D804CC /* OneViewController.m */; };
 		A71B87232051810900D804CC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A71B87212051810900D804CC /* ViewController.m */; };
-		A71B87272051811000D804CC /* MNAssistiveBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = A71B87262051811000D804CC /* MNAssistiveBtn.m */; };
+		A71B87272051811000D804CC /* MNFloatBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = A71B87262051811000D804CC /* MNFloatBtn.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,8 +32,8 @@
 		A71B871F2051810900D804CC /* OneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneViewController.m; sourceTree = "<group>"; };
 		A71B87202051810900D804CC /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		A71B87212051810900D804CC /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		A71B87252051811000D804CC /* MNAssistiveBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNAssistiveBtn.h; sourceTree = "<group>"; };
-		A71B87262051811000D804CC /* MNAssistiveBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNAssistiveBtn.m; sourceTree = "<group>"; };
+		A71B87252051811000D804CC /* MNFloatBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNFloatBtn.h; sourceTree = "<group>"; };
+		A71B87262051811000D804CC /* MNFloatBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNFloatBtn.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,7 +77,7 @@
 		14DA4E892051225000718635 /* LevitationButtonDemo */ = {
 			isa = PBXGroup;
 			children = (
-				A71B87242051811000D804CC /* MNAssistiveBtn */,
+				A71B87242051811000D804CC /* MNFloatBtn */,
 				A71B871D2051810900D804CC /* DemoController */,
 				14DA4E8A2051225000718635 /* AppDelegate.h */,
 				14DA4E8B2051225000718635 /* AppDelegate.m */,
@@ -109,13 +109,13 @@
 			path = DemoController;
 			sourceTree = "<group>";
 		};
-		A71B87242051811000D804CC /* MNAssistiveBtn */ = {
+		A71B87242051811000D804CC /* MNFloatBtn */ = {
 			isa = PBXGroup;
 			children = (
-				A71B87252051811000D804CC /* MNAssistiveBtn.h */,
-				A71B87262051811000D804CC /* MNAssistiveBtn.m */,
+				A71B87252051811000D804CC /* MNFloatBtn.h */,
+				A71B87262051811000D804CC /* MNFloatBtn.m */,
 			);
-			path = MNAssistiveBtn;
+			path = MNFloatBtn;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,7 +242,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A71B87272051811000D804CC /* MNAssistiveBtn.m in Sources */,
+				A71B87272051811000D804CC /* MNFloatBtn.m in Sources */,
 				A71B87222051810900D804CC /* OneViewController.m in Sources */,
 				14DA4E9A2051225000718635 /* main.m in Sources */,
 				A71B87232051810900D804CC /* ViewController.m in Sources */,

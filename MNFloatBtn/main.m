@@ -1,9 +1,9 @@
 //
 //  main.m
-//  LevitationButtonDemo
+//  MNFloatBtn
 //
-//  Created by Lyh on 2018/3/8.
-//  Copyright © 2018年 xmhccf. All rights reserved.
+//  Created by 梁宇航 on 2018/11/10.
+//  Copyright © 2018年 梁宇航. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

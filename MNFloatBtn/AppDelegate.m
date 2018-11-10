@@ -17,7 +17,7 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-
+    
     ViewController *vc = [[ViewController alloc]init];
     UINavigationController *navi = [[UINavigationController alloc]initWithRootViewController:vc];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
@@ -33,9 +33,9 @@
 }
 
 -(void)setVersionBtn{
- 
+    
     [MNFloatBtn show];
-
+    
     MNFloatBtn *btn = [MNFloatBtn getFloatBtn];
     btn.btnClick = ^(UIButton *sender) {
         

@@ -1,0 +1,6 @@
+framework module MNFloatBtn {
+  umbrella header "MNFloatBtn-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,16 @@
+PODS:
+  - MNFloatBtn (0.1.0)
+
+DEPENDENCIES:
+  - MNFloatBtn (from `../`)
+
+EXTERNAL SOURCES:
+  MNFloatBtn:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  MNFloatBtn: 11ca5990e5e3eb34a08ca490cd625ea9e74a450c
+
+PODFILE CHECKSUM: a744f714a5c7516015c27c070ec780519826627e
+
+COCOAPODS: 1.5.3

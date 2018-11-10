@@ -22,7 +22,6 @@
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
-		A7B423882197177A00C20287 /* MNFloatBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B423872197177A00C20287 /* MNFloatBtn.m */; };
 		A7B4238B219717D400C20287 /* OneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B4238A219717D300C20287 /* OneViewController.m */; };
 		BECCFC883A024E630155EEC8 /* Pods_MNFloatBtn_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8F867C28DAF1704F15CE2AF /* Pods_MNFloatBtn_Tests.framework */; };
 		FF3F5C007C4F2D0C7379C089 /* Pods_MNFloatBtn_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 216653D39542B61925B2CCB3 /* Pods_MNFloatBtn_Example.framework */; };
@@ -67,8 +66,6 @@
 		8B631F8CD1EF7980CE886F2F /* Pods-MNFloatBtn_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MNFloatBtn_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MNFloatBtn_Example/Pods-MNFloatBtn_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		8C8CA41E8A159A43756323ED /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		992C1192803C1C8771711035 /* Pods-MNFloatBtn_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MNFloatBtn_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MNFloatBtn_Tests/Pods-MNFloatBtn_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		A7B423862197177A00C20287 /* MNFloatBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNFloatBtn.h; sourceTree = "<group>"; };
-		A7B423872197177A00C20287 /* MNFloatBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNFloatBtn.m; sourceTree = "<group>"; };
 		A7B42389219717CD00C20287 /* OneViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OneViewController.h; sourceTree = "<group>"; };
 		A7B4238A219717D300C20287 /* OneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneViewController.m; sourceTree = "<group>"; };
 		B8F867C28DAF1704F15CE2AF /* Pods_MNFloatBtn_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MNFloatBtn_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -115,7 +112,6 @@
 		6003F581195388D10070C39A = {
 			isa = PBXGroup;
 			children = (
-				A7B423852197177A00C20287 /* MNFloatBtn */,
 				60FF7A9C1954A5C5007DD14C /* Podspec Metadata */,
 				6003F593195388D20070C39A /* Example for MNFloatBtn */,
 				6003F5B5195388D20070C39A /* Tests */,
@@ -200,16 +196,6 @@
 				8C8CA41E8A159A43756323ED /* LICENSE */,
 			);
 			name = "Podspec Metadata";
-			sourceTree = "<group>";
-		};
-		A7B423852197177A00C20287 /* MNFloatBtn */ = {
-			isa = PBXGroup;
-			children = (
-				A7B423862197177A00C20287 /* MNFloatBtn.h */,
-				A7B423872197177A00C20287 /* MNFloatBtn.m */,
-			);
-			name = MNFloatBtn;
-			path = ../../../FloatButton/MNFloatBtn/MNFloatBtn;
 			sourceTree = "<group>";
 		};
 		A7B4238C219717D600C20287 /* DemoViewController */ = {
@@ -382,7 +368,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A7B423882197177A00C20287 /* MNFloatBtn.m in Sources */,
 				A7B4238B219717D400C20287 /* OneViewController.m in Sources */,
 				6003F59E195388D20070C39A /* MNAppDelegate.m in Sources */,
 				6003F5A7195388D20070C39A /* MNViewController.m in Sources */,

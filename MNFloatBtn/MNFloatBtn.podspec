@@ -30,7 +30,7 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '8.0'
 
-s.source_files = 'MNFloatBtn/*'
+s.source_files = 'MNFloatBtn/MNFloatBtn.{h,m}'
   
   # s.resource_bundles = {
   #   'MNFloatBtn' => ['MNFloatBtn/Assets/*.png']

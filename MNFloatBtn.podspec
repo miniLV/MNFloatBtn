@@ -32,8 +32,8 @@ Pod::Spec.new do |s|
 
  s.source_files = 'MNFloatBtn/MNFloatBtn.{h,m}'
   
-  s.resources = 'MNFloatBtn/Resources.bundle'
-  spec.resource_bundles = {
+  #s.resources = 'MNFloatBtn/Resources.bundle'
+  s.resource_bundles = {
     'main' => ['MNFloatBtn/Resources/*.png'],
   }
  # s.resources    = 'SVProgressHUD/SVProgressHUD.bundle'

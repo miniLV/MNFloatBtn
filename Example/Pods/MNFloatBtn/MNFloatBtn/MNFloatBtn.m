@@ -47,7 +47,7 @@ static CGFloat floatBtnH = 49;
 + (void)showDebugMode{
     
 #ifdef DEBUG
-    [self show];
+[self show];
 #else
 #endif
 }
@@ -94,11 +94,15 @@ static CGFloat floatBtnH = 49;
     
     NSLog(@"url = %@ , imageBundle = %@",url, imageBundle);
     
-    NSString *path = [imageBundle pathForResource:@"test" ofType:@"png"];
+    NSString *path = [imageBundle pathForResource:@"mn_placeholder" ofType:@"png"];
     
     UIImage *image = [UIImage imageWithContentsOfFile:path];
     
     NSLog(@"path = %@, image = %@",path,image);
+    
+//    UIImage *image = [UIImage imageNamed:@"mn_placeholder"
+//               inBundle:[NSBundle bundleForClass:[MNFloatBtn class]]
+//compatibleWithTraitCollection:nil];
     
     return [self initWithType:type
                         frame:frame
@@ -146,7 +150,7 @@ static CGFloat floatBtnH = 49;
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     
     [super touchesBegan:touches withEvent:event];
-    
+
     //按钮刚按下的时候，获取此时的起始坐标
     UITouch *touch = [touches anyObject];
     _touchPoint = [touch locationInView:self];
@@ -156,7 +160,7 @@ static CGFloat floatBtnH = 49;
 }
 
 - (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    
+
     UITouch *touch = [touches anyObject];
     CGPoint currentPosition = [touch locationInView:self];
     
@@ -206,25 +210,25 @@ static CGFloat floatBtnH = 49;
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
-    
+
     CGFloat btnWidth = self.frame.size.width;
     CGFloat btnHeight = self.frame.size.height;
     CGFloat btnY = self.frame.origin.y;
     CGFloat btnX = self.frame.origin.x;
     
     CGFloat minDistance = 2;
-    
+
     //结束move的时候，计算移动的距离是>最低要求，如果没有，就调用按钮点击事件
     BOOL isOverX = fabs(btnX - _touchBtnX) > minDistance;
     BOOL isOverY = fabs(btnY - _touchBtnY) > minDistance;
-    
+
     if (isOverX || isOverY) {
         //超过移动范围就不响应点击 - 只做移动操作
         [self touchesCancelled:touches withEvent:event];
     }else{
         [super touchesEnded:touches withEvent:event];
     }
-    
+
     //按钮靠近右侧
     switch (_type) {
             

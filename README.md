@@ -1,15 +1,15 @@
 # MNFloatBtn
 
-![demo示例](https://github.com/miniLV/MNFloatBtn/tree/master/Resources)
+![demo示例](https://github.com/miniLV/MNFloatBtn/blob/master/Resources/demo.gif)
 
 
-##集成方法
+## 集成方法
 
 1.CocoaPods : `pod 'MNFloatBtn'`
 
 2.手动导入 : 拖入`MNFloatBtn`文件夹 
 
-##使用方法
+## 使用方法
 1. 导入头文件,`#import <MNFloatBtn/MNFloatBtn.h>`
 2. 一行代码,显示悬浮按钮
 
@@ -21,9 +21,9 @@
 <br>
 
 - 仅在Debug模式下显示悬浮按钮(推荐使用)
-  ```
-  [MNFloatBtn showDebugMode];
-  ```
+```
+[MNFloatBtn showDebugMode];
+```
 <br>
 
 - 移除悬浮按钮在界面上显示

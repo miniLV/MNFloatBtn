@@ -85,8 +85,20 @@ static CGFloat floatBtnH = 49;
     
     NSString *title = [NSString stringWithFormat:@"Ver:%@ 测试\nBuild:%@",versionStr,buildStr];
     
-    UIImage *image = [self p_getResourceImage];
+    NSBundle *bundle = [NSBundle bundleForClass:[MNFloatBtn class]];
     
+    NSLog(@"bundle = %@",bundle);
+    
+    NSURL *url = [bundle URLForResource:@"MNFloatBtn" withExtension:@"bundle"];
+    NSBundle *imageBundle = [NSBundle bundleWithURL:url];
+    
+    NSLog(@"url = %@ , imageBundle = %@",url, imageBundle);
+    
+    NSString *path = [imageBundle pathForResource:@"mn_placeholder@3x" ofType:@"png"];
+    
+    UIImage *image = [UIImage imageWithContentsOfFile:path];
+    
+    NSLog(@"path = %@, image = %@",path,image);
     return [self initWithType:type
                         frame:frame
                         title:title
@@ -254,24 +266,6 @@ static CGFloat floatBtnH = 49;
 }
 
 
-#pragma - getImage
-- (UIImage *)p_getResourceImage{
-    
-    
-    NSBundle *bundle = [NSBundle bundleForClass:[MNFloatBtn class]];
-    
-    NSLog(@"bundle = %@",bundle);
-    
-    NSURL *url = [bundle URLForResource:@"MNFloatBtn" withExtension:@"bundle"];
-    NSBundle *imageBundle = [NSBundle bundleWithURL:url];
-    
-    NSLog(@"url = %@ , imageBundle = %@",url, imageBundle);
-    
-    NSString *path = [imageBundle pathForResource:@"mn_placeholder@3x" ofType:@"png"];
-    
-    UIImage *image = [UIImage imageWithContentsOfFile:path];
-    
-    return image;
-}
+
 
 @end

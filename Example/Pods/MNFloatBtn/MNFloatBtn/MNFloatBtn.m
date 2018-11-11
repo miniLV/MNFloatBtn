@@ -89,12 +89,12 @@ static CGFloat floatBtnH = 49;
     
     NSLog(@"bundle = %@",bundle);
     
-    NSURL *url = [bundle URLForResource:@"MNFloatBtn" withExtension:@"bundle"];
+    NSURL *url = [bundle URLForResource:@"Resources" withExtension:@"bundle"];
     NSBundle *imageBundle = [NSBundle bundleWithURL:url];
     
     NSLog(@"url = %@ , imageBundle = %@",url, imageBundle);
     
-    NSString *path = [imageBundle pathForResource:@"mn_placeholder@3x" ofType:@"png"];
+    NSString *path = [imageBundle pathForResource:@"mn_placeholder" ofType:@"png"];
     
     UIImage *image = [UIImage imageWithContentsOfFile:path];
     
@@ -105,7 +105,7 @@ static CGFloat floatBtnH = 49;
                    titleColor:[UIColor whiteColor]
                     titleFont:[UIFont systemFontOfSize:11]
               backgroundColor:nil
-              backgroundImage:image];
+              backgroundImage:[UIImage imageNamed:@"mn_placeholder"]];
 }
 
 - (instancetype)initWithType:(MNAssistiveTouchType)type

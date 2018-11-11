@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'MNFloatBtn'
-  s.version          = '1.1.1'
+  s.version          = '1.1.2'
   s.summary          = 'A short description of MNFloatBtn.'
 
 # This description is used to generate tags and improve search results.
@@ -33,6 +33,9 @@ Pod::Spec.new do |s|
  s.source_files = 'MNFloatBtn/MNFloatBtn.{h,m}'
   
   s.resources = 'MNFloatBtn/Resources.bundle'
+  spec.resource_bundles = {
+    'main' => ['MNFloatBtn/Resources/*.png'],
+  }
  # s.resources    = 'SVProgressHUD/SVProgressHUD.bundle'
 
   # s.public_header_files = 'Pod/Classes/**/*.h'

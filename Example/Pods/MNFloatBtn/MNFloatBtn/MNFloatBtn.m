@@ -99,18 +99,13 @@ static CGFloat floatBtnH = 49;
     UIImage *image = [UIImage imageWithContentsOfFile:path];
     
     NSLog(@"path = %@, image = %@",path,image);
-    
-//    UIImage *image = [UIImage imageNamed:@"mn_placeholder"
-//               inBundle:[NSBundle bundleForClass:[MNFloatBtn class]]
-//compatibleWithTraitCollection:nil];
-    
     return [self initWithType:type
                         frame:frame
                         title:title
                    titleColor:[UIColor whiteColor]
                     titleFont:[UIFont systemFontOfSize:11]
               backgroundColor:nil
-              backgroundImage:image];
+              backgroundImage:[UIImage imageNamed:@"mn_placeholder"]];
 }
 
 - (instancetype)initWithType:(MNAssistiveTouchType)type

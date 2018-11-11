@@ -7,18 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D090A8A95DA55DC9D9082C1213A7E53 /* MNFloatBtn.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A5945041FCE1EFDAD1AFDD2AF86731C /* MNFloatBtn.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1B46E1C5268C467895DD0CCBA9B3DFA8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		241323830482D3FAD96EA632612B9949 /* Pods-MNFloatBtn_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A85C9EA5B066E620DA930B86FEBCFB20 /* Pods-MNFloatBtn_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		24B0D3FE3996FD1E3D0111C3C3C38A40 /* MNFloatBtn-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D5D7FAE315ADF9CED90F262C33C70E15 /* MNFloatBtn-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		30EDF5F35C2A2E2469D79BA03E2B4219 /* main.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 58322FC278E7110DAB3DEA3B3E1F6B23 /* main.bundle */; };
-		43CF81BECA8C23CA0BD3FE72C2271A85 /* MNFloatBtn-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 69515F36B92D7A79DA688416C4101B87 /* MNFloatBtn-dummy.m */; };
 		497801206455CF3060686BF74A207368 /* Pods-MNFloatBtn_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 93CA39B160B2ED1E7431FE042384FBB6 /* Pods-MNFloatBtn_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4D02F20655BFC13EF8DF0B36637C020E /* Pods-MNFloatBtn_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A338FB97146113FDBCFAB5F6735897D0 /* Pods-MNFloatBtn_Example-dummy.m */; };
-		6E92335929D6558215CB40623220F9B6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		86FB218DE64BCC679C6F0646C92CC525 /* MNFloatBtn.h in Headers */ = {isa = PBXBuildFile; fileRef = 16478265024216E38946C25DE5CE6EA4 /* MNFloatBtn.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5FE3BA29F84E6F54867BC9D1E123C947 /* MNFloatBtn-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B1E39218CCE166C04CCEC4E62651391 /* MNFloatBtn-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AABAC3D13650E6C9713F3B063B655989 /* Pods-MNFloatBtn_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C226D2115CA0837DB3FB9155F25ADE51 /* Pods-MNFloatBtn_Tests-dummy.m */; };
 		C6A7FABE2F5CAC3C4F9D26392C249D70 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		CE4B153ADB2A4E896813BD190F83ED35 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		E02CF8B6D8878FBF3D5802446832DA37 /* MNFloatBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 31CFC64958245645059D324852285298 /* MNFloatBtn.m */; };
+		E24DB86A8A9F3B0F826EBF1C143F83E2 /* MNFloatBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 2734E5D61BBCD576C6FE05C9C2606113 /* MNFloatBtn.m */; };
+		E8227BB7A9CAF4BA135AC8EFE05F8CDB /* MNFloatBtn-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F0A555D032E06AABE8FFFB9B4475BF9A /* MNFloatBtn-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,65 +28,57 @@
 			remoteGlobalIDString = 52182D6AF44FA3D755F9D42FD0ED0749;
 			remoteInfo = "Pods-MNFloatBtn_Example";
 		};
-		0D8233B1F0D4D97345F1FBDC23089664 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 5747C7D323E480E8B7F93DDB69CC1503;
-			remoteInfo = "MNFloatBtn-main";
-		};
 		EC854369A36BB8F9C355E97E76B68D96 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 2989F1804012FD020CA5E81CA6FBA887;
+			remoteGlobalIDString = AAC08EA4639550BD0C71109C5BFD9D13;
 			remoteInfo = MNFloatBtn;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		03EF40C1AFA3C2EA992420591634EAF2 /* Pods-MNFloatBtn_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MNFloatBtn_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		07F896A5E4B69134C0F23A7D95336DFA /* MNFloatBtn-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MNFloatBtn-prefix.pch"; sourceTree = "<group>"; };
 		0A4A10D5A4FDEF53A07A352B93EAF82F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		13AA578926C06B5FB0D34BA7A50FB355 /* Pods-MNFloatBtn_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MNFloatBtn_Tests-resources.sh"; sourceTree = "<group>"; };
 		15233E367FE1B5B7AAB73E66C15E5FD0 /* Pods-MNFloatBtn_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MNFloatBtn_Tests-frameworks.sh"; sourceTree = "<group>"; };
-		16478265024216E38946C25DE5CE6EA4 /* MNFloatBtn.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MNFloatBtn.h; path = MNFloatBtn/MNFloatBtn.h; sourceTree = "<group>"; };
-		219D1943E7002CA5052C18C5C08ACD30 /* MNFloatBtn.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MNFloatBtn.xcconfig; sourceTree = "<group>"; };
+		2734E5D61BBCD576C6FE05C9C2606113 /* MNFloatBtn.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MNFloatBtn.m; path = MNFloatBtn/MNFloatBtn.m; sourceTree = "<group>"; };
 		2F9CD7D9ACC5A2EABA06BC85F0E5C0F3 /* Pods-MNFloatBtn_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MNFloatBtn_Tests.modulemap"; sourceTree = "<group>"; };
-		31CFC64958245645059D324852285298 /* MNFloatBtn.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MNFloatBtn.m; path = MNFloatBtn/MNFloatBtn.m; sourceTree = "<group>"; };
 		32FF396E5D608313607B9F5C31A8139E /* Pods-MNFloatBtn_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MNFloatBtn_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		36C5B306B3CFC26CB2F3D6BB68456460 /* Pods-MNFloatBtn_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MNFloatBtn_Example-frameworks.sh"; sourceTree = "<group>"; };
 		43582C9E1FA7FE7B2BA0D0472ACC0B8F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		47A5D0E72076B85DEDE47525D63BE3EB /* Pods_MNFloatBtn_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MNFloatBtn_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C83D58B356FCCBFF5FCC21A05A2897A /* Pods-MNFloatBtn_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MNFloatBtn_Example-resources.sh"; sourceTree = "<group>"; };
-		5686BDC569A1D3C3C7F3AA880BAC274D /* ResourceBundle-main-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-main-Info.plist"; sourceTree = "<group>"; };
-		58322FC278E7110DAB3DEA3B3E1F6B23 /* main.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = main.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C580D5AA8B8823D05F9EA50A92D678F /* Pods-MNFloatBtn_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MNFloatBtn_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		5E4BFEB6D60F5F00EB70D4EE378E5EB1 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		69515F36B92D7A79DA688416C4101B87 /* MNFloatBtn-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MNFloatBtn-dummy.m"; sourceTree = "<group>"; };
 		7F721D717F6837888E33510B901951BC /* Pods-MNFloatBtn_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MNFloatBtn_Example.modulemap"; sourceTree = "<group>"; };
 		7FD9CFD1CC88E03EBFF09B80026F37B3 /* Pods-MNFloatBtn_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MNFloatBtn_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		8A5945041FCE1EFDAD1AFDD2AF86731C /* MNFloatBtn.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MNFloatBtn.h; path = MNFloatBtn/MNFloatBtn.h; sourceTree = "<group>"; };
+		8B1E39218CCE166C04CCEC4E62651391 /* MNFloatBtn-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MNFloatBtn-umbrella.h"; sourceTree = "<group>"; };
+		8CE55A9A0AB0D5CFB8EAE5F363B862E2 /* MNFloatBtn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MNFloatBtn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		93CA39B160B2ED1E7431FE042384FBB6 /* Pods-MNFloatBtn_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MNFloatBtn_Tests-umbrella.h"; sourceTree = "<group>"; };
+		9D0C74DE870FAB17E6DBB26CD4B1557C /* Pods_MNFloatBtn_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MNFloatBtn_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A338FB97146113FDBCFAB5F6735897D0 /* Pods-MNFloatBtn_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MNFloatBtn_Example-dummy.m"; sourceTree = "<group>"; };
 		A85C9EA5B066E620DA930B86FEBCFB20 /* Pods-MNFloatBtn_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MNFloatBtn_Example-umbrella.h"; sourceTree = "<group>"; };
+		C07DE34579C4144E1160EFFAA7E66C20 /* MNFloatBtn.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MNFloatBtn.modulemap; sourceTree = "<group>"; };
 		C226D2115CA0837DB3FB9155F25ADE51 /* Pods-MNFloatBtn_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MNFloatBtn_Tests-dummy.m"; sourceTree = "<group>"; };
-		C251BDF744F45F90F3F77C15561C3354 /* MNFloatBtn.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MNFloatBtn.modulemap; sourceTree = "<group>"; };
-		C8700A36112E550DFD99DF624052770F /* Pods_MNFloatBtn_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MNFloatBtn_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBAF10D33F14F0FE5E762E9416D4F4E2 /* Pods-MNFloatBtn_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MNFloatBtn_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		CD9C7B881C2BBCD31BA32011BD67F75A /* MNFloatBtn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MNFloatBtn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CBE447E3D4AD1F910C1C9B318D4B3761 /* MNFloatBtn.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MNFloatBtn.xcconfig; sourceTree = "<group>"; };
 		D2EC0D1DB092075F07E1FBE8BEF5CA73 /* Pods-MNFloatBtn_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MNFloatBtn_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		D5D7FAE315ADF9CED90F262C33C70E15 /* MNFloatBtn-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MNFloatBtn-umbrella.h"; sourceTree = "<group>"; };
 		E0B1685C365EF5AA6CB9B11005B3B0CE /* Pods-MNFloatBtn_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MNFloatBtn_Example.release.xcconfig"; sourceTree = "<group>"; };
-		E65CCE054E0554413DCD18022DA232AA /* Pods_MNFloatBtn_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MNFloatBtn_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		ED53E28215B814ED3ABFB218452E95AE /* MNFloatBtn-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MNFloatBtn-prefix.pch"; sourceTree = "<group>"; };
-		FC976123C87D97BEFA7CE6ADD70AD980 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F0A555D032E06AABE8FFFB9B4475BF9A /* MNFloatBtn-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MNFloatBtn-dummy.m"; sourceTree = "<group>"; };
 		FDB98773AF8585622B9C1936EFB4DDE2 /* Pods-MNFloatBtn_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MNFloatBtn_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		30049975CCF43BFADBE570FA873FE81B /* Frameworks */ = {
+		226A2A6DA55C9F111FF90E6BA893A7D1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B46E1C5268C467895DD0CCBA9B3DFA8 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,14 +95,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C6A7FABE2F5CAC3C4F9D26392C249D70 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E04696A85C8F6CC5144D52FFB056F9EB /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6E92335929D6558215CB40623220F9B6 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,30 +128,24 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		39F1C397B451F77269E4AB8FDDEC07D4 /* Products */ = {
+		47C91844E255B83267BAE45B33E40E65 /* MNFloatBtn */ = {
 			isa = PBXGroup;
 			children = (
-				58322FC278E7110DAB3DEA3B3E1F6B23 /* main.bundle */,
-				CD9C7B881C2BBCD31BA32011BD67F75A /* MNFloatBtn.framework */,
-				E65CCE054E0554413DCD18022DA232AA /* Pods_MNFloatBtn_Example.framework */,
-				C8700A36112E550DFD99DF624052770F /* Pods_MNFloatBtn_Tests.framework */,
+				8A5945041FCE1EFDAD1AFDD2AF86731C /* MNFloatBtn.h */,
+				2734E5D61BBCD576C6FE05C9C2606113 /* MNFloatBtn.m */,
+				A1311AD1662D1CAE3A4FC0DA05CDDF87 /* Support Files */,
 			);
-			name = Products;
+			path = MNFloatBtn;
 			sourceTree = "<group>";
 		};
-		60F4911838D3304EEA0991DEFD1E8DAC /* Support Files */ = {
+		593D52A8225AD5959339E4154B65DD13 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FC976123C87D97BEFA7CE6ADD70AD980 /* Info.plist */,
-				C251BDF744F45F90F3F77C15561C3354 /* MNFloatBtn.modulemap */,
-				219D1943E7002CA5052C18C5C08ACD30 /* MNFloatBtn.xcconfig */,
-				69515F36B92D7A79DA688416C4101B87 /* MNFloatBtn-dummy.m */,
-				ED53E28215B814ED3ABFB218452E95AE /* MNFloatBtn-prefix.pch */,
-				D5D7FAE315ADF9CED90F262C33C70E15 /* MNFloatBtn-umbrella.h */,
-				5686BDC569A1D3C3C7F3AA880BAC274D /* ResourceBundle-main-Info.plist */,
+				8CE55A9A0AB0D5CFB8EAE5F363B862E2 /* MNFloatBtn.framework */,
+				9D0C74DE870FAB17E6DBB26CD4B1557C /* Pods_MNFloatBtn_Example.framework */,
+				47A5D0E72076B85DEDE47525D63BE3EB /* Pods_MNFloatBtn_Tests.framework */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/MNFloatBtn";
+			name = Products;
 			sourceTree = "<group>";
 		};
 		71BEDAC57F3FDC3A7793365D5A55FCA4 /* Pods-MNFloatBtn_Tests */ = {
@@ -195,9 +172,23 @@
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
 				F13C24C1C54A0B3895AF6D0821E033C8 /* Pods */,
-				39F1C397B451F77269E4AB8FDDEC07D4 /* Products */,
+				593D52A8225AD5959339E4154B65DD13 /* Products */,
 				0EB1929C122EF6CE5125278C8848CE70 /* Targets Support Files */,
 			);
+			sourceTree = "<group>";
+		};
+		A1311AD1662D1CAE3A4FC0DA05CDDF87 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				5E4BFEB6D60F5F00EB70D4EE378E5EB1 /* Info.plist */,
+				C07DE34579C4144E1160EFFAA7E66C20 /* MNFloatBtn.modulemap */,
+				CBE447E3D4AD1F910C1C9B318D4B3761 /* MNFloatBtn.xcconfig */,
+				F0A555D032E06AABE8FFFB9B4475BF9A /* MNFloatBtn-dummy.m */,
+				07F896A5E4B69134C0F23A7D95336DFA /* MNFloatBtn-prefix.pch */,
+				8B1E39218CCE166C04CCEC4E62651391 /* MNFloatBtn-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/MNFloatBtn";
 			sourceTree = "<group>";
 		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
@@ -206,16 +197,6 @@
 				D35AF013A5F0BAD4F32504907A52519E /* iOS */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		C7293FFDD1A044F9C85A104CA04DF6F2 /* MNFloatBtn */ = {
-			isa = PBXGroup;
-			children = (
-				16478265024216E38946C25DE5CE6EA4 /* MNFloatBtn.h */,
-				31CFC64958245645059D324852285298 /* MNFloatBtn.m */,
-				60F4911838D3304EEA0991DEFD1E8DAC /* Support Files */,
-			);
-			path = MNFloatBtn;
 			sourceTree = "<group>";
 		};
 		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
@@ -229,7 +210,7 @@
 		F13C24C1C54A0B3895AF6D0821E033C8 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				C7293FFDD1A044F9C85A104CA04DF6F2 /* MNFloatBtn */,
+				47C91844E255B83267BAE45B33E40E65 /* MNFloatBtn */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -253,37 +234,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B15987599D3642264891D07FAEDE7036 /* Headers */ = {
+		D859DE3E70F5B27DAF9E82B3CA76383F /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				24B0D3FE3996FD1E3D0111C3C3C38A40 /* MNFloatBtn-umbrella.h in Headers */,
-				86FB218DE64BCC679C6F0646C92CC525 /* MNFloatBtn.h in Headers */,
+				5FE3BA29F84E6F54867BC9D1E123C947 /* MNFloatBtn-umbrella.h in Headers */,
+				0D090A8A95DA55DC9D9082C1213A7E53 /* MNFloatBtn.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		2989F1804012FD020CA5E81CA6FBA887 /* MNFloatBtn */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 64F993BF72293BBB2BA5F51F3C95A510 /* Build configuration list for PBXNativeTarget "MNFloatBtn" */;
-			buildPhases = (
-				DCCF1CDAEEDBD1811C064E0749165875 /* Sources */,
-				E04696A85C8F6CC5144D52FFB056F9EB /* Frameworks */,
-				2009408CF453A8A0BC564DBB65075D91 /* Resources */,
-				B15987599D3642264891D07FAEDE7036 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				6899E5D0FD0E80AA090B8421747E2862 /* PBXTargetDependency */,
-			);
-			name = MNFloatBtn;
-			productName = MNFloatBtn;
-			productReference = CD9C7B881C2BBCD31BA32011BD67F75A /* MNFloatBtn.framework */;
-			productType = "com.apple.product-type.framework";
-		};
 		4058CCB4D7327EC17F82E6F127A13A04 /* Pods-MNFloatBtn_Tests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 22F6ACA3B3457742327C599CC6DBDCDB /* Build configuration list for PBXNativeTarget "Pods-MNFloatBtn_Tests" */;
@@ -299,7 +261,7 @@
 			);
 			name = "Pods-MNFloatBtn_Tests";
 			productName = "Pods-MNFloatBtn_Tests";
-			productReference = C8700A36112E550DFD99DF624052770F /* Pods_MNFloatBtn_Tests.framework */;
+			productReference = 47A5D0E72076B85DEDE47525D63BE3EB /* Pods_MNFloatBtn_Tests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		52182D6AF44FA3D755F9D42FD0ED0749 /* Pods-MNFloatBtn_Example */ = {
@@ -317,25 +279,26 @@
 			);
 			name = "Pods-MNFloatBtn_Example";
 			productName = "Pods-MNFloatBtn_Example";
-			productReference = E65CCE054E0554413DCD18022DA232AA /* Pods_MNFloatBtn_Example.framework */;
+			productReference = 9D0C74DE870FAB17E6DBB26CD4B1557C /* Pods_MNFloatBtn_Example.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		5747C7D323E480E8B7F93DDB69CC1503 /* MNFloatBtn-main */ = {
+		AAC08EA4639550BD0C71109C5BFD9D13 /* MNFloatBtn */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6AA460A51D3AC9AD7FB95FC0B39D2CC1 /* Build configuration list for PBXNativeTarget "MNFloatBtn-main" */;
+			buildConfigurationList = 1D48A3BFBDEC72C2A4AF10B3303A7C71 /* Build configuration list for PBXNativeTarget "MNFloatBtn" */;
 			buildPhases = (
-				476085C7F9E24B8F651FC7621B3900E2 /* Sources */,
-				30049975CCF43BFADBE570FA873FE81B /* Frameworks */,
-				715DF77F3E9768DB7F7443B0F91438CD /* Resources */,
+				65BAA1E47F48FEF5BAA84730D65CC204 /* Sources */,
+				226A2A6DA55C9F111FF90E6BA893A7D1 /* Frameworks */,
+				D859DE3E70F5B27DAF9E82B3CA76383F /* Headers */,
+				3ED6DBE800294D9361C5128E061D4E5D /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "MNFloatBtn-main";
-			productName = "MNFloatBtn-main";
-			productReference = 58322FC278E7110DAB3DEA3B3E1F6B23 /* main.bundle */;
-			productType = "com.apple.product-type.bundle";
+			name = MNFloatBtn;
+			productName = MNFloatBtn;
+			productReference = 8CE55A9A0AB0D5CFB8EAE5F363B862E2 /* MNFloatBtn.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -354,12 +317,11 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 39F1C397B451F77269E4AB8FDDEC07D4 /* Products */;
+			productRefGroup = 593D52A8225AD5959339E4154B65DD13 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2989F1804012FD020CA5E81CA6FBA887 /* MNFloatBtn */,
-				5747C7D323E480E8B7F93DDB69CC1503 /* MNFloatBtn-main */,
+				AAC08EA4639550BD0C71109C5BFD9D13 /* MNFloatBtn */,
 				52182D6AF44FA3D755F9D42FD0ED0749 /* Pods-MNFloatBtn_Example */,
 				4058CCB4D7327EC17F82E6F127A13A04 /* Pods-MNFloatBtn_Tests */,
 			);
@@ -367,15 +329,7 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		2009408CF453A8A0BC564DBB65075D91 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				30EDF5F35C2A2E2469D79BA03E2B4219 /* main.bundle in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		715DF77F3E9768DB7F7443B0F91438CD /* Resources */ = {
+		3ED6DBE800294D9361C5128E061D4E5D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -385,10 +339,12 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		476085C7F9E24B8F651FC7621B3900E2 /* Sources */ = {
+		65BAA1E47F48FEF5BAA84730D65CC204 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8227BB7A9CAF4BA135AC8EFE05F8CDB /* MNFloatBtn-dummy.m in Sources */,
+				E24DB86A8A9F3B0F826EBF1C143F83E2 /* MNFloatBtn.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,15 +353,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D02F20655BFC13EF8DF0B36637C020E /* Pods-MNFloatBtn_Example-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DCCF1CDAEEDBD1811C064E0749165875 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				43CF81BECA8C23CA0BD3FE72C2271A85 /* MNFloatBtn-dummy.m in Sources */,
-				E02CF8B6D8878FBF3D5802446832DA37 /* MNFloatBtn.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -426,16 +373,10 @@
 			target = 52182D6AF44FA3D755F9D42FD0ED0749 /* Pods-MNFloatBtn_Example */;
 			targetProxy = 0BAEBF8AE694B6F127381D88E8F73FB2 /* PBXContainerItemProxy */;
 		};
-		6899E5D0FD0E80AA090B8421747E2862 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "MNFloatBtn-main";
-			target = 5747C7D323E480E8B7F93DDB69CC1503 /* MNFloatBtn-main */;
-			targetProxy = 0D8233B1F0D4D97345F1FBDC23089664 /* PBXContainerItemProxy */;
-		};
 		8E44FA6C941073CABB4656FF2F29BDFA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = MNFloatBtn;
-			target = 2989F1804012FD020CA5E81CA6FBA887 /* MNFloatBtn */;
+			target = AAC08EA4639550BD0C71109C5BFD9D13 /* MNFloatBtn */;
 			targetProxy = EC854369A36BB8F9C355E97E76B68D96 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -474,22 +415,6 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
-		};
-		1A0A5D85251BF15EBFC703E3EF096B72 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 219D1943E7002CA5052C18C5C08ACD30 /* MNFloatBtn.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/MNFloatBtn";
-				INFOPLIST_FILE = "Target Support Files/MNFloatBtn/ResourceBundle-main-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				PRODUCT_NAME = main;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Debug;
 		};
 		4F0AA64947C259DD6A1EA3516F0071E4 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -621,53 +546,6 @@
 			};
 			name = Debug;
 		};
-		9152BFC3F77A675EC49A629EFF11C6F8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 219D1943E7002CA5052C18C5C08ACD30 /* MNFloatBtn.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/MNFloatBtn";
-				INFOPLIST_FILE = "Target Support Files/MNFloatBtn/ResourceBundle-main-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				PRODUCT_NAME = main;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Release;
-		};
-		B41172735F2A5B6BC5EFFB47DF83A13A /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 219D1943E7002CA5052C18C5C08ACD30 /* MNFloatBtn.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/MNFloatBtn/MNFloatBtn-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/MNFloatBtn/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/MNFloatBtn/MNFloatBtn.modulemap";
-				PRODUCT_MODULE_NAME = MNFloatBtn;
-				PRODUCT_NAME = MNFloatBtn;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		B42B54097A876E8A982CBF5DAA91B1AB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -726,9 +604,9 @@
 			};
 			name = Release;
 		};
-		C7C6F61F180CC3EF016F79A30A4E2315 /* Debug */ = {
+		D43233141582CF667ED31A782279CE30 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 219D1943E7002CA5052C18C5C08ACD30 /* MNFloatBtn.xcconfig */;
+			baseConfigurationReference = CBE447E3D4AD1F910C1C9B318D4B3761 /* MNFloatBtn.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -755,6 +633,37 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
+		};
+		E6C8A92C16F5CDB0DDED5D9E851C45D6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CBE447E3D4AD1F910C1C9B318D4B3761 /* MNFloatBtn.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/MNFloatBtn/MNFloatBtn-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MNFloatBtn/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/MNFloatBtn/MNFloatBtn.modulemap";
+				PRODUCT_MODULE_NAME = MNFloatBtn;
+				PRODUCT_NAME = MNFloatBtn;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
 		};
 		F3EB0F126BE3D0FD923007DF5D0FF2D2 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -792,6 +701,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1D48A3BFBDEC72C2A4AF10B3303A7C71 /* Build configuration list for PBXNativeTarget "MNFloatBtn" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D43233141582CF667ED31A782279CE30 /* Debug */,
+				E6C8A92C16F5CDB0DDED5D9E851C45D6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		22F6ACA3B3457742327C599CC6DBDCDB /* Build configuration list for PBXNativeTarget "Pods-MNFloatBtn_Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -806,24 +724,6 @@
 			buildConfigurations = (
 				8B33C5230DE4A9DFA6D8F46505DD7AF7 /* Debug */,
 				B42B54097A876E8A982CBF5DAA91B1AB /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		64F993BF72293BBB2BA5F51F3C95A510 /* Build configuration list for PBXNativeTarget "MNFloatBtn" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				C7C6F61F180CC3EF016F79A30A4E2315 /* Debug */,
-				B41172735F2A5B6BC5EFFB47DF83A13A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		6AA460A51D3AC9AD7FB95FC0B39D2CC1 /* Build configuration list for PBXNativeTarget "MNFloatBtn-main" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1A0A5D85251BF15EBFC703E3EF096B72 /* Debug */,
-				9152BFC3F77A675EC49A629EFF11C6F8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

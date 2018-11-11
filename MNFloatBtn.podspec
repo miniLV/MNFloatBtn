@@ -32,7 +32,7 @@ Pod::Spec.new do |s|
 
  s.source_files = 'MNFloatBtn/MNFloatBtn.{h,m}'
   
-  s.resources = 'MNFloatBtn/MNFloatBtn.bundle'
+  s.resources = 'MNFloatBtn/MNFloatBtn/MNFloatBtn.bundle'
   # s.resources    = 'SVProgressHUD/SVProgressHUD.bundle'
 
  # s.resources    = 'SVProgressHUD/SVProgressHUD.bundle'

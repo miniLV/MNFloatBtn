@@ -85,13 +85,27 @@ static CGFloat floatBtnH = 49;
     
     NSString *title = [NSString stringWithFormat:@"Ver:%@ 测试\nBuild:%@",versionStr,buildStr];
     
+    NSBundle *bundle = [NSBundle bundleForClass:[MNFloatBtn class]];
+    
+    NSLog(@"bundle = %@",bundle);
+    
+    NSURL *url = [bundle URLForResource:@"Resources" withExtension:@"bundle"];
+    NSBundle *imageBundle = [NSBundle bundleWithURL:url];
+    
+    NSLog(@"url = %@ , imageBundle = %@",url, imageBundle);
+    
+    NSString *path = [imageBundle pathForResource:@"mn_placeholder" ofType:@"png"];
+    
+    UIImage *image = [UIImage imageWithContentsOfFile:path];
+    
+    NSLog(@"path = %@, image = %@",path,image);
     return [self initWithType:type
                         frame:frame
                         title:title
                    titleColor:[UIColor whiteColor]
                     titleFont:[UIFont systemFontOfSize:11]
               backgroundColor:nil
-              backgroundImage:[UIImage imageNamed:@"test"]];
+              backgroundImage:[UIImage imageNamed:@"mn_placeholder"]];
 }
 
 - (instancetype)initWithType:(MNAssistiveTouchType)type

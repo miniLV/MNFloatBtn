@@ -7,7 +7,7 @@
 //
 
 #import "OneViewController.h"
-#import <MNFloatBtn/MNFloatBtn.h>
+#import "MNFloatBtn.h"
 @interface OneViewController ()
 
 @end

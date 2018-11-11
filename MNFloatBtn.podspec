@@ -30,11 +30,9 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '8.0'
 
-s.source_files = 'MNFloatBtn/MNFloatBtn.{h,m},MNFloatBtn/*.png'
+s.source_files = 'MNFloatBtn/MNFloatBtn.{h,m}'
   
-   s.resource_bundles = {
-     'MNFloatBtn' => ['MNFloatBtn/*.png']
-   }
+  s.resources    = 'MNFloatBtn/*.png'
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'

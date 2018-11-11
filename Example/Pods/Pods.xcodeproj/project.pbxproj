@@ -48,7 +48,7 @@
 		36C5B306B3CFC26CB2F3D6BB68456460 /* Pods-MNFloatBtn_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MNFloatBtn_Example-frameworks.sh"; sourceTree = "<group>"; };
 		3C23CB519C855696D47F4410DC5C36C9 /* MNFloatBtn-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MNFloatBtn-umbrella.h"; sourceTree = "<group>"; };
 		43582C9E1FA7FE7B2BA0D0472ACC0B8F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		47A5D0E72076B85DEDE47525D63BE3EB /* Pods_MNFloatBtn_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MNFloatBtn_Tests.framework; path = "Pods-MNFloatBtn_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		47A5D0E72076B85DEDE47525D63BE3EB /* Pods_MNFloatBtn_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MNFloatBtn_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		481902F55294219F0FFEE96B9125E00C /* MNFloatBtn-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MNFloatBtn-prefix.pch"; sourceTree = "<group>"; };
 		4C83D58B356FCCBFF5FCC21A05A2897A /* Pods-MNFloatBtn_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MNFloatBtn_Example-resources.sh"; sourceTree = "<group>"; };
 		5C580D5AA8B8823D05F9EA50A92D678F /* Pods-MNFloatBtn_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MNFloatBtn_Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -58,13 +58,14 @@
 		715F103D200C44D6A240637F30F95197 /* MNFloatBtn.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MNFloatBtn.h; path = MNFloatBtn/MNFloatBtn.h; sourceTree = "<group>"; };
 		7F721D717F6837888E33510B901951BC /* Pods-MNFloatBtn_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MNFloatBtn_Example.modulemap"; sourceTree = "<group>"; };
 		7FD9CFD1CC88E03EBFF09B80026F37B3 /* Pods-MNFloatBtn_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MNFloatBtn_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		8CE55A9A0AB0D5CFB8EAE5F363B862E2 /* MNFloatBtn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MNFloatBtn.framework; path = MNFloatBtn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CE55A9A0AB0D5CFB8EAE5F363B862E2 /* MNFloatBtn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MNFloatBtn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		90F0FEE69CFDFD5EC16524B8ABC180EF /* MNFloatBtn.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MNFloatBtn.modulemap; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		93CA39B160B2ED1E7431FE042384FBB6 /* Pods-MNFloatBtn_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MNFloatBtn_Tests-umbrella.h"; sourceTree = "<group>"; };
 		97CD0A15A892C60791BB2736E44EE73A /* MNFloatBtn.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MNFloatBtn.xcconfig; sourceTree = "<group>"; };
-		9D0C74DE870FAB17E6DBB26CD4B1557C /* Pods_MNFloatBtn_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MNFloatBtn_Example.framework; path = "Pods-MNFloatBtn_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D0C74DE870FAB17E6DBB26CD4B1557C /* Pods_MNFloatBtn_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MNFloatBtn_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A338FB97146113FDBCFAB5F6735897D0 /* Pods-MNFloatBtn_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MNFloatBtn_Example-dummy.m"; sourceTree = "<group>"; };
+		A7B4239421985F2F00C20287 /* Resources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Resources.bundle; path = MNFloatBtn/Resources.bundle; sourceTree = "<group>"; };
 		A85C9EA5B066E620DA930B86FEBCFB20 /* Pods-MNFloatBtn_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MNFloatBtn_Example-umbrella.h"; sourceTree = "<group>"; };
 		C226D2115CA0837DB3FB9155F25ADE51 /* Pods-MNFloatBtn_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MNFloatBtn_Tests-dummy.m"; sourceTree = "<group>"; };
 		CBAF10D33F14F0FE5E762E9416D4F4E2 /* Pods-MNFloatBtn_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MNFloatBtn_Example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -156,8 +157,8 @@
 				715F103D200C44D6A240637F30F95197 /* MNFloatBtn.h */,
 				708945FEF240F05A5B7E989B57A3614D /* MNFloatBtn.m */,
 				066F11C58C526C504BE548EBD438F802 /* Support Files */,
+				A7B4239421985F2F00C20287 /* Resources.bundle */,
 			);
-			name = MNFloatBtn;
 			path = MNFloatBtn;
 			sourceTree = "<group>";
 		};

@@ -87,9 +87,6 @@ static CGFloat floatBtnH = 49;
     
     UIImage *image = [self p_loadResourceImage];
     
-    
-    
-    NSLog(@"path = %@, image = %@",path,image);
     return [self initWithType:type
                         frame:frame
                         title:title

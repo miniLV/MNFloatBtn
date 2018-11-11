@@ -32,10 +32,7 @@ Pod::Spec.new do |s|
 
  s.source_files = 'MNFloatBtn/MNFloatBtn.{h,m}'
   
-  s.resources = 'MNFloatBtn/Resources/MNFloatBtn.bundle'
-  # s.resources    = 'SVProgressHUD/SVProgressHUD.bundle'
-
- # s.resources    = 'SVProgressHUD/SVProgressHUD.bundle'
+  s.resources = 'MNFloatBtn/MNFloatBtn.bundle'
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'

@@ -1,5 +1,5 @@
 PODS:
-  - MNFloatBtn (1.1.4)
+  - MNFloatBtn (2.0.0)
 
 DEPENDENCIES:
   - MNFloatBtn
@@ -9,7 +9,7 @@ SPEC REPOS:
     - MNFloatBtn
 
 SPEC CHECKSUMS:
-  MNFloatBtn: 9abe82ee92faf384f1a56f73d35eea81c9d7339d
+  MNFloatBtn: 116eb128e9cc75df75782acfe32db8e330edaeaf
 
 PODFILE CHECKSUM: d6eb40bb08f84cf4782651bf71bb4677c29b4359
 

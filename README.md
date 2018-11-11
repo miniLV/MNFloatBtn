@@ -1,22 +1,35 @@
-# LevitationButtonDemo
+# MNFloatBtn
 
-![demo示例](https://github.com/miniLV/LevitationButtonDemo/blob/master/demo.gif)
+![demo示例](https://github.com/miniLV/MNFloatBtn/tree/master/Resources)
 
-*使用方法*
 
-1. 引入‘MNAssistiveBtn’ 文件
+##集成方法
 
-2. 进入`AppDelegate.m` 在 ```- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {...}```方法中，添加以下代码即可
+1.CocoaPods : `pod 'MNFloatBtn'`
+
+2.手动导入 : 拖入`MNFloatBtn`文件夹 
+
+##使用方法
+1. 导入头文件,`#import <MNFloatBtn/MNFloatBtn.h>`
+2. 一行代码,显示悬浮按钮
+
+---
+- 任何情况都显示悬浮按钮
 ```
-MNAssistiveBtn *btn = [MNAssistiveBtn mn_touchWithType:MNAssistiveTypeNone
-                                                 Frame:frame
-                                                 title:title
-                                            titleColor:[UIColor whiteColor]
-                                             titleFont:[UIFont systemFontOfSize:11]
-                                       backgroundColor:nil
-                                       backgroundImage:[UIImage imageNamed:@"test"]];
-[self.window addSubview:btn];
-
+[MNFloatBtn show];
 ```
+<br>
+
+- 仅在Debug模式下显示悬浮按钮(推荐使用)
+  ```
+  [MNFloatBtn showDebugMode];
+  ```
+<br>
+
+- 移除悬浮按钮在界面上显示
+```
+[MNFloatBtn hidden];
+```
+
 
 [文章介绍](https://www.jianshu.com/p/5a0ca7c4fd78)

@@ -1,0 +1,16 @@
+PODS:
+  - MNFloatBtn (0.1.1)
+
+DEPENDENCIES:
+  - MNFloatBtn
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - MNFloatBtn
+
+SPEC CHECKSUMS:
+  MNFloatBtn: 8f83d4a8873373f57b13f667678954e1fb4ef0c8
+
+PODFILE CHECKSUM: 85b47ad01a695850207077f11718c50e232695e8
+
+COCOAPODS: 1.5.3

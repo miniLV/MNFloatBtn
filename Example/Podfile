@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'MNFloatBtn_Example' do
+  #pod 'MNFloatBtn', :path => '../'
+	pod 'MNFloatBtn'
+  target 'MNFloatBtn_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

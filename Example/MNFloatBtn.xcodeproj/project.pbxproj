@@ -23,6 +23,7 @@
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		A7B4238B219717D400C20287 /* OneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B4238A219717D300C20287 /* OneViewController.m */; };
+		A7B42399219862A300C20287 /* Resources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A7B42398219862A300C20287 /* Resources.bundle */; };
 		BECCFC883A024E630155EEC8 /* Pods_MNFloatBtn_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8F867C28DAF1704F15CE2AF /* Pods_MNFloatBtn_Tests.framework */; };
 		FF3F5C007C4F2D0C7379C089 /* Pods_MNFloatBtn_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 216653D39542B61925B2CCB3 /* Pods_MNFloatBtn_Example.framework */; };
 /* End PBXBuildFile section */
@@ -68,6 +69,7 @@
 		992C1192803C1C8771711035 /* Pods-MNFloatBtn_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MNFloatBtn_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MNFloatBtn_Tests/Pods-MNFloatBtn_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		A7B42389219717CD00C20287 /* OneViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OneViewController.h; sourceTree = "<group>"; };
 		A7B4238A219717D300C20287 /* OneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneViewController.m; sourceTree = "<group>"; };
+		A7B42398219862A300C20287 /* Resources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Resources.bundle; path = ../MNFloatBtn/Resources.bundle; sourceTree = "<group>"; };
 		B8F867C28DAF1704F15CE2AF /* Pods_MNFloatBtn_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MNFloatBtn_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F69E4B8DBA442EF09A728460 /* Pods-MNFloatBtn_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MNFloatBtn_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MNFloatBtn_Tests/Pods-MNFloatBtn_Tests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -112,6 +114,7 @@
 		6003F581195388D10070C39A = {
 			isa = PBXGroup;
 			children = (
+				A7B42398219862A300C20287 /* Resources.bundle */,
 				60FF7A9C1954A5C5007DD14C /* Podspec Metadata */,
 				6003F593195388D20070C39A /* Example for MNFloatBtn */,
 				6003F5B5195388D20070C39A /* Tests */,
@@ -289,6 +292,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7B42399219862A300C20287 /* Resources.bundle in Resources */,
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
 				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,

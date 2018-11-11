@@ -65,7 +65,6 @@
 		97CD0A15A892C60791BB2736E44EE73A /* MNFloatBtn.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MNFloatBtn.xcconfig; sourceTree = "<group>"; };
 		9D0C74DE870FAB17E6DBB26CD4B1557C /* Pods_MNFloatBtn_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MNFloatBtn_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A338FB97146113FDBCFAB5F6735897D0 /* Pods-MNFloatBtn_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MNFloatBtn_Example-dummy.m"; sourceTree = "<group>"; };
-		A7B4239421985F2F00C20287 /* Resources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Resources.bundle; path = MNFloatBtn/Resources.bundle; sourceTree = "<group>"; };
 		A85C9EA5B066E620DA930B86FEBCFB20 /* Pods-MNFloatBtn_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MNFloatBtn_Example-umbrella.h"; sourceTree = "<group>"; };
 		C226D2115CA0837DB3FB9155F25ADE51 /* Pods-MNFloatBtn_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MNFloatBtn_Tests-dummy.m"; sourceTree = "<group>"; };
 		CBAF10D33F14F0FE5E762E9416D4F4E2 /* Pods-MNFloatBtn_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MNFloatBtn_Example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -157,7 +156,6 @@
 				715F103D200C44D6A240637F30F95197 /* MNFloatBtn.h */,
 				708945FEF240F05A5B7E989B57A3614D /* MNFloatBtn.m */,
 				066F11C58C526C504BE548EBD438F802 /* Support Files */,
-				A7B4239421985F2F00C20287 /* Resources.bundle */,
 			);
 			path = MNFloatBtn;
 			sourceTree = "<group>";

@@ -29,10 +29,22 @@
 
 -(void)setVersionBtn{
     
-    [MNFloatBtn show];
-    MNFloatBtn *btn = [MNFloatBtn getFloatBtn];
-    btn.btnClick = ^(UIButton *sender) {
-        
+    [[MNFloatBtn sharedBtn] setBuildShowDate:NO];
+    [MNFloatBtn showDebugModeWithType:MNAssistiveTypeNone];
+
+    //#define kAddress            @"testapi.miniLV.com"
+    //#define kAddress            @"devapi.miniLV.com"
+    //#define kAddress            @"api.miniLV.com"
+    NSDictionary *envMap = @{
+                             @"测试":@"testapi.miniLV.com",
+                             @"开发":@"devapi.miniLV.com",
+                             @"生产":@"api.miniLV.com"
+                             };
+    [[MNFloatBtn sharedBtn]setEnvironmentMap:envMap];
+    
+    
+    [MNFloatBtn sharedBtn].btnClick = ^(UIButton *sender) {
+
         NSLog(@" btn.btnClick ~");
     };
 }

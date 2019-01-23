@@ -78,6 +78,7 @@ static CGFloat floatBtnH = 49;
         
         frame = CGRectMake(floatBtnX, floatBtnY, floatBtnW, floatBtnH);
     }
+    
     NSString *versionStr = [[[NSBundle
                               mainBundle]infoDictionary]valueForKey:@"CFBundleShortVersionString"];
     NSString *buildStr = [[[NSBundle

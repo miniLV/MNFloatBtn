@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		587AAE8621F81C4A002B5E0E /* MNFloatBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 587AAE8421F81C49002B5E0E /* MNFloatBtn.m */; };
+		587AAE8721F81C4A002B5E0E /* MNFloatBtn.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 587AAE8521F81C49002B5E0E /* MNFloatBtn.bundle */; };
+		58A6557521F81D9700A633C3 /* NSDate+MNDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A6557421F81D9700A633C3 /* NSDate+MNDate.m */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -40,6 +43,11 @@
 /* Begin PBXFileReference section */
 		0F0A0A6BDC03DE6722B682D9 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		216653D39542B61925B2CCB3 /* Pods_MNFloatBtn_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MNFloatBtn_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		587AAE8321F81C49002B5E0E /* MNFloatBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNFloatBtn.h; sourceTree = "<group>"; };
+		587AAE8421F81C49002B5E0E /* MNFloatBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNFloatBtn.m; sourceTree = "<group>"; };
+		587AAE8521F81C49002B5E0E /* MNFloatBtn.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MNFloatBtn.bundle; sourceTree = "<group>"; };
+		58A6557321F81D9700A633C3 /* NSDate+MNDate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+MNDate.h"; sourceTree = "<group>"; };
+		58A6557421F81D9700A633C3 /* NSDate+MNDate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+MNDate.m"; sourceTree = "<group>"; };
 		5A338D21B55E8058B4D1E7DF /* MNFloatBtn.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = MNFloatBtn.podspec; path = ../MNFloatBtn.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		6003F58A195388D20070C39A /* MNFloatBtn_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MNFloatBtn_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -109,9 +117,31 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		587AAE8221F81C49002B5E0E /* MNFloatBtn */ = {
+			isa = PBXGroup;
+			children = (
+				587AAE8321F81C49002B5E0E /* MNFloatBtn.h */,
+				587AAE8421F81C49002B5E0E /* MNFloatBtn.m */,
+				587AAE8521F81C49002B5E0E /* MNFloatBtn.bundle */,
+				58A6557321F81D9700A633C3 /* NSDate+MNDate.h */,
+				58A6557421F81D9700A633C3 /* NSDate+MNDate.m */,
+			);
+			name = MNFloatBtn;
+			path = ../../MNFloatBtn;
+			sourceTree = "<group>";
+		};
+		58E8552021F819F9008A0BC9 /* File */ = {
+			isa = PBXGroup;
+			children = (
+				587AAE8221F81C49002B5E0E /* MNFloatBtn */,
+			);
+			path = File;
+			sourceTree = "<group>";
+		};
 		6003F581195388D10070C39A = {
 			isa = PBXGroup;
 			children = (
+				58E8552021F819F9008A0BC9 /* File */,
 				60FF7A9C1954A5C5007DD14C /* Podspec Metadata */,
 				6003F593195388D20070C39A /* Example for MNFloatBtn */,
 				6003F5B5195388D20070C39A /* Tests */,
@@ -260,6 +290,9 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = miniLV;
 				TargetAttributes = {
+					6003F589195388D20070C39A = {
+						DevelopmentTeam = 32F3APKGGM;
+					};
 					6003F5AD195388D20070C39A = {
 						TestTargetID = 6003F589195388D20070C39A;
 					};
@@ -292,6 +325,7 @@
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
 				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
+				587AAE8721F81C4A002B5E0E /* MNFloatBtn.bundle in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -349,7 +383,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-MNFloatBtn_Example/Pods-MNFloatBtn_Example-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-MNFloatBtn_Example/Pods-MNFloatBtn_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/MNFloatBtn/MNFloatBtn.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -358,7 +392,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MNFloatBtn_Example/Pods-MNFloatBtn_Example-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MNFloatBtn_Example/Pods-MNFloatBtn_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -371,7 +405,9 @@
 				A7B4238B219717D400C20287 /* OneViewController.m in Sources */,
 				6003F59E195388D20070C39A /* MNAppDelegate.m in Sources */,
 				6003F5A7195388D20070C39A /* MNViewController.m in Sources */,
+				587AAE8621F81C4A002B5E0E /* MNFloatBtn.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
+				58A6557521F81D9700A633C3 /* NSDate+MNDate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -499,6 +535,7 @@
 			baseConfigurationReference = 8B631F8CD1EF7980CE886F2F /* Pods-MNFloatBtn_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 32F3APKGGM;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MNFloatBtn/MNFloatBtn-Prefix.pch";
 				INFOPLIST_FILE = "MNFloatBtn/MNFloatBtn-Info.plist";
@@ -514,6 +551,7 @@
 			baseConfigurationReference = 773A5637FC6A607D1066CDC5 /* Pods-MNFloatBtn_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 32F3APKGGM;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MNFloatBtn/MNFloatBtn-Prefix.pch";
 				INFOPLIST_FILE = "MNFloatBtn/MNFloatBtn-Info.plist";

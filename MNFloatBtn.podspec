@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'MNFloatBtn'
-  s.version          = '2.0.0'
+  s.version          = '2.1.0'
   s.summary          = 'A short description of MNFloatBtn.'
 
 # This description is used to generate tags and improve search results.
@@ -30,7 +30,7 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '8.0'
 
- s.source_files = 'MNFloatBtn/MNFloatBtn.{h,m}'
+ s.source_files = 'MNFloatBtn/MNFloatBtn.{h,m}','MNFloatBtn/NSDate+MNDate.{h,m}'
   
   s.resources = 'MNFloatBtn/MNFloatBtn.bundle'
 

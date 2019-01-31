@@ -7,9 +7,20 @@
 //
 
 #import "MNFloatBtn.h"
+#import "NSDate+MNDate.h"
 
-#define screenW  [UIScreen mainScreen].bounds.size.width
-#define screenH  [UIScreen mainScreen].bounds.size.height
+
+@interface MNFloatBtn()
+
+@property (nonatomic, assign, getter=isBuildShowDate) BOOL buildShowDate;
+
+//Build号
+@property(nonatomic, copy)NSString *buildStr;
+
+//当前展示的环境
+@property (nonatomic, strong)NSString *environmentStr;
+
+@end
 
 @implementation MNFloatBtn{
     
@@ -20,6 +31,7 @@
     //起始按钮的x,y值
     CGFloat _touchBtnX;
     CGFloat _touchBtnY;
+
 }
 
 static MNFloatBtn *_floatBtn;
@@ -27,7 +39,79 @@ static MNFloatBtn *_floatBtn;
 static CGFloat floatBtnW = 120;
 static CGFloat floatBtnH = 49;
 
-+ (instancetype)getFloatBtn{
+#define screenW  [UIScreen mainScreen].bounds.size.width
+#define screenH  [UIScreen mainScreen].bounds.size.height
+
+//系统默认build
+#define MNFloatBtnSystemBuild [[[NSBundle mainBundle]infoDictionary]valueForKey:@"CFBundleVersion"]
+//系统默认version
+#define MNFloatBtnSystemVersion [[[NSBundle mainBundle]infoDictionary]valueForKey:@"CFBundleShortVersionString"]
+
+#pragma mark - lazy
+- (NSString *)buildStr{
+    if (!_buildStr) {
+        _buildStr = [NSDate currentDate];
+    }
+    return _buildStr;
+}
+
+- (NSString *)environmentStr{
+    if (!_environmentStr) {
+        
+        _environmentStr = @"测试";
+    }
+    return _environmentStr;
+}
+
+#pragma mark - setMethod
+- (void)setBuildShowDate:(BOOL)isBuildShowDate{
+    _buildShowDate = isBuildShowDate;
+
+    [self p_getBuildStr];
+    
+    [self p_updateBtnTitle];
+}
+
+- (void)setEnvironmentMap:(NSDictionary *)environmentMap currentEnv:(NSString *)currentEnv{
+    
+    __block NSString *envStr = @"测试";
+    
+    [environmentMap enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
+        
+        if ([currentEnv isEqualToString:obj]) {
+            envStr = key;
+            *stop = YES;
+        }
+    }];
+    
+    self.environmentStr = envStr;
+    
+    [self p_updateBtnTitle];
+}
+
+- (void)p_updateBtnTitle{
+    
+    NSString *title = [NSString stringWithFormat:@"Ver:%@ %@\nBuild:%@",MNFloatBtnSystemVersion,self.environmentStr, self.buildStr];
+    
+    //如果createBtn的时候直接改title，可能会出现title无法更新问题，所以加个0.01s的延迟函数
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.01 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [[MNFloatBtn sharedBtn] setTitle:title forState:UIControlStateNormal];
+    });
+}
+
+//获取build展示内容
+- (void)p_getBuildStr{
+    NSString *buildStr = [NSDate currentDate];
+    if (!self.isBuildShowDate) {
+        buildStr = MNFloatBtnSystemBuild;
+    }
+    self.buildStr = buildStr;
+}
+
+
+#pragma mark - private Method
++ (MNFloatBtn *)sharedBtn{
+    
     if (!_floatBtn) {
         _floatBtn = [[self alloc]initWithType:MNAssistiveTypeNearRight frame:CGRectZero];
     }
@@ -52,12 +136,20 @@ static CGFloat floatBtnH = 49;
 #endif
 }
 
+
++ (void)showDebugModeWithType:(MNAssistiveTouchType)type{
+#ifdef DEBUG
+    [self showWithType:type];
+#else
+#endif
+}
+
 + (void)showWithType:(MNAssistiveTouchType)type{
     
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        
-        _floatBtn = [[MNFloatBtn alloc] initWithType:MNAssistiveTypeNearRight frame:CGRectZero];
+
+        _floatBtn = [[MNFloatBtn alloc] initWithType:type frame:CGRectZero];
     });
     
     if (!_floatBtn.superview) {
@@ -71,19 +163,18 @@ static CGFloat floatBtnH = 49;
 
 - (instancetype)initWithType:(MNAssistiveTouchType)type
                        frame:(CGRect)frame{
-    
+ 
     if (CGRectEqualToRect(frame, CGRectZero)) {
         CGFloat floatBtnX = screenW - floatBtnW;
         CGFloat floatBtnY = 60;
         
         frame = CGRectMake(floatBtnX, floatBtnY, floatBtnW, floatBtnH);
     }
-    NSString *versionStr = [[[NSBundle
-                              mainBundle]infoDictionary]valueForKey:@"CFBundleShortVersionString"];
-    NSString *buildStr = [[[NSBundle
-                            mainBundle]infoDictionary]valueForKey:@"CFBundleVersion"];
-    
-    NSString *title = [NSString stringWithFormat:@"Ver:%@ 测试\nBuild:%@",versionStr,buildStr];
+
+    //获取build的值
+    [self p_getBuildStr];
+   
+    NSString *title = [NSString stringWithFormat:@"Ver:%@ %@\nBuild:%@",MNFloatBtnSystemVersion,self.environmentStr, self.buildStr];
     
     UIImage *image = [self p_loadResourceImage];
     

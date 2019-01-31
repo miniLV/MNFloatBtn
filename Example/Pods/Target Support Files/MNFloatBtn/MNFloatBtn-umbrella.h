@@ -11,6 +11,7 @@
 #endif
 
 #import "MNFloatBtn.h"
+#import "NSDate+MNDate.h"
 
 FOUNDATION_EXPORT double MNFloatBtnVersionNumber;
 FOUNDATION_EXPORT const unsigned char MNFloatBtnVersionString[];

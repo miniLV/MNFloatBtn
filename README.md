@@ -1,5 +1,12 @@
 # MNFloatBtn
 
+<p align="center">
+<a href=""><img src="https://img.shields.io/badge/pod-v2.1.0-brightgreen.svg"></a>
+<a href=""><img src="https://img.shields.io/badge/ObjectiveC-compatible-orange.svg"></a>
+<a href=""><img src="https://img.shields.io/badge/platform-iOS%207.0%2B-ff69b5152950834.svg"></a>
+<a href="https://github.com/miniLV"><img src="https://img.shields.io/badge/license-MIT-green.svg?style=flat"></a>
+</p>
+
 ![demo示例](https://github.com/miniLV/MNFloatBtn/blob/master/Resources/demo.gif)
 
 
@@ -22,7 +29,7 @@
 
 - 仅在Debug模式下显示悬浮按钮(推荐使用)
 ```
-[MNFloatBtn showDebugMode];
+[MNFloatBtn showDebugModeWithType:MNAssistiveTypeNone];
 ```
 <br>
 
@@ -30,6 +37,46 @@
 ```
 [MNFloatBtn hidden];
 ```
+
+- 按钮点击事件
+
+``` 
+[MNFloatBtn sharedBtn].btnClick = ^(UIButton *sender) {
+
+	NSLog(@" btn.btnClick ~");
+    
+};
+```
+
+---
+
+## 进阶用法:
+
+- 默认显示当前日期
+```
+[[MNFloatBtn sharedBtn] setBuildShowDate:YES];
+```
+
+- 配置api环境显示
+
+```
+
+#define kAddress            @"testapi.miniLV.com"
+//#define kAddress            @"devapi.miniLV.com"
+//#define kAddress            @"api.miniLV.com"
+    
+//自己配置 - 什么api环境下，要显示什么标签
+NSDictionary *envMap = @{
+                         @"测试":@"testapi.miniLV.com",
+                         @"开发":@"devapi.miniLV.com",
+                         @"生产":@"api.miniLV.com"
+                         };
+                             
+//设置不同环境下，要展示的不同title，以及当前的Host
+[[MNFloatBtn sharedBtn]setEnvironmentMap:envMap currentEnv:kAddress]; 
+    
+```
+
 
 
 [文章介绍](https://www.jianshu.com/p/5a0ca7c4fd78)

@@ -10,7 +10,6 @@
 #import "NSDate+MNDate.h"
 
 
-
 @interface MNFloatBtn()
 
 @property (nonatomic, assign, getter=isBuildShowDate) BOOL buildShowDate;
@@ -43,13 +42,6 @@ static CGFloat floatBtnH = 49;
 #define screenW  [UIScreen mainScreen].bounds.size.width
 #define screenH  [UIScreen mainScreen].bounds.size.height
 
-//#define kAddress            @"testapi.miniLV.com"
-#define kAddress            @"devapi.miniLV.com"
-//#define kAddress            @"api.miniLV.com"
-
-//api
-#define HOST     [NSString stringWithFormat:@"https://%@",kAddress]
-
 //系统默认build
 #define MNFloatBtnSystemBuild [[[NSBundle mainBundle]infoDictionary]valueForKey:@"CFBundleVersion"]
 //系统默认version
@@ -80,13 +72,13 @@ static CGFloat floatBtnH = 49;
     [self p_updateBtnTitle];
 }
 
-- (void)setEnvironmentMap:(NSDictionary *)environmentMap{
+- (void)setEnvironmentMap:(NSDictionary *)environmentMap currentEnv:(NSString *)currentEnv{
     
     __block NSString *envStr = @"测试";
     
     [environmentMap enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
         
-        if ([kAddress isEqualToString:obj]) {
+        if ([currentEnv isEqualToString:obj]) {
             envStr = key;
             *stop = YES;
         }
@@ -98,8 +90,6 @@ static CGFloat floatBtnH = 49;
 }
 
 - (void)p_updateBtnTitle{
-    
-    NSLog(@"--- buildStr = %@",self.buildStr);
     
     NSString *title = [NSString stringWithFormat:@"Ver:%@ %@\nBuild:%@",MNFloatBtnSystemVersion,self.environmentStr, self.buildStr];
     

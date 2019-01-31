@@ -61,7 +61,8 @@ typedef void (^floatBtnClick)(UIButton *sender);
  }
  
  @param environmentMap 环境 - Host 的 映射
+ @param currentEnv - 当前环境的Host
  */
-- (void)setEnvironmentMap:(NSDictionary *)environmentMap;
+- (void)setEnvironmentMap:(NSDictionary *)environmentMap currentEnv:(NSString *)currentEnv;
 
 @end

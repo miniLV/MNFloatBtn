@@ -32,7 +32,7 @@
     [[MNFloatBtn sharedBtn] setBuildShowDate:NO];
     [MNFloatBtn showDebugModeWithType:MNAssistiveTypeNone];
 
-    //#define kAddress            @"testapi.miniLV.com"
+    #define kAddress            @"testapi.miniLV.com"
     //#define kAddress            @"devapi.miniLV.com"
     //#define kAddress            @"api.miniLV.com"
     NSDictionary *envMap = @{
@@ -40,8 +40,7 @@
                              @"开发":@"devapi.miniLV.com",
                              @"生产":@"api.miniLV.com"
                              };
-    [[MNFloatBtn sharedBtn]setEnvironmentMap:envMap];
-    
+    [[MNFloatBtn sharedBtn]setEnvironmentMap:envMap currentEnv:kAddress];
     
     [MNFloatBtn sharedBtn].btnClick = ^(UIButton *sender) {
 

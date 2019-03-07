@@ -43,12 +43,12 @@
     //设置不同环境下，要展示的不同title，以及当前的Host
     [[MNFloatBtn sharedBtn]setEnvironmentMap:envMap currentEnv:kAddress];
     
+    [MNFloatBtn showDebugModeWithType:MNAssistiveTypeNone];
+    
     [MNFloatBtn sharedBtn].btnClick = ^(UIButton *sender) {
 
         NSLog(@" btn.btnClick ~");
     };
-    
-    [MNFloatBtn showDebugModeWithType:MNAssistiveTypeNone];
 }
 
 

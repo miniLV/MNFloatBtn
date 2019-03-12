@@ -9,6 +9,86 @@
 
 ![demo示例](https://github.com/miniLV/MNFloatBtn/blob/master/Resources/demo.gif)
 
+## Installation
+
+#### Manually
+
+Just add the `MNFloatBtn` folder to your project
+
+#### CocoaPods
+
+Use [CocoaPods](https://cocoapods.org/) with Podfile:
+
+```
+pod 'MNFloatBtn'
+```
+
+```
+github "miniLV/MNFloatBtn"
+```
+
+## Usage
+
+- The floating button is displayed in any case
+```
+[MNFloatBtn show];
+```
+<br>
+
+- Display the floating button only in Debug mode (recommended)
+```
+[MNFloatBtn showDebugModeWithType:MNAssistiveTypeNone];
+```
+<br>
+
+- remove floating button
+```
+[MNFloatBtn hidden];
+```
+
+- touch event
+
+``` 
+[MNFloatBtn sharedBtn].btnClick = ^(UIButton *sender) {
+
+	NSLog(@" btn.btnClick ~");
+    
+};
+```
+
+## Advanced usage
+
+- The current date is displayed by default
+
+```
+[[MNFloatBtn sharedBtn] setBuildShowDate:YES];
+```
+
+- Configure the api environment display
+
+```
+
+#define kAddress            @"testapi.miniLV.com"
+//#define kAddress            @"devapi.miniLV.com"
+//#define kAddress            @"api.miniLV.com"
+    
+//Configure yourself - what api environment, what label to display
+NSDictionary *envMap = @{
+                         @"test":@"testapi.miniLV.com",
+                         @"dev":@"devapi.miniLV.com",
+                         @"pro":@"api.miniLV.com"
+                         };
+                             
+//Set different titles to be displayed in different environments, as well as the current Host
+[[MNFloatBtn sharedBtn]setEnvironmentMap:envMap currentEnv:kAddress]; 
+    
+```
+
+<br>
+
+---
+
+# 中文版使用说明
 
 ## 集成方法
 
@@ -78,5 +158,5 @@ NSDictionary *envMap = @{
 ```
 
 
-
+*如果你在天朝，可以看这篇中文博客*
 [文章介绍](https://www.jianshu.com/p/5a0ca7c4fd78)

@@ -9,6 +9,29 @@
 #import "MNFloatBtn.h"
 #import "NSDate+MNDate.h"
 
+#define kSystemKeyboardWindowLevel 10000000
+
+@implementation MNSaveWindow
+
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        self.backgroundColor = [UIColor colorWithRed:0.5 green:0.5 blue:0.25 alpha:0.5];
+        self.windowLevel = kSystemKeyboardWindowLevel;
+    }
+    return self;
+}
+
+
+
+
+@end
+
+@implementation MNWindowController
+
+@end
+
 
 @interface MNFloatBtn()
 
@@ -32,6 +55,10 @@
     CGFloat _touchBtnX;
     CGFloat _touchBtnY;
 
+//    {
+        MNSaveWindow *_superviewWindow;
+        CGRect _currentFrame;
+//    }
 }
 
 static MNFloatBtn *_floatBtn;
@@ -144,20 +171,45 @@ static CGFloat floatBtnH = 49;
 #endif
 }
 
+#define kSystemKeyboardWindowLevel 10000000
+
 + (void)showWithType:(MNAssistiveTouchType)type{
     
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
 
         _floatBtn = [[MNFloatBtn alloc] initWithType:type frame:CGRectZero];
-    });
-    
-    if (!_floatBtn.superview) {
         
-        [[UIApplication sharedApplication].keyWindow addSubview:_floatBtn];
-        //让floatBtn在最上层(即便以后还有keywindow add subView，也会在 floatBtn下)
-        [[UIApplication sharedApplication].keyWindow bringSubviewToFront:_floatBtn];
+    });
+
+    [_floatBtn showWithType:type];
+    
+}
+
+- (void)showWithType:(MNAssistiveTouchType)type{
+    
+    UIWindow *currentKeyWindow = [UIApplication sharedApplication].keyWindow;
+    
+    NSLog(@"super view frame: %@", NSStringFromCGRect(_floatBtn.frame));
+    if (!_superviewWindow) {
+//        _superviewWindow = [[MNSaveWindow alloc] initWithFrame:CGRectMake(0, 0, 300, 500)];
+        _superviewWindow = [[MNSaveWindow alloc] initWithFrame:_floatBtn.frame];
+        _superviewWindow.rootViewController = [ MNWindowController new];
+    } else {
+        _superviewWindow.frame = _currentFrame;
     }
+    
+    [_superviewWindow makeKeyAndVisible];
+    
+    _floatBtn.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
+
+//    self.layer.cornerRadius = self.frame.size.width <= self.frame.size.height ? self.frame.size.width / 2.0 : self.frame.size.height / 2.0;
+    
+    [_superviewWindow addSubview:_floatBtn];
+    
+    // keep the original keyWindow to avoid some unpredictable problems
+    [currentKeyWindow makeKeyWindow];
+    
 }
 
 
@@ -208,14 +260,16 @@ static CGFloat floatBtnH = 49;
         
         [self addTarget:self action:@selector(p_clickBtn:) forControlEvents:UIControlEventTouchUpInside];
         
+//        self.windowLevel = kSystemKeyboardWindowLevel;
     }
     return self;
 }
 
+
 - (void)p_clickBtn:(UIButton *)sender{
     
-    if (_btnClick) {
-        _btnClick(sender);
+    if (self.btnClick) {
+        self.btnClick(sender);
     }
 }
 
@@ -248,8 +302,11 @@ static CGFloat floatBtnH = 49;
     self.center = CGPointMake(centerX, centerY);
     
     //父试图的宽高
-    CGFloat superViewWidth = self.superview.frame.size.width;
-    CGFloat superViewHeight = self.superview.frame.size.height;
+//    CGFloat superViewWidth = self.superview.frame.size.width;
+//    CGFloat superViewHeight = self.superview.frame.size.height;
+
+    CGFloat superViewWidth = screenW;
+    CGFloat superViewHeight = screenH;
     CGFloat btnX = self.frame.origin.x;
     CGFloat btnY = self.frame.origin.y;
     CGFloat btnW = self.frame.size.width;
@@ -281,6 +338,21 @@ static CGFloat floatBtnH = 49;
         CGFloat y = superViewHeight - btnH * 0.5;
         self.center = CGPointMake(btnX, y);
     }
+
+//    _superviewWindow.center = self.center;
+//    _currentFrame = self.frame;
+//    _superviewWindow.center = self.center;
+//    CGPoint newCenter = self;
+//    [UIView animateWithDuration:.25 animations:^{
+//        _superviewWindow.center = newCenter;
+//        //
+//        if (_superviewWindow.hidden == YES) {
+//            self.center = newCenter;
+//        }
+//
+//        // record frame for superview back to superviewWindow
+//        _currentFrame = _superviewWindow.frame;
+//    }];
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
@@ -342,6 +414,8 @@ static CGFloat floatBtnH = 49;
             }];
         }
     }
+    
+    
 }
 
 #pragma mark - loadResourceImage

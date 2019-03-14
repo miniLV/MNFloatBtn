@@ -66,3 +66,13 @@ typedef void (^floatBtnClick)(UIButton *sender);
 - (void)setEnvironmentMap:(NSDictionary *)environmentMap currentEnv:(NSString *)currentEnv;
 
 @end
+
+
+@interface MNSaveWindow : UIWindow
+
+@end
+
+
+@interface MNWindowController : UIViewController
+
+@end

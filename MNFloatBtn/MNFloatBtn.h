@@ -15,7 +15,7 @@ typedef NS_ENUM(NSInteger, MNAssistiveTouchType)
     MNAssistiveTypeNearRight,  //拖动停止之后，自动向右贴边
 };
 
-@interface MNFloatBtn : UIButton
+@interface MNFloatWindow : UIWindow
 
 typedef void (^floatBtnClick)(UIButton *sender);
 
@@ -32,7 +32,7 @@ typedef void (^floatBtnClick)(UIButton *sender);
 + (void)hidden;
 
 //获取floatBtn单例对象
-+ (instancetype)sharedBtn;
+//+ (instancetype)sharedBtn;
 
 //按钮点击事件
 @property (nonatomic, copy)floatBtnClick btnClick;
@@ -67,12 +67,3 @@ typedef void (^floatBtnClick)(UIButton *sender);
 
 @end
 
-
-@interface MNSaveWindow : UIWindow
-
-@end
-
-
-@interface MNWindowController : UIViewController
-
-@end

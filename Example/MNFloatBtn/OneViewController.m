@@ -47,7 +47,7 @@
     
     sender.selected = !sender.selected;
     
-    sender.selected ? [MNFloatBtn hidden] : [MNFloatBtn show];
+    sender.selected ? [MNFloatWindow hidden] : [MNFloatWindow show];
 }
 
 - (void)p_alertBtn{

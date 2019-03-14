@@ -11,29 +11,9 @@
 
 #define kSystemKeyboardWindowLevel 10000000
 
-@implementation MNSaveWindow
-
-- (instancetype)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        self.backgroundColor = [UIColor colorWithRed:0.5 green:0.5 blue:0.25 alpha:0.5];
-        self.windowLevel = kSystemKeyboardWindowLevel;
-    }
-    return self;
-}
 
 
-
-
-@end
-
-@implementation MNWindowController
-
-@end
-
-
-@interface MNFloatBtn()
+@interface MNFloatWindow()
 
 @property (nonatomic, assign, getter=isBuildShowDate) BOOL buildShowDate;
 
@@ -45,7 +25,7 @@
 
 @end
 
-@implementation MNFloatBtn{
+@implementation MNFloatWindow{
     
     MNAssistiveTouchType  _type;
     //拖动按钮的起始坐标点
@@ -55,13 +35,10 @@
     CGFloat _touchBtnX;
     CGFloat _touchBtnY;
 
-//    {
-        MNSaveWindow *_superviewWindow;
-        CGRect _currentFrame;
-//    }
 }
 
-static MNFloatBtn *_floatBtn;
+static UIButton *_floatBtn;
+static MNFloatWindow *_floatWindow;
 
 static CGFloat floatBtnW = 120;
 static CGFloat floatBtnH = 49;
@@ -122,7 +99,7 @@ static CGFloat floatBtnH = 49;
     
     //如果createBtn的时候直接改title，可能会出现title无法更新问题，所以加个0.01s的延迟函数
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.01 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [[MNFloatBtn sharedBtn] setTitle:title forState:UIControlStateNormal];
+        [_floatBtn setTitle:title forState:UIControlStateNormal];
     });
 }
 
@@ -137,12 +114,12 @@ static CGFloat floatBtnH = 49;
 
 
 #pragma mark - private Method
-+ (MNFloatBtn *)sharedBtn{
++ (instancetype)sharedWindow{
     
-    if (!_floatBtn) {
-        _floatBtn = [[self alloc]initWithType:MNAssistiveTypeNearRight frame:CGRectZero];
+    if (!_floatWindow) {
+        _floatWindow = [[self alloc]initWithType:MNAssistiveTypeNearRight frame:CGRectZero];
     }
-    return _floatBtn;
+    return _floatWindow;
 }
 
 + (void)show{
@@ -178,34 +155,66 @@ static CGFloat floatBtnH = 49;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
 
-        _floatBtn = [[MNFloatBtn alloc] initWithType:type frame:CGRectZero];
-        
+        _floatWindow = [[MNFloatWindow alloc] initWithType:type frame:CGRectZero];
+        _floatWindow.rootViewController = [[UIViewController alloc]init];
+//        [_floatWindow makeKeyAndVisible];
     });
 
-    [_floatBtn showWithType:type];
+    [_floatWindow showWithType:type];
     
 }
+
+//- (void)showWithType:(MNAssistiveTouchType)type{
+//
+//    static dispatch_once_t onceToken;
+//    dispatch_once(&onceToken, ^{
+//
+//        _floatWindow = [[MNFloatWindow alloc] initWithType:type frame:CGRectZero];
+//    });
+//
+//
+//
+////    if (!_floatWindow.superview) {
+////
+////        [[UIApplication sharedApplication].keyWindow addSubview:_floatWindow];
+////        //让floatBtn在最上层(即便以后还有keywindow add subView，也会在 floatBtn下)
+////        [[UIApplication sharedApplication].keyWindow bringSubviewToFront:_floatWindow];
+////
+////        _floatWindow.backgroundColor = [UIColor redColor];
+////        [_floatWindow makeKeyAndVisible];
+////
+////        _floatWindow.windowLevel = 1000000;
+////
+////    }else{
+////        [UIApplication sharedApplication].keyWindow.windowLevel = 1000000;
+////
+////        //        [window makeKeyWindow];
+////    }
+////    [[UIApplication sharedApplication].keyWindow makeKeyWindow];
+//}
 
 - (void)showWithType:(MNAssistiveTouchType)type{
     
     UIWindow *currentKeyWindow = [UIApplication sharedApplication].keyWindow;
     
-    NSLog(@"super view frame: %@", NSStringFromCGRect(_floatBtn.frame));
-    if (!_superviewWindow) {
-//        _superviewWindow = [[MNSaveWindow alloc] initWithFrame:CGRectMake(0, 0, 300, 500)];
-        _superviewWindow = [[MNSaveWindow alloc] initWithFrame:_floatBtn.frame];
-        _superviewWindow.rootViewController = [ MNWindowController new];
+    NSLog(@"super view frame: %@", NSStringFromCGRect(self.frame));
+    if (!_floatWindow) {
+        _floatWindow = [[MNFloatWindow alloc] initWithType:type frame:CGRectZero];
+        _floatWindow.rootViewController = [UIViewController new];
     } else {
-        _superviewWindow.frame = _currentFrame;
+//        _floatWindow.frame = _currentFrame;
+        
     }
     
-    [_superviewWindow makeKeyAndVisible];
+    _floatWindow.backgroundColor = [UIColor redColor];
+    [_floatWindow makeKeyAndVisible];
+    _floatWindow.windowLevel = kSystemKeyboardWindowLevel;
     
-    _floatBtn.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
-
-//    self.layer.cornerRadius = self.frame.size.width <= self.frame.size.height ? self.frame.size.width / 2.0 : self.frame.size.height / 2.0;
+//    _floatWindow.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
+//
+//    _floatWindow.layer.cornerRadius = self.frame.size.width <= self.frame.size.height ? self.frame.size.width / 2.0 : self.frame.size.height / 2.0;
     
-    [_superviewWindow addSubview:_floatBtn];
+//    [currentKeyWindow addSubview:_floatWindow];
     
     // keep the original keyWindow to avoid some unpredictable problems
     [currentKeyWindow makeKeyWindow];
@@ -221,6 +230,8 @@ static CGFloat floatBtnH = 49;
         CGFloat floatBtnY = 60;
         
         frame = CGRectMake(floatBtnX, floatBtnY, floatBtnW, floatBtnH);
+        self.frame = frame;
+        self.backgroundColor = [UIColor orangeColor];
     }
 
     //获取build的值
@@ -251,14 +262,14 @@ static CGFloat floatBtnH = 49;
         _type = type;
         
         //UIbutton的换行显示
-        self.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
-        self.backgroundColor = backgroundColor;
-        self.titleLabel.font = titleFont;
-        [self setTitle:title forState:UIControlStateNormal];
-        [self setBackgroundImage:backgroundImage forState:UIControlStateNormal];
-        [self setBackgroundColor:backgroundColor];
+        _floatBtn.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
+        _floatBtn.backgroundColor = backgroundColor;
+        _floatBtn.titleLabel.font = titleFont;
+        [_floatBtn setTitle:title forState:UIControlStateNormal];
+        [_floatBtn setBackgroundImage:backgroundImage forState:UIControlStateNormal];
+        [_floatBtn setBackgroundColor:backgroundColor];
         
-        [self addTarget:self action:@selector(p_clickBtn:) forControlEvents:UIControlEventTouchUpInside];
+        [_floatBtn addTarget:self action:@selector(p_clickBtn:) forControlEvents:UIControlEventTouchUpInside];
         
 //        self.windowLevel = kSystemKeyboardWindowLevel;
     }
@@ -338,21 +349,6 @@ static CGFloat floatBtnH = 49;
         CGFloat y = superViewHeight - btnH * 0.5;
         self.center = CGPointMake(btnX, y);
     }
-
-//    _superviewWindow.center = self.center;
-//    _currentFrame = self.frame;
-//    _superviewWindow.center = self.center;
-//    CGPoint newCenter = self;
-//    [UIView animateWithDuration:.25 animations:^{
-//        _superviewWindow.center = newCenter;
-//        //
-//        if (_superviewWindow.hidden == YES) {
-//            self.center = newCenter;
-//        }
-//
-//        // record frame for superview back to superviewWindow
-//        _currentFrame = _superviewWindow.frame;
-//    }];
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
@@ -421,7 +417,7 @@ static CGFloat floatBtnH = 49;
 #pragma mark - loadResourceImage
 - (UIImage *)p_loadResourceImage{
     
-    NSBundle *bundle = [NSBundle bundleForClass:[MNFloatBtn class]];
+    NSBundle *bundle = [NSBundle bundleForClass:[MNFloatWindow class]];
     
     NSURL *url = [bundle URLForResource:@"MNFloatBtn" withExtension:@"bundle"];
     NSBundle *imageBundle = [NSBundle bundleWithURL:url];

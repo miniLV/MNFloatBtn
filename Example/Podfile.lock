@@ -2,15 +2,15 @@ PODS:
   - MNFloatBtn (2.1.0)
 
 DEPENDENCIES:
-  - MNFloatBtn
+  - MNFloatBtn (from `../MNFloatBtn.podspec`)
 
-SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
-    - MNFloatBtn
+EXTERNAL SOURCES:
+  MNFloatBtn:
+    :path: "../MNFloatBtn.podspec"
 
 SPEC CHECKSUMS:
   MNFloatBtn: 463b31d6d186aa7f3176a7752b28d543c805c173
 
-PODFILE CHECKSUM: d6eb40bb08f84cf4782651bf71bb4677c29b4359
+PODFILE CHECKSUM: 4b89b572518e169cf369a8fa55a25a03ee45e1bf
 
 COCOAPODS: 1.6.0.beta.2

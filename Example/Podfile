@@ -1,7 +1,7 @@
 use_frameworks!
 
 target 'MNFloatBtn_Example' do
-	pod 'MNFloatBtn'
+	pod 'MNFloatBtn', :path => '../MNFloatBtn.podspec'
   target 'MNFloatBtn_Tests' do
     inherit! :search_paths
 

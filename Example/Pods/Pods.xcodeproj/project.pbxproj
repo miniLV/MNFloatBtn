@@ -9,16 +9,16 @@
 /* Begin PBXBuildFile section */
 		0847CB3E516C4B0A3F7E29C1820FDAE8 /* Pods-MNFloatBtn_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 009B42AAF99AA84DDE06C2B0F17C6BB3 /* Pods-MNFloatBtn_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		10C19BB1E5E920DB388CF50A87533F4D /* Pods-MNFloatBtn_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A26F44DD6B1B5B0D62281408B6A60BB /* Pods-MNFloatBtn_Example-dummy.m */; };
-		1B05B796B5FE5136DA9D3134765413C1 /* MNFloatBtn-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F6EFEF63529C6E8071B614728B9D8A /* MNFloatBtn-dummy.m */; };
+		1B05B796B5FE5136DA9D3134765413C1 /* MNFloatBtn-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B999F56B903734E868FAF30844F953D4 /* MNFloatBtn-dummy.m */; };
 		235359F26140EE105E472F3129FD28BF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */; };
-		3DB9B8C292E6E7744C1CA2E39005963E /* MNFloatBtn-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FF0982193B19180E51EE487F15F7E57F /* MNFloatBtn-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		58558806249AFF334F018AB3EE9FF530 /* MNFloatBtn.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DB0A20EE2CB14F752277EC4C103758A /* MNFloatBtn.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		81F651D3F82367AD3FF9A306058CF0DC /* MNFloatBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 9153EF54BA04FB44B0B76358B361FBB8 /* MNFloatBtn.m */; };
-		95D97CB0F96F1DE4E784A971DC9F638A /* NSDate+MNDate.m in Sources */ = {isa = PBXBuildFile; fileRef = D9475BA8883869A217797E8912E54C50 /* NSDate+MNDate.m */; };
-		9839BBA4B36CDD80CE5C91226B7462E6 /* MNFloatBtn.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FF24487D116D18720E6E3E26049C09CC /* MNFloatBtn.bundle */; };
+		3DB9B8C292E6E7744C1CA2E39005963E /* MNFloatBtn-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 489780340DF8ED80913D50F160BFC478 /* MNFloatBtn-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		58558806249AFF334F018AB3EE9FF530 /* MNFloatBtn.h in Headers */ = {isa = PBXBuildFile; fileRef = 62C2F0D1A899226DCC3111569C8C6F7D /* MNFloatBtn.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		81F651D3F82367AD3FF9A306058CF0DC /* MNFloatBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 688736D61DE51337647EC510D2CAF24A /* MNFloatBtn.m */; };
+		95D97CB0F96F1DE4E784A971DC9F638A /* NSDate+MNDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 584FCB7B250ABF0E81EE5E25B73234C5 /* NSDate+MNDate.m */; };
+		9839BBA4B36CDD80CE5C91226B7462E6 /* MNFloatBtn.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 556A7002D8694F1F6600E0F268CDED85 /* MNFloatBtn.bundle */; };
 		B9E4DE6A8F4ACE6D4128B76FCE2EE35F /* Pods-MNFloatBtn_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C58F245672C7EC357CF20C5C3E80D8C3 /* Pods-MNFloatBtn_Tests-dummy.m */; };
 		D71FCBBBF12F89B986232CC92D7BD360 /* Pods-MNFloatBtn_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7CDF7C3EBD3F9B8EDECF86EC1F03D47B /* Pods-MNFloatBtn_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E42EA8DF82B543FD631A7CB3ACD14E72 /* NSDate+MNDate.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B8E2FD70A98F2E778D1D7413499C3A1 /* NSDate+MNDate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E42EA8DF82B543FD631A7CB3ACD14E72 /* NSDate+MNDate.h in Headers */ = {isa = PBXBuildFile; fileRef = B6839C96ED291BEAFAE8FEC0606E0D09 /* NSDate+MNDate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E610756093E3C1EEEED438AC81D24DF3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */; };
 		F005D70F6D9B4CCFB37F4FCBF6438F69 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */; };
 /* End PBXBuildFile section */
@@ -42,38 +42,41 @@
 
 /* Begin PBXFileReference section */
 		009B42AAF99AA84DDE06C2B0F17C6BB3 /* Pods-MNFloatBtn_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MNFloatBtn_Example-umbrella.h"; sourceTree = "<group>"; };
+		078598D8D905DB8FE9D044B9A343889A /* MNFloatBtn.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MNFloatBtn.xcconfig; sourceTree = "<group>"; };
 		0C13962F285F8060E235108F8015C83D /* Pods-MNFloatBtn_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MNFloatBtn_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		16C51D4511D05F37F82DA382206A67B4 /* Pods-MNFloatBtn_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MNFloatBtn_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		1A7CE8B9F0672AE195B3A106EED40A44 /* Pods-MNFloatBtn_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MNFloatBtn_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		3A26F44DD6B1B5B0D62281408B6A60BB /* Pods-MNFloatBtn_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MNFloatBtn_Example-dummy.m"; sourceTree = "<group>"; };
 		47A5D0E72076B85DEDE47525D63BE3EB /* Pods_MNFloatBtn_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MNFloatBtn_Tests.framework; path = "Pods-MNFloatBtn_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		489780340DF8ED80913D50F160BFC478 /* MNFloatBtn-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MNFloatBtn-umbrella.h"; sourceTree = "<group>"; };
 		4AFC806FC6731F340D6C0DDBD8B02EDB /* Pods-MNFloatBtn_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MNFloatBtn_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		5B8E2FD70A98F2E778D1D7413499C3A1 /* NSDate+MNDate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSDate+MNDate.h"; path = "MNFloatBtn/NSDate+MNDate.h"; sourceTree = "<group>"; };
+		556A7002D8694F1F6600E0F268CDED85 /* MNFloatBtn.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = MNFloatBtn.bundle; path = MNFloatBtn/MNFloatBtn.bundle; sourceTree = "<group>"; };
+		584FCB7B250ABF0E81EE5E25B73234C5 /* NSDate+MNDate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSDate+MNDate.m"; path = "MNFloatBtn/NSDate+MNDate.m"; sourceTree = "<group>"; };
+		58F2711AA03B38FCB4DA6F0996A0EDD8 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		62C2F0D1A899226DCC3111569C8C6F7D /* MNFloatBtn.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MNFloatBtn.h; path = MNFloatBtn/MNFloatBtn.h; sourceTree = "<group>"; };
 		67C0E12AA3CDC08DD7C693AE23E9AF76 /* Pods-MNFloatBtn_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MNFloatBtn_Example-frameworks.sh"; sourceTree = "<group>"; };
+		688736D61DE51337647EC510D2CAF24A /* MNFloatBtn.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MNFloatBtn.m; path = MNFloatBtn/MNFloatBtn.m; sourceTree = "<group>"; };
 		6B977345A05940F16B98DB595B3D916B /* Pods-MNFloatBtn_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MNFloatBtn_Tests-Info.plist"; sourceTree = "<group>"; };
 		6C2E7E52972034F156D6629D5A14FCBB /* Pods-MNFloatBtn_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MNFloatBtn_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		7A6254B979951CFE9842E0BF977F40E1 /* MNFloatBtn-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MNFloatBtn-prefix.pch"; sourceTree = "<group>"; };
+		7161D8EA820591BD7144640D3736B11D /* MNFloatBtn.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = MNFloatBtn.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		7CDF7C3EBD3F9B8EDECF86EC1F03D47B /* Pods-MNFloatBtn_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MNFloatBtn_Tests-umbrella.h"; sourceTree = "<group>"; };
-		7DB0A20EE2CB14F752277EC4C103758A /* MNFloatBtn.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MNFloatBtn.h; path = MNFloatBtn/MNFloatBtn.h; sourceTree = "<group>"; };
-		8A8CCF924F2B762BB12EB53AB401A10B /* MNFloatBtn-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "MNFloatBtn-Info.plist"; sourceTree = "<group>"; };
+		8980E102A487282EE1B8667FF7D4EB2F /* MNFloatBtn.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MNFloatBtn.modulemap; sourceTree = "<group>"; };
 		8CE55A9A0AB0D5CFB8EAE5F363B862E2 /* MNFloatBtn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MNFloatBtn.framework; path = MNFloatBtn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F797BA7D50BF9AD8094F4A28758BDBF /* Pods-MNFloatBtn_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MNFloatBtn_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		9153EF54BA04FB44B0B76358B361FBB8 /* MNFloatBtn.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MNFloatBtn.m; path = MNFloatBtn/MNFloatBtn.m; sourceTree = "<group>"; };
-		9BC48118C3FDF67ADF14E245B5ED5D38 /* MNFloatBtn.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MNFloatBtn.modulemap; sourceTree = "<group>"; };
 		9D0C74DE870FAB17E6DBB26CD4B1557C /* Pods_MNFloatBtn_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MNFloatBtn_Example.framework; path = "Pods-MNFloatBtn_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D9D1776E4450AB187BFEB12777337A7 /* Pods-MNFloatBtn_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MNFloatBtn_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		AA512588A7CE6D994EE5605333B11726 /* Pods-MNFloatBtn_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MNFloatBtn_Example.release.xcconfig"; sourceTree = "<group>"; };
-		B2F6EFEF63529C6E8071B614728B9D8A /* MNFloatBtn-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MNFloatBtn-dummy.m"; sourceTree = "<group>"; };
 		B36AB396275697EEE1A5B13BA8A38FE3 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		B6839C96ED291BEAFAE8FEC0606E0D09 /* NSDate+MNDate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSDate+MNDate.h"; path = "MNFloatBtn/NSDate+MNDate.h"; sourceTree = "<group>"; };
+		B999F56B903734E868FAF30844F953D4 /* MNFloatBtn-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MNFloatBtn-dummy.m"; sourceTree = "<group>"; };
 		C58F245672C7EC357CF20C5C3E80D8C3 /* Pods-MNFloatBtn_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MNFloatBtn_Tests-dummy.m"; sourceTree = "<group>"; };
 		C5A84F05090318AE1F5D0E1906C835D0 /* Pods-MNFloatBtn_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MNFloatBtn_Tests.modulemap"; sourceTree = "<group>"; };
 		C9B43BEFE3F7BC0D0065AEF11C99A7FF /* Pods-MNFloatBtn_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MNFloatBtn_Example-Info.plist"; sourceTree = "<group>"; };
 		D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		D9475BA8883869A217797E8912E54C50 /* NSDate+MNDate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSDate+MNDate.m"; path = "MNFloatBtn/NSDate+MNDate.m"; sourceTree = "<group>"; };
 		DA16B309CF534A1468FC760904D23928 /* Pods-MNFloatBtn_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MNFloatBtn_Example.modulemap"; sourceTree = "<group>"; };
-		EE5E95588B79279988A18C4DB38B2D82 /* MNFloatBtn.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MNFloatBtn.xcconfig; sourceTree = "<group>"; };
-		FF0982193B19180E51EE487F15F7E57F /* MNFloatBtn-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MNFloatBtn-umbrella.h"; sourceTree = "<group>"; };
-		FF24487D116D18720E6E3E26049C09CC /* MNFloatBtn.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = MNFloatBtn.bundle; path = MNFloatBtn/MNFloatBtn.bundle; sourceTree = "<group>"; };
+		EB86D5711E7829BC8F4357EBADE17822 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		FA1BD70DA857DED4187A96289EC3EA67 /* MNFloatBtn-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "MNFloatBtn-Info.plist"; sourceTree = "<group>"; };
+		FECBFE5B4A6B343569C220BE92FE7F6D /* MNFloatBtn-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MNFloatBtn-prefix.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,34 +124,6 @@
 			path = "Target Support Files/Pods-MNFloatBtn_Example";
 			sourceTree = "<group>";
 		};
-		173BE4CAE72737B262CFFAC35ED84C3D /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				9BC48118C3FDF67ADF14E245B5ED5D38 /* MNFloatBtn.modulemap */,
-				EE5E95588B79279988A18C4DB38B2D82 /* MNFloatBtn.xcconfig */,
-				B2F6EFEF63529C6E8071B614728B9D8A /* MNFloatBtn-dummy.m */,
-				8A8CCF924F2B762BB12EB53AB401A10B /* MNFloatBtn-Info.plist */,
-				7A6254B979951CFE9842E0BF977F40E1 /* MNFloatBtn-prefix.pch */,
-				FF0982193B19180E51EE487F15F7E57F /* MNFloatBtn-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/MNFloatBtn";
-			sourceTree = "<group>";
-		};
-		338032DED31D48B023FB8D5D7ECD1CF6 /* MNFloatBtn */ = {
-			isa = PBXGroup;
-			children = (
-				7DB0A20EE2CB14F752277EC4C103758A /* MNFloatBtn.h */,
-				9153EF54BA04FB44B0B76358B361FBB8 /* MNFloatBtn.m */,
-				5B8E2FD70A98F2E778D1D7413499C3A1 /* NSDate+MNDate.h */,
-				D9475BA8883869A217797E8912E54C50 /* NSDate+MNDate.m */,
-				DF5E493D77B61764A20A8CE11A331181 /* Resources */,
-				173BE4CAE72737B262CFFAC35ED84C3D /* Support Files */,
-			);
-			name = MNFloatBtn;
-			path = MNFloatBtn;
-			sourceTree = "<group>";
-		};
 		4350CC02D5F9290AF4423A53F5C29DF4 /* Pods-MNFloatBtn_Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -187,8 +162,8 @@
 			isa = PBXGroup;
 			children = (
 				B36AB396275697EEE1A5B13BA8A38FE3 /* Podfile */,
+				C6690B9019A0AD927BD88BE5D99A97C2 /* Development Pods */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				C5348EE4EDC059BF411DC83614411536 /* Pods */,
 				593D52A8225AD5959339E4154B65DD13 /* Products */,
 				94D504A8E45F7493079E375F32B8E05F /* Targets Support Files */,
 			);
@@ -211,20 +186,59 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		C5348EE4EDC059BF411DC83614411536 /* Pods */ = {
+		C47449F7C491B997FC9A1B436A4B51BD /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				338032DED31D48B023FB8D5D7ECD1CF6 /* MNFloatBtn */,
+				58F2711AA03B38FCB4DA6F0996A0EDD8 /* LICENSE */,
+				7161D8EA820591BD7144640D3736B11D /* MNFloatBtn.podspec */,
+				EB86D5711E7829BC8F4357EBADE17822 /* README.md */,
 			);
-			name = Pods;
+			name = Pod;
 			sourceTree = "<group>";
 		};
-		DF5E493D77B61764A20A8CE11A331181 /* Resources */ = {
+		C6690B9019A0AD927BD88BE5D99A97C2 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				FF24487D116D18720E6E3E26049C09CC /* MNFloatBtn.bundle */,
+				CA83929C3AC156F6931B00DA33520369 /* MNFloatBtn */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		CA83929C3AC156F6931B00DA33520369 /* MNFloatBtn */ = {
+			isa = PBXGroup;
+			children = (
+				62C2F0D1A899226DCC3111569C8C6F7D /* MNFloatBtn.h */,
+				688736D61DE51337647EC510D2CAF24A /* MNFloatBtn.m */,
+				B6839C96ED291BEAFAE8FEC0606E0D09 /* NSDate+MNDate.h */,
+				584FCB7B250ABF0E81EE5E25B73234C5 /* NSDate+MNDate.m */,
+				C47449F7C491B997FC9A1B436A4B51BD /* Pod */,
+				E8D5A3470954BA5D8AF77B4BCF8102CF /* Resources */,
+				EE8A9BAFB8D7C48F3DA5C319DEF68605 /* Support Files */,
+			);
+			name = MNFloatBtn;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		E8D5A3470954BA5D8AF77B4BCF8102CF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				556A7002D8694F1F6600E0F268CDED85 /* MNFloatBtn.bundle */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		EE8A9BAFB8D7C48F3DA5C319DEF68605 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				8980E102A487282EE1B8667FF7D4EB2F /* MNFloatBtn.modulemap */,
+				078598D8D905DB8FE9D044B9A343889A /* MNFloatBtn.xcconfig */,
+				B999F56B903734E868FAF30844F953D4 /* MNFloatBtn-dummy.m */,
+				FA1BD70DA857DED4187A96289EC3EA67 /* MNFloatBtn-Info.plist */,
+				FECBFE5B4A6B343569C220BE92FE7F6D /* MNFloatBtn-prefix.pch */,
+				489780340DF8ED80913D50F160BFC478 /* MNFloatBtn-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/MNFloatBtn";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -448,7 +462,7 @@
 		};
 		2FC913946B17988CEE051D9944550D0F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EE5E95588B79279988A18C4DB38B2D82 /* MNFloatBtn.xcconfig */;
+			baseConfigurationReference = 078598D8D905DB8FE9D044B9A343889A /* MNFloatBtn.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -703,7 +717,7 @@
 		};
 		EF4D9FE03E7A49D986BD08EA0BD6949E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EE5E95588B79279988A18C4DB38B2D82 /* MNFloatBtn.xcconfig */;
+			baseConfigurationReference = 078598D8D905DB8FE9D044B9A343889A /* MNFloatBtn.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";

@@ -31,8 +31,8 @@ typedef void (^floatBtnClick)(UIButton *sender);
 //移除floatBtn在界面显示
 + (void)hidden;
 
-//获取floatBtn单例对象
-//+ (instancetype)sharedBtn;
+//获取floatBtn对象
++ (UIButton *)sharedBtn;
 
 //按钮点击事件
 @property (nonatomic, copy)floatBtnClick btnClick;

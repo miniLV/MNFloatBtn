@@ -11,8 +11,6 @@
 
 #define kSystemKeyboardWindowLevel 10000000
 
-
-
 @interface MNFloatWindow()
 
 @property (nonatomic, assign, getter=isBuildShowDate) BOOL buildShowDate;
@@ -129,7 +127,7 @@ static CGFloat floatBtnH = 49;
     
     //如果createBtn的时候直接改title，可能会出现title无法更新问题，所以加个0.01s的延迟函数
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.01 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [_floatBtn setTitle:title forState:UIControlStateNormal];
+        [self.floatBtn setTitle:title forState:UIControlStateNormal];
     });
 }
 
@@ -143,13 +141,10 @@ static CGFloat floatBtnH = 49;
 }
 
 
-#pragma mark - private Method
-+ (instancetype)sharedWindow{
+#pragma mark - public Method
++ (UIButton *)sharedBtn{
     
-    if (!_floatWindow) {
-        _floatWindow = [[self alloc]initWithType:MNAssistiveTypeNearRight frame:CGRectZero];
-    }
-    return _floatWindow;
+    return _floatWindow.floatBtn;
 }
 
 + (void)show{
@@ -178,7 +173,6 @@ static CGFloat floatBtnH = 49;
 #endif
 }
 
-#define kSystemKeyboardWindowLevel 10000000
 
 + (void)showWithType:(MNAssistiveTouchType)type{
     
@@ -194,7 +188,7 @@ static CGFloat floatBtnH = 49;
     
 }
 
-
+#pragma mark - private Method
 - (void)showWithType:(MNAssistiveTouchType)type{
     
     UIWindow *currentKeyWindow = [UIApplication sharedApplication].keyWindow;
@@ -202,7 +196,6 @@ static CGFloat floatBtnH = 49;
     if (_floatWindow.hidden) {
         _floatWindow.hidden = NO;
     }
-    
     else if (!_floatWindow) {
         _floatWindow = [[MNFloatWindow alloc] initWithType:type frame:CGRectZero];
         _floatWindow.rootViewController = [UIViewController new];

@@ -161,8 +161,6 @@ static CGFloat floatBtnH = 49;
         [[UIApplication sharedApplication].keyWindow bringSubviewToFront:_floatBtn];
     }else{
         [UIApplication sharedApplication].keyWindow.windowLevel = 1000000;
-        
-//        [window makeKeyWindow];
     }
 }
 

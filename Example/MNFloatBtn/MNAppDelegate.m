@@ -41,7 +41,7 @@
                              @"生产":@"api.miniLV.com"
                              };
     
-    [MNFloatWindow show];
+    [MNFloatWindow showDebugModeWithType:MNAssistiveTypeNone];
     
     //设置不同环境下，要展示的不同title，以及当前的Host
 //    [[MNFloatBtn sharedBtn] setEnvironmentMap:envMap currentEnv:kAddress];

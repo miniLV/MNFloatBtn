@@ -129,7 +129,7 @@ static CGFloat floatBtnH = 49;
 
 + (void)hidden{
     
-    [_floatBtn removeFromSuperview];
+    [_floatWindow setHidden:YES];
 }
 
 + (void)showDebugMode{
@@ -197,26 +197,19 @@ static CGFloat floatBtnH = 49;
     
     UIWindow *currentKeyWindow = [UIApplication sharedApplication].keyWindow;
     
-    NSLog(@"super view frame: %@", NSStringFromCGRect(self.frame));
-    if (!_floatWindow) {
+    if (_floatWindow.hidden) {
+        _floatWindow.hidden = NO;
+    }
+    
+    else if (!_floatWindow) {
         _floatWindow = [[MNFloatWindow alloc] initWithType:type frame:CGRectZero];
         _floatWindow.rootViewController = [UIViewController new];
-    } else {
-//        _floatWindow.frame = _currentFrame;
-        
     }
     
     _floatWindow.backgroundColor = [UIColor redColor];
     [_floatWindow makeKeyAndVisible];
     _floatWindow.windowLevel = kSystemKeyboardWindowLevel;
     
-//    _floatWindow.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
-//
-//    _floatWindow.layer.cornerRadius = self.frame.size.width <= self.frame.size.height ? self.frame.size.width / 2.0 : self.frame.size.height / 2.0;
-    
-//    [currentKeyWindow addSubview:_floatWindow];
-    
-    // keep the original keyWindow to avoid some unpredictable problems
     [currentKeyWindow makeKeyWindow];
     
 }
@@ -353,8 +346,6 @@ static CGFloat floatBtnH = 49;
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
     
-    CGFloat btnWidth = self.frame.size.width;
-    CGFloat btnHeight = self.frame.size.height;
     CGFloat btnY = self.frame.origin.y;
     CGFloat btnX = self.frame.origin.x;
     
@@ -373,23 +364,23 @@ static CGFloat floatBtnH = 49;
     
     //按钮靠近右侧
     switch (_type) {
-            
+
         case MNAssistiveTypeNone:{
-            
+
             //自动识别贴边
-            if (self.center.x >= self.superview.frame.size.width/2) {
-                
+            if (self.center.x >= screenW/2) {
+
                 [UIView animateWithDuration:0.5 animations:^{
                     //按钮靠右自动吸边
-                    CGFloat btnX = self.superview.frame.size.width - btnWidth;
-                    self.frame = CGRectMake(btnX, btnY, btnWidth, btnHeight);
+                    CGFloat btnX = screenW - floatBtnW;
+                    self.frame = CGRectMake(btnX, btnY, floatBtnW, floatBtnH);
                 }];
             }else{
-                
+
                 [UIView animateWithDuration:0.5 animations:^{
                     //按钮靠左吸边
                     CGFloat btnX = 0;
-                    self.frame = CGRectMake(btnX, btnY, btnWidth, btnHeight);
+                    self.frame = CGRectMake(btnX, btnY, floatBtnW, floatBtnH);
                 }];
             }
             break;
@@ -398,15 +389,15 @@ static CGFloat floatBtnH = 49;
             [UIView animateWithDuration:0.5 animations:^{
                 //按钮靠左吸边
                 CGFloat btnX = 0;
-                self.frame = CGRectMake(btnX, btnY, btnWidth, btnHeight);
+                self.frame = CGRectMake(btnX, btnY, floatBtnW, floatBtnH);
             }];
             break;
         }
         case MNAssistiveTypeNearRight:{
             [UIView animateWithDuration:0.5 animations:^{
                 //按钮靠右自动吸边
-                CGFloat btnX = self.superview.frame.size.width - btnWidth;
-                self.frame = CGRectMake(btnX, btnY, btnWidth, btnHeight);
+                CGFloat btnX = screenW - floatBtnW;
+                self.frame = CGRectMake(btnX, btnY, floatBtnW, floatBtnH);
             }];
         }
     }

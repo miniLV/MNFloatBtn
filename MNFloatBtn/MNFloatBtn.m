@@ -23,6 +23,9 @@
 //当前展示的环境
 @property (nonatomic, strong)NSString *environmentStr;
 
+//悬浮的按钮
+@property (nonatomic, strong) UIButton *floatBtn;
+
 @end
 
 @implementation MNFloatWindow{
@@ -37,7 +40,7 @@
 
 }
 
-static UIButton *_floatBtn;
+//static
 static MNFloatWindow *_floatWindow;
 
 static CGFloat floatBtnW = 120;
@@ -65,6 +68,33 @@ static CGFloat floatBtnH = 49;
         _environmentStr = @"测试";
     }
     return _environmentStr;
+}
+
+- (UIButton *)floatBtn{
+    if (!_floatBtn) {
+        
+        UIImage *image = [self p_loadResourceImage];
+        
+        //获取build的值
+        [self p_getBuildStr];
+        
+        NSString *title = [NSString stringWithFormat:@"Ver:%@ %@\nBuild:%@",MNFloatBtnSystemVersion,self.environmentStr, self.buildStr];
+        
+        //UIbutton的换行显示
+        _floatBtn = [[UIButton alloc]init];
+        _floatBtn.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
+        _floatBtn.titleLabel.font = [UIFont systemFontOfSize:11];
+        [_floatBtn setTitle:title forState:UIControlStateNormal];
+        [_floatBtn setBackgroundImage:image forState:UIControlStateNormal];
+     
+        [_floatBtn addTarget:self action:@selector(p_clickBtn:) forControlEvents:UIControlEventTouchUpInside];
+
+        //添加到window上
+        [_floatWindow addSubview:_floatBtn];
+        _floatBtn.frame = _floatWindow.bounds;
+        
+    }
+    return _floatBtn;
 }
 
 #pragma mark - setMethod
@@ -157,41 +187,13 @@ static CGFloat floatBtnH = 49;
 
         _floatWindow = [[MNFloatWindow alloc] initWithType:type frame:CGRectZero];
         _floatWindow.rootViewController = [[UIViewController alloc]init];
-//        [_floatWindow makeKeyAndVisible];
+        [_floatWindow p_createFloatBtn];
     });
-
+    
     [_floatWindow showWithType:type];
     
 }
 
-//- (void)showWithType:(MNAssistiveTouchType)type{
-//
-//    static dispatch_once_t onceToken;
-//    dispatch_once(&onceToken, ^{
-//
-//        _floatWindow = [[MNFloatWindow alloc] initWithType:type frame:CGRectZero];
-//    });
-//
-//
-//
-////    if (!_floatWindow.superview) {
-////
-////        [[UIApplication sharedApplication].keyWindow addSubview:_floatWindow];
-////        //让floatBtn在最上层(即便以后还有keywindow add subView，也会在 floatBtn下)
-////        [[UIApplication sharedApplication].keyWindow bringSubviewToFront:_floatWindow];
-////
-////        _floatWindow.backgroundColor = [UIColor redColor];
-////        [_floatWindow makeKeyAndVisible];
-////
-////        _floatWindow.windowLevel = 1000000;
-////
-////    }else{
-////        [UIApplication sharedApplication].keyWindow.windowLevel = 1000000;
-////
-////        //        [window makeKeyWindow];
-////    }
-////    [[UIApplication sharedApplication].keyWindow makeKeyWindow];
-//}
 
 - (void)showWithType:(MNAssistiveTouchType)type{
     
@@ -206,7 +208,7 @@ static CGFloat floatBtnH = 49;
         _floatWindow.rootViewController = [UIViewController new];
     }
     
-    _floatWindow.backgroundColor = [UIColor redColor];
+    _floatWindow.backgroundColor = [UIColor clearColor];
     [_floatWindow makeKeyAndVisible];
     _floatWindow.windowLevel = kSystemKeyboardWindowLevel;
     
@@ -217,8 +219,10 @@ static CGFloat floatBtnH = 49;
 
 - (instancetype)initWithType:(MNAssistiveTouchType)type
                        frame:(CGRect)frame{
- 
-    if (CGRectEqualToRect(frame, CGRectZero)) {
+
+    
+    if (self = [super init]) {
+        _type = type;
         CGFloat floatBtnX = screenW - floatBtnW;
         CGFloat floatBtnY = 60;
         
@@ -226,49 +230,12 @@ static CGFloat floatBtnH = 49;
         self.frame = frame;
         self.backgroundColor = [UIColor orangeColor];
     }
-
-    //获取build的值
-    [self p_getBuildStr];
-   
-    NSString *title = [NSString stringWithFormat:@"Ver:%@ %@\nBuild:%@",MNFloatBtnSystemVersion,self.environmentStr, self.buildStr];
-    
-    UIImage *image = [self p_loadResourceImage];
-    
-    return [self initWithType:type
-                        frame:frame
-                        title:title
-                   titleColor:[UIColor whiteColor]
-                    titleFont:[UIFont systemFontOfSize:11]
-              backgroundColor:nil
-              backgroundImage:image];
-}
-
-- (instancetype)initWithType:(MNAssistiveTouchType)type
-                       frame:(CGRect)frame
-                       title:(NSString *)title
-                  titleColor:(UIColor *)titleColor
-                   titleFont:(UIFont *)titleFont
-             backgroundColor:(UIColor *)backgroundColor
-             backgroundImage:(UIImage *)backgroundImage{
-    
-    if (self = [super initWithFrame:frame]) {
-        _type = type;
-        
-        //UIbutton的换行显示
-        _floatBtn.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
-        _floatBtn.backgroundColor = backgroundColor;
-        _floatBtn.titleLabel.font = titleFont;
-        [_floatBtn setTitle:title forState:UIControlStateNormal];
-        [_floatBtn setBackgroundImage:backgroundImage forState:UIControlStateNormal];
-        [_floatBtn setBackgroundColor:backgroundColor];
-        
-        [_floatBtn addTarget:self action:@selector(p_clickBtn:) forControlEvents:UIControlEventTouchUpInside];
-        
-//        self.windowLevel = kSystemKeyboardWindowLevel;
-    }
     return self;
 }
 
+- (void)p_createFloatBtn{
+    self.floatBtn.hidden = NO;
+}
 
 - (void)p_clickBtn:(UIButton *)sender{
     
@@ -306,9 +273,6 @@ static CGFloat floatBtnH = 49;
     self.center = CGPointMake(centerX, centerY);
     
     //父试图的宽高
-//    CGFloat superViewWidth = self.superview.frame.size.width;
-//    CGFloat superViewHeight = self.superview.frame.size.height;
-
     CGFloat superViewWidth = screenW;
     CGFloat superViewHeight = screenH;
     CGFloat btnX = self.frame.origin.x;

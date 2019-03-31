@@ -44,19 +44,26 @@
     [MNFloatBtn showDebugModeWithType:MNAssistiveTypeNone];
     
     //设置不同环境下，要展示的不同title，以及当前的Host
-    [MNFloatBtn setEnvironmentMap:envMap currentEnv:kAddress];
+    [[MNFloatBtn sharedBtn] setEnvironmentMap:envMap currentEnv:kAddress];
+//    [[MNFloatBtn sharedBtn] setEnvironmentMap:envMap currentEnv:kAddress];
 //    [MNFloatBtn setEnvironmentMap:envMap currentEnv:kAddress];
     
     [MNFloatBtn showDebugModeWithType:MNAssistiveTypeNone];
     
-//    [MNFloatBtn sharedBtn].btnClick = ^(UIButton *sender) {
-//
-//        NSLog(@" btn.btnClick ~");
-//    };
+//    UIButton *btn = [MNFloatBtn sharedBtn];
+//    [btn addTarget:self action:@selector(p_test)  forControlEvents:UIControlEventTouchUpInside];
+    
+    [MNFloatBtn new].btnClick = ^(UIButton *sender) {
+
+        NSLog(@" btn.btnClick ~");
+    };
     
 
 }
 
+- (void)p_test{
+    NSLog(@"p_test");
+}
 
 
 @end

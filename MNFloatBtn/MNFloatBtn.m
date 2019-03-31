@@ -13,16 +13,10 @@
 
 @interface MNFloatBtn()
 
-@property (nonatomic, assign, getter=isBuildShowDate) BOOL buildShowDate;
 
-//Build号
-@property(nonatomic, copy)NSString *buildStr;
-
-//当前展示的环境
-@property (nonatomic, strong)NSString *environmentStr;
 
 //悬浮的按钮
-@property (nonatomic, strong) UIButton *floatBtn;
+@property (nonatomic, strong) MNFloatContentBtn *floatBtn;
 
 @end
 
@@ -53,91 +47,34 @@ static CGFloat floatBtnH = 49;
 #define MNFloatBtnSystemVersion [[[NSBundle mainBundle]infoDictionary]valueForKey:@"CFBundleShortVersionString"]
 
 #pragma mark - lazy
-- (NSString *)buildStr{
-    if (!_buildStr) {
-        _buildStr = [NSDate currentDate];
-    }
-    return _buildStr;
-}
 
-- (NSString *)environmentStr{
-    if (!_environmentStr) {
-        
-        _environmentStr = @"测试";
-    }
-    return _environmentStr;
-}
 
-- (UIButton *)floatBtn{
+
+
+- (MNFloatContentBtn *)floatBtn{
     if (!_floatBtn) {
         
-        UIImage *image = [self p_loadResourceImage];
+        _floatBtn = [[MNFloatContentBtn alloc]init];
         
-        //获取build的值
-        [self p_getBuildStr];
-        
-        NSString *title = [NSString stringWithFormat:@"Ver:%@ %@\nBuild:%@",MNFloatBtnSystemVersion,self.environmentStr, self.buildStr];
-        
-        //UIbutton的换行显示
-        _floatBtn = [[UIButton alloc]init];
-        _floatBtn.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
-        _floatBtn.titleLabel.font = [UIFont systemFontOfSize:11];
-        [_floatBtn setTitle:title forState:UIControlStateNormal];
-        [_floatBtn setBackgroundImage:image forState:UIControlStateNormal];
-     
-        [_floatBtn addTarget:self action:@selector(p_clickBtn:) forControlEvents:UIControlEventTouchUpInside];
-
         //添加到window上
         [_floatWindow addSubview:_floatBtn];
         _floatBtn.frame = _floatWindow.bounds;
+//        _floatWindow.userInteractionEnabled = YES;
+//        _floatBtn.userInteractionEnabled = YES;
+        
+        
+        [_floatBtn addTarget:self action:@selector(p_clickBtn:) forControlEvents:UIControlEventTouchUpInside];
         
     }
     return _floatBtn;
 }
 
-#pragma mark - setMethod
-- (void)setBuildShowDate:(BOOL)isBuildShowDate{
-    _buildShowDate = isBuildShowDate;
+#pragma mark - Button Touch
+- (void)p_clickBtn:(UIButton *)sender{
 
-    [self p_getBuildStr];
-    
-    [self p_updateBtnTitle];
-}
-
-+ (void)setEnvironmentMap:(NSDictionary *)environmentMap currentEnv:(NSString *)currentEnv{
-    
-    __block NSString *envStr = @"测试";
-    
-    [environmentMap enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
-        
-        if ([currentEnv isEqualToString:obj]) {
-            envStr = key;
-            *stop = YES;
-        }
-    }];
-    
-    _floatWindow.environmentStr = envStr;
-    
-    [_floatWindow p_updateBtnTitle];
-}
-
-- (void)p_updateBtnTitle{
-    
-    NSString *title = [NSString stringWithFormat:@"Ver:%@ %@\nBuild:%@",MNFloatBtnSystemVersion,self.environmentStr, self.buildStr];
-    
-    //如果createBtn的时候直接改title，可能会出现title无法更新问题，所以加个0.01s的延迟函数
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.01 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self.floatBtn setTitle:title forState:UIControlStateNormal];
-    });
-}
-
-//获取build展示内容
-- (void)p_getBuildStr{
-    NSString *buildStr = [NSDate currentDate];
-    if (!self.isBuildShowDate) {
-        buildStr = MNFloatBtnSystemBuild;
+    if (self.btnClick) {
+        self.btnClick(sender);
     }
-    self.buildStr = buildStr;
 }
 
 
@@ -229,12 +166,7 @@ static CGFloat floatBtnH = 49;
     self.floatBtn.hidden = NO;
 }
 
-- (void)p_clickBtn:(UIButton *)sender{
-    
-    if (self.btnClick) {
-        self.btnClick(sender);
-    }
-}
+
 
 
 #pragma mark - button move
@@ -361,6 +293,121 @@ static CGFloat floatBtnH = 49;
     
 }
 
+
+
+
+@end
+
+@interface MNFloatContentBtn()
+
+//是否显示当前日期
+@property (nonatomic, assign, getter=isBuildShowDate) BOOL buildShowDate;
+
+//Build号
+@property(nonatomic, copy)NSString *buildStr;
+
+//当前展示的环境
+@property (nonatomic, strong)NSString *environmentStr;
+
+
+@end
+
+@implementation MNFloatContentBtn
+
+#pragma mark - lazy
+- (NSString *)buildStr{
+    if (!_buildStr) {
+        _buildStr = [NSDate currentDate];
+    }
+    return _buildStr;
+}
+
+#pragma mark - init
+- (instancetype)initWithFrame:(CGRect)frame{
+    if (self = [super initWithFrame:frame]) {
+        
+        UIImage *image = [self p_loadResourceImage];
+        
+        //获取build的值
+        [self p_getBuildStr];
+        
+        NSString *title = [NSString stringWithFormat:@"Ver:%@ %@\nBuild:%@",MNFloatBtnSystemVersion,self.environmentStr, self.buildStr];
+        
+        //UIbutton的换行显示
+        self.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
+        self.titleLabel.font = [UIFont systemFontOfSize:11];
+        [self setTitle:title forState:UIControlStateNormal];
+        [self setBackgroundImage:image forState:UIControlStateNormal];
+        
+//        [self addTarget:self action:@selector(p_clickBtn:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return self;
+}
+
+#pragma mark - set Method
+- (void)setBuildShowDate:(BOOL)isBuildShowDate{
+    _buildShowDate = isBuildShowDate;
+    
+    [self p_getBuildStr];
+    
+    [self p_updateBtnTitle];
+}
+
+
+- (void)setEnvironmentMap:(NSDictionary *)environmentMap currentEnv:(NSString *)currentEnv{
+    
+    __block NSString *envStr = @"测试";
+    
+    [environmentMap enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
+        
+        if ([currentEnv isEqualToString:obj]) {
+            envStr = key;
+            *stop = YES;
+        }
+    }];
+    
+    self.environmentStr = envStr;
+    
+    [self p_updateBtnTitle];
+}
+
+
+//获取build展示内容
+- (void)p_getBuildStr{
+    NSString *buildStr = [NSDate currentDate];
+    if (!self.isBuildShowDate) {
+        buildStr = MNFloatBtnSystemBuild;
+    }
+    self.buildStr = buildStr;
+}
+
+- (void)p_updateBtnTitle{
+    
+    NSString *title = [NSString stringWithFormat:@"Ver:%@ %@\nBuild:%@",MNFloatBtnSystemVersion,self.environmentStr, self.buildStr];
+    
+    //如果createBtn的时候直接改title，可能会出现title无法更新问题，所以加个0.01s的延迟函数
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.01 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self setTitle:title forState:UIControlStateNormal];
+    });
+}
+
+- (NSString *)environmentStr{
+    if (!_environmentStr) {
+        
+        _environmentStr = @"测试";
+    }
+    return _environmentStr;
+}
+
+#pragma mark - Button Touch
+//- (void)p_clickBtn:(UIButton *)sender{
+//
+//    if (self.btnClick) {
+//        self.btnClick(sender);
+//    }
+//}
+
+
 #pragma mark - loadResourceImage
 - (UIImage *)p_loadResourceImage{
     
@@ -375,6 +422,5 @@ static CGFloat floatBtnH = 49;
     
     return image;
 }
-
 
 @end

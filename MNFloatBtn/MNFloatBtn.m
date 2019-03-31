@@ -11,7 +11,7 @@
 
 #define kSystemKeyboardWindowLevel 10000000
 
-@interface MNFloatWindow()
+@interface MNFloatBtn()
 
 @property (nonatomic, assign, getter=isBuildShowDate) BOOL buildShowDate;
 
@@ -26,7 +26,7 @@
 
 @end
 
-@implementation MNFloatWindow{
+@implementation MNFloatBtn{
     
     MNAssistiveTouchType  _type;
     //拖动按钮的起始坐标点
@@ -39,7 +39,7 @@
 }
 
 //static
-static MNFloatWindow *_floatWindow;
+static MNFloatBtn *_floatWindow;
 
 static CGFloat floatBtnW = 120;
 static CGFloat floatBtnH = 49;
@@ -104,7 +104,7 @@ static CGFloat floatBtnH = 49;
     [self p_updateBtnTitle];
 }
 
-- (void)setEnvironmentMap:(NSDictionary *)environmentMap currentEnv:(NSString *)currentEnv{
++ (void)setEnvironmentMap:(NSDictionary *)environmentMap currentEnv:(NSString *)currentEnv{
     
     __block NSString *envStr = @"测试";
     
@@ -116,9 +116,9 @@ static CGFloat floatBtnH = 49;
         }
     }];
     
-    self.environmentStr = envStr;
+    _floatWindow.environmentStr = envStr;
     
-    [self p_updateBtnTitle];
+    [_floatWindow p_updateBtnTitle];
 }
 
 - (void)p_updateBtnTitle{
@@ -179,7 +179,7 @@ static CGFloat floatBtnH = 49;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
 
-        _floatWindow = [[MNFloatWindow alloc] initWithType:type frame:CGRectZero];
+        _floatWindow = [[MNFloatBtn alloc] initWithType:type frame:CGRectZero];
         _floatWindow.rootViewController = [[UIViewController alloc]init];
         [_floatWindow p_createFloatBtn];
     });
@@ -197,7 +197,7 @@ static CGFloat floatBtnH = 49;
         _floatWindow.hidden = NO;
     }
     else if (!_floatWindow) {
-        _floatWindow = [[MNFloatWindow alloc] initWithType:type frame:CGRectZero];
+        _floatWindow = [[MNFloatBtn alloc] initWithType:type frame:CGRectZero];
         _floatWindow.rootViewController = [UIViewController new];
     }
     
@@ -221,7 +221,6 @@ static CGFloat floatBtnH = 49;
         
         frame = CGRectMake(floatBtnX, floatBtnY, floatBtnW, floatBtnH);
         self.frame = frame;
-        self.backgroundColor = [UIColor orangeColor];
     }
     return self;
 }
@@ -365,7 +364,7 @@ static CGFloat floatBtnH = 49;
 #pragma mark - loadResourceImage
 - (UIImage *)p_loadResourceImage{
     
-    NSBundle *bundle = [NSBundle bundleForClass:[MNFloatWindow class]];
+    NSBundle *bundle = [NSBundle bundleForClass:[MNFloatBtn class]];
     
     NSURL *url = [bundle URLForResource:@"MNFloatBtn" withExtension:@"bundle"];
     NSBundle *imageBundle = [NSBundle bundleWithURL:url];

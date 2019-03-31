@@ -33,21 +33,22 @@
 //    [[MNFloatWindow sharedBtn] setBuildShowDate:YES];
     
     //#define kAddress            @"testapi.miniLV.com"
-    #define kAddress            @"devapi.miniLV.com"
-    //#define kAddress            @"api.miniLV.com"
+//    #define kAddress            @"devapi.miniLV.com"
+    #define kAddress            @"api.miniLV.com"
     NSDictionary *envMap = @{
                              @"测试":@"testapi.miniLV.com",
                              @"开发":@"devapi.miniLV.com",
                              @"生产":@"api.miniLV.com"
                              };
     
-    [MNFloatWindow showDebugModeWithType:MNAssistiveTypeNone];
+    [MNFloatBtn showDebugModeWithType:MNAssistiveTypeNone];
     
     //设置不同环境下，要展示的不同title，以及当前的Host
-//    [[MNFloatBtn sharedBtn] setEnvironmentMap:envMap currentEnv:kAddress];
-//    
-//    [MNFloatBtn showDebugModeWithType:MNAssistiveTypeNone];
-//    
+    [MNFloatBtn setEnvironmentMap:envMap currentEnv:kAddress];
+//    [MNFloatBtn setEnvironmentMap:envMap currentEnv:kAddress];
+    
+    [MNFloatBtn showDebugModeWithType:MNAssistiveTypeNone];
+    
 //    [MNFloatBtn sharedBtn].btnClick = ^(UIButton *sender) {
 //
 //        NSLog(@" btn.btnClick ~");

@@ -15,7 +15,7 @@ typedef NS_ENUM(NSInteger, MNAssistiveTouchType)
     MNAssistiveTypeNearRight,  //拖动停止之后，自动向右贴边
 };
 
-@interface MNFloatWindow : UIWindow
+@interface MNFloatBtn : UIWindow
 
 typedef void (^floatBtnClick)(UIButton *sender);
 
@@ -63,7 +63,13 @@ typedef void (^floatBtnClick)(UIButton *sender);
  @param environmentMap 环境 - Host 的 映射
  @param currentEnv - 当前环境的Host
  */
-- (void)setEnvironmentMap:(NSDictionary *)environmentMap currentEnv:(NSString *)currentEnv;
++ (void)setEnvironmentMap:(NSDictionary *)environmentMap currentEnv:(NSString *)currentEnv;
 
 @end
+
+
+@interface MNFloatContentBtn : UIButton
+
+@end
+
 

@@ -47,7 +47,7 @@
     
     sender.selected = !sender.selected;
     
-    sender.selected ? [MNFloatWindow hidden] : [MNFloatWindow show];
+    sender.selected ? [MNFloatBtn hidden] : [MNFloatBtn show];
 }
 
 - (void)p_alertBtn{
@@ -63,7 +63,7 @@
  
     UIWindow *window = [UIApplication sharedApplication].keyWindow;
     UIView *testView = [[UIView alloc]init];
-    testView.backgroundColor = [UIColor orangeColor];
+    testView.backgroundColor = [UIColor lightGrayColor];
     testView.frame = CGRectMake(0, 400, 300, 500);
     [window addSubview:testView];
     

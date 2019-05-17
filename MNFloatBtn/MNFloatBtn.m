@@ -9,16 +9,14 @@
 #import "MNFloatBtn.h"
 #import "NSDate+MNDate.h"
 
+#define kSystemKeyboardWindowLevel 10000000
 
 @interface MNFloatBtn()
 
-@property (nonatomic, assign, getter=isBuildShowDate) BOOL buildShowDate;
 
-//Build号
-@property(nonatomic, copy)NSString *buildStr;
 
-//当前展示的环境
-@property (nonatomic, strong)NSString *environmentStr;
+//悬浮的按钮
+@property (nonatomic, strong) MNFloatContentBtn *floatBtn;
 
 @end
 
@@ -34,7 +32,8 @@
 
 }
 
-static MNFloatBtn *_floatBtn;
+//static
+static MNFloatBtn *_floatWindow;
 
 static CGFloat floatBtnW = 120;
 static CGFloat floatBtnH = 49;
@@ -47,75 +46,27 @@ static CGFloat floatBtnH = 49;
 //系统默认version
 #define MNFloatBtnSystemVersion [[[NSBundle mainBundle]infoDictionary]valueForKey:@"CFBundleShortVersionString"]
 
-#pragma mark - lazy
-- (NSString *)buildStr{
-    if (!_buildStr) {
-        _buildStr = [NSDate currentDate];
-    }
-    return _buildStr;
-}
-
-- (NSString *)environmentStr{
-    if (!_environmentStr) {
-        
-        _environmentStr = @"测试";
-    }
-    return _environmentStr;
-}
-
-#pragma mark - setMethod
-- (void)setBuildShowDate:(BOOL)isBuildShowDate{
-    _buildShowDate = isBuildShowDate;
-
-    [self p_getBuildStr];
-    
-    [self p_updateBtnTitle];
-}
-
-- (void)setEnvironmentMap:(NSDictionary *)environmentMap currentEnv:(NSString *)currentEnv{
-    
-    __block NSString *envStr = @"测试";
-    
-    [environmentMap enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
-        
-        if ([currentEnv isEqualToString:obj]) {
-            envStr = key;
-            *stop = YES;
-        }
-    }];
-    
-    self.environmentStr = envStr;
-    
-    [self p_updateBtnTitle];
-}
-
-- (void)p_updateBtnTitle{
-    
-    NSString *title = [NSString stringWithFormat:@"Ver:%@ %@\nBuild:%@",MNFloatBtnSystemVersion,self.environmentStr, self.buildStr];
-    
-    //如果createBtn的时候直接改title，可能会出现title无法更新问题，所以加个0.01s的延迟函数
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.01 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [[MNFloatBtn sharedBtn] setTitle:title forState:UIControlStateNormal];
-    });
-}
-
-//获取build展示内容
-- (void)p_getBuildStr{
-    NSString *buildStr = [NSDate currentDate];
-    if (!self.isBuildShowDate) {
-        buildStr = MNFloatBtnSystemBuild;
-    }
-    self.buildStr = buildStr;
-}
 
 
-#pragma mark - private Method
-+ (MNFloatBtn *)sharedBtn{
-    
+
+- (MNFloatContentBtn *)floatBtn{
     if (!_floatBtn) {
-        _floatBtn = [[self alloc]initWithType:MNAssistiveTypeNearRight frame:CGRectZero];
+        
+        _floatBtn = [[MNFloatContentBtn alloc]init];
+        
+        //添加到window上
+        [_floatWindow addSubview:_floatBtn];
+        _floatBtn.frame = _floatWindow.bounds;
+       
     }
     return _floatBtn;
+}
+
+
+#pragma mark - public Method
++ (UIButton *)sharedBtn{
+    
+    return _floatWindow.floatBtn;
 }
 
 + (void)show{
@@ -125,7 +76,7 @@ static CGFloat floatBtnH = 49;
 
 + (void)hidden{
     
-    [_floatBtn removeFromSuperview];
+    [_floatWindow setHidden:YES];
 }
 
 + (void)showDebugMode{
@@ -144,80 +95,63 @@ static CGFloat floatBtnH = 49;
 #endif
 }
 
+
 + (void)showWithType:(MNAssistiveTouchType)type{
     
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
 
-        _floatBtn = [[MNFloatBtn alloc] initWithType:type frame:CGRectZero];
+        _floatWindow = [[MNFloatBtn alloc] initWithType:type frame:CGRectZero];
+        _floatWindow.rootViewController = [[UIViewController alloc]init];
+        [_floatWindow p_createFloatBtn];
     });
     
-    if (!_floatBtn.superview) {
-        
-        [[UIApplication sharedApplication].keyWindow addSubview:_floatBtn];
-        //让floatBtn在最上层(即便以后还有keywindow add subView，也会在 floatBtn下)
-        [[UIApplication sharedApplication].keyWindow bringSubviewToFront:_floatBtn];
+    [_floatWindow showWithType:type];
+    
+}
+
+#pragma mark - private Method
+- (void)showWithType:(MNAssistiveTouchType)type{
+    
+    UIWindow *currentKeyWindow = [UIApplication sharedApplication].keyWindow;
+    
+    if (_floatWindow.hidden) {
+        _floatWindow.hidden = NO;
     }
+    else if (!_floatWindow) {
+        _floatWindow = [[MNFloatBtn alloc] initWithType:type frame:CGRectZero];
+        _floatWindow.rootViewController = [UIViewController new];
+    }
+    
+    _floatWindow.backgroundColor = [UIColor clearColor];
+    [_floatWindow makeKeyAndVisible];
+    _floatWindow.windowLevel = kSystemKeyboardWindowLevel;
+    
+    [currentKeyWindow makeKeyWindow];
+    
 }
 
 
 - (instancetype)initWithType:(MNAssistiveTouchType)type
                        frame:(CGRect)frame{
- 
-    if (CGRectEqualToRect(frame, CGRectZero)) {
+
+    
+    if (self = [super init]) {
+        _type = type;
         CGFloat floatBtnX = screenW - floatBtnW;
         CGFloat floatBtnY = 60;
         
         frame = CGRectMake(floatBtnX, floatBtnY, floatBtnW, floatBtnH);
-    }
-
-    //获取build的值
-    [self p_getBuildStr];
-   
-    NSString *title = [NSString stringWithFormat:@"Ver:%@ %@\nBuild:%@",MNFloatBtnSystemVersion,self.environmentStr, self.buildStr];
-    
-    UIImage *image = [self p_loadResourceImage];
-    
-    return [self initWithType:type
-                        frame:frame
-                        title:title
-                   titleColor:[UIColor whiteColor]
-                    titleFont:[UIFont systemFontOfSize:11]
-              backgroundColor:nil
-              backgroundImage:image];
-}
-
-- (instancetype)initWithType:(MNAssistiveTouchType)type
-                       frame:(CGRect)frame
-                       title:(NSString *)title
-                  titleColor:(UIColor *)titleColor
-                   titleFont:(UIFont *)titleFont
-             backgroundColor:(UIColor *)backgroundColor
-             backgroundImage:(UIImage *)backgroundImage{
-    
-    if (self = [super initWithFrame:frame]) {
-        _type = type;
-        
-        //UIbutton的换行显示
-        self.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
-        self.backgroundColor = backgroundColor;
-        self.titleLabel.font = titleFont;
-        [self setTitle:title forState:UIControlStateNormal];
-        [self setBackgroundImage:backgroundImage forState:UIControlStateNormal];
-        [self setBackgroundColor:backgroundColor];
-        
-        [self addTarget:self action:@selector(p_clickBtn:) forControlEvents:UIControlEventTouchUpInside];
-        
+        self.frame = frame;
     }
     return self;
 }
 
-- (void)p_clickBtn:(UIButton *)sender{
-    
-    if (_btnClick) {
-        _btnClick(sender);
-    }
+- (void)p_createFloatBtn{
+    self.floatBtn.hidden = NO;
 }
+
+
 
 
 #pragma mark - button move
@@ -248,8 +182,8 @@ static CGFloat floatBtnH = 49;
     self.center = CGPointMake(centerX, centerY);
     
     //父试图的宽高
-    CGFloat superViewWidth = self.superview.frame.size.width;
-    CGFloat superViewHeight = self.superview.frame.size.height;
+    CGFloat superViewWidth = screenW;
+    CGFloat superViewHeight = screenH;
     CGFloat btnX = self.frame.origin.x;
     CGFloat btnY = self.frame.origin.y;
     CGFloat btnW = self.frame.size.width;
@@ -285,8 +219,6 @@ static CGFloat floatBtnH = 49;
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
     
-    CGFloat btnWidth = self.frame.size.width;
-    CGFloat btnHeight = self.frame.size.height;
     CGFloat btnY = self.frame.origin.y;
     CGFloat btnX = self.frame.origin.x;
     
@@ -298,30 +230,35 @@ static CGFloat floatBtnH = 49;
     
     if (isOverX || isOverY) {
         //超过移动范围就不响应点击 - 只做移动操作
+        NSLog(@"move - btn");
         [self touchesCancelled:touches withEvent:event];
     }else{
         [super touchesEnded:touches withEvent:event];
+        
+        if (_floatBtn.btnClick) {
+            _floatBtn.btnClick(_floatBtn);
+        }
     }
     
     //按钮靠近右侧
     switch (_type) {
-            
+
         case MNAssistiveTypeNone:{
-            
+
             //自动识别贴边
-            if (self.center.x >= self.superview.frame.size.width/2) {
-                
+            if (self.center.x >= screenW/2) {
+
                 [UIView animateWithDuration:0.5 animations:^{
                     //按钮靠右自动吸边
-                    CGFloat btnX = self.superview.frame.size.width - btnWidth;
-                    self.frame = CGRectMake(btnX, btnY, btnWidth, btnHeight);
+                    CGFloat btnX = screenW - floatBtnW;
+                    self.frame = CGRectMake(btnX, btnY, floatBtnW, floatBtnH);
                 }];
             }else{
-                
+
                 [UIView animateWithDuration:0.5 animations:^{
                     //按钮靠左吸边
                     CGFloat btnX = 0;
-                    self.frame = CGRectMake(btnX, btnY, btnWidth, btnHeight);
+                    self.frame = CGRectMake(btnX, btnY, floatBtnW, floatBtnH);
                 }];
             }
             break;
@@ -330,19 +267,127 @@ static CGFloat floatBtnH = 49;
             [UIView animateWithDuration:0.5 animations:^{
                 //按钮靠左吸边
                 CGFloat btnX = 0;
-                self.frame = CGRectMake(btnX, btnY, btnWidth, btnHeight);
+                self.frame = CGRectMake(btnX, btnY, floatBtnW, floatBtnH);
             }];
             break;
         }
         case MNAssistiveTypeNearRight:{
             [UIView animateWithDuration:0.5 animations:^{
                 //按钮靠右自动吸边
-                CGFloat btnX = self.superview.frame.size.width - btnWidth;
-                self.frame = CGRectMake(btnX, btnY, btnWidth, btnHeight);
+                CGFloat btnX = screenW - floatBtnW;
+                self.frame = CGRectMake(btnX, btnY, floatBtnW, floatBtnH);
             }];
         }
     }
+    
+    
 }
+
+
+
+
+@end
+
+@interface MNFloatContentBtn()
+
+//是否显示当前日期
+@property (nonatomic, assign, getter=isBuildShowDate) BOOL buildShowDate;
+
+//Build号
+@property(nonatomic, copy)NSString *buildStr;
+
+//当前展示的环境
+@property (nonatomic, strong)NSString *environmentStr;
+
+
+@end
+
+@implementation MNFloatContentBtn
+
+#pragma mark - lazy
+- (NSString *)buildStr{
+    if (!_buildStr) {
+        _buildStr = [NSDate currentDate];
+    }
+    return _buildStr;
+}
+
+#pragma mark - init
+- (instancetype)initWithFrame:(CGRect)frame{
+    if (self = [super initWithFrame:frame]) {
+        
+        UIImage *image = [self p_loadResourceImage];
+        
+        //获取build的值
+        [self p_getBuildStr];
+        
+        NSString *title = [NSString stringWithFormat:@"Ver:%@ %@\nBuild:%@",MNFloatBtnSystemVersion,self.environmentStr, self.buildStr];
+        
+        //UIbutton的换行显示
+        self.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
+        self.titleLabel.font = [UIFont systemFontOfSize:11];
+        [self setTitle:title forState:UIControlStateNormal];
+        [self setBackgroundImage:image forState:UIControlStateNormal];
+
+    }
+    return self;
+}
+
+#pragma mark - set Method
+- (void)setBuildShowDate:(BOOL)isBuildShowDate{
+    _buildShowDate = isBuildShowDate;
+    
+    [self p_getBuildStr];
+    
+    [self p_updateBtnTitle];
+}
+
+
+- (void)setEnvironmentMap:(NSDictionary *)environmentMap currentEnv:(NSString *)currentEnv{
+    
+    __block NSString *envStr = @"测试";
+    
+    [environmentMap enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
+        
+        if ([currentEnv isEqualToString:obj]) {
+            envStr = key;
+            *stop = YES;
+        }
+    }];
+    
+    self.environmentStr = envStr;
+    
+    [self p_updateBtnTitle];
+}
+
+
+//获取build展示内容
+- (void)p_getBuildStr{
+    NSString *buildStr = [NSDate currentDate];
+    if (!self.isBuildShowDate) {
+        buildStr = MNFloatBtnSystemBuild;
+    }
+    self.buildStr = buildStr;
+}
+
+- (void)p_updateBtnTitle{
+    
+    NSString *title = [NSString stringWithFormat:@"Ver:%@ %@\nBuild:%@",MNFloatBtnSystemVersion,self.environmentStr, self.buildStr];
+    
+    //如果createBtn的时候直接改title，可能会出现title无法更新问题，所以加个0.01s的延迟函数
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.01 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self setTitle:title forState:UIControlStateNormal];
+    });
+}
+
+- (NSString *)environmentStr{
+    if (!_environmentStr) {
+        
+        _environmentStr = @"测试";
+    }
+    return _environmentStr;
+}
+
 
 #pragma mark - loadResourceImage
 - (UIImage *)p_loadResourceImage{
@@ -358,6 +403,5 @@ static CGFloat floatBtnH = 49;
     
     return image;
 }
-
 
 @end

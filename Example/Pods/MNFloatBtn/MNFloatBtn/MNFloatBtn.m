@@ -159,6 +159,8 @@ static CGFloat floatBtnH = 49;
         [[UIApplication sharedApplication].keyWindow addSubview:_floatBtn];
         //让floatBtn在最上层(即便以后还有keywindow add subView，也会在 floatBtn下)
         [[UIApplication sharedApplication].keyWindow bringSubviewToFront:_floatBtn];
+    }else{
+        [UIApplication sharedApplication].keyWindow.windowLevel = 1000000;
     }
 }
 

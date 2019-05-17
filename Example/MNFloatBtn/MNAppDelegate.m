@@ -30,27 +30,35 @@
 -(void)setVersionBtn{
     
     //是否显示系统的当天日期，如果选择NO，显示Build号
-    [[MNFloatBtn sharedBtn] setBuildShowDate:YES];
+//    [[MNFloatWindow sharedBtn] setBuildShowDate:YES];
     
     //#define kAddress            @"testapi.miniLV.com"
-    #define kAddress            @"devapi.miniLV.com"
-    //#define kAddress            @"api.miniLV.com"
+//    #define kAddress            @"devapi.miniLV.com"
+    #define kAddress            @"api.miniLV.com"
     NSDictionary *envMap = @{
                              @"测试":@"testapi.miniLV.com",
                              @"开发":@"devapi.miniLV.com",
                              @"生产":@"api.miniLV.com"
                              };
-    //设置不同环境下，要展示的不同title，以及当前的Host
-    [[MNFloatBtn sharedBtn]setEnvironmentMap:envMap currentEnv:kAddress];
     
     [MNFloatBtn showDebugModeWithType:MNAssistiveTypeNone];
     
+    //设置不同环境下，要展示的不同title，以及当前的Host
+    [[MNFloatBtn sharedBtn] setEnvironmentMap:envMap currentEnv:kAddress];
+  
+    [MNFloatBtn showDebugModeWithType:MNAssistiveTypeNone];
+    
+    //点击事件 - 用'[MNFloatBtn sharedBtn].btnClick'触发
     [MNFloatBtn sharedBtn].btnClick = ^(UIButton *sender) {
-
+        
         NSLog(@" btn.btnClick ~");
     };
+
 }
 
+- (void)p_test{
+    NSLog(@"p_test");
+}
 
 
 @end

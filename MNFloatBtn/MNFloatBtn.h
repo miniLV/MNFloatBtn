@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+@class MNFloatContentBtn;
 
 typedef NS_ENUM(NSInteger, MNAssistiveTouchType)
 {
@@ -15,7 +16,7 @@ typedef NS_ENUM(NSInteger, MNAssistiveTouchType)
     MNAssistiveTypeNearRight,  //拖动停止之后，自动向右贴边
 };
 
-@interface MNFloatBtn : UIButton
+@interface MNFloatBtn : UIWindow
 
 typedef void (^floatBtnClick)(UIButton *sender);
 
@@ -31,19 +32,14 @@ typedef void (^floatBtnClick)(UIButton *sender);
 //移除floatBtn在界面显示
 + (void)hidden;
 
-//获取floatBtn单例对象
-+ (instancetype)sharedBtn;
+//获取floatBtn对象
++ (MNFloatContentBtn *)sharedBtn;
 
 //按钮点击事件
-@property (nonatomic, copy)floatBtnClick btnClick;
+//@property (nonatomic, copy)floatBtnClick btnClick;
 
 
-/**
- Build是否显示当天日期 - 默认是
- 如果传NO - Build 显示 系统的Build - 需手动更新
- 如果传YES - 字段识别今天的日期
- */
-- (void)setBuildShowDate:(BOOL)isBuildShowDate;
+
 
 
 /**
@@ -63,6 +59,29 @@ typedef void (^floatBtnClick)(UIButton *sender);
  @param environmentMap 环境 - Host 的 映射
  @param currentEnv - 当前环境的Host
  */
-- (void)setEnvironmentMap:(NSDictionary *)environmentMap currentEnv:(NSString *)currentEnv;
+//- (void)setEnvironmentMap:(NSDictionary *)environmentMap currentEnv:(NSString *)currentEnv;
 
 @end
+
+
+@interface MNFloatContentBtn : UIButton
+
+/**
+ Build是否显示当天日期 - 默认是
+ 如果传NO - Build 显示 系统的Build - 需手动更新
+ 如果传YES - 字段识别今天的日期
+ */
+- (void)setBuildShowDate:(BOOL)isBuildShowDate;
+
+////按钮点击事件
+//@property (nonatomic, copy)floatBtnClick btnClick;
+
+- (void)setEnvironmentMap:(NSDictionary *)environmentMap currentEnv:(NSString *)currentEnv;
+
+
+@property (nonatomic, copy)floatBtnClick btnClick;
+
+
+@end
+
+

@@ -64,7 +64,7 @@
     UIWindow *window = [UIApplication sharedApplication].keyWindow;
     UIView *testView = [[UIView alloc]init];
     testView.backgroundColor = [UIColor lightGrayColor];
-    testView.frame = CGRectMake(0, 400, 300, 500);
+    testView.frame = CGRectMake(0, 400, 200, 400);
     [window addSubview:testView];
     
 }

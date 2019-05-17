@@ -46,8 +46,6 @@ static CGFloat floatBtnH = 49;
 //系统默认version
 #define MNFloatBtnSystemVersion [[[NSBundle mainBundle]infoDictionary]valueForKey:@"CFBundleShortVersionString"]
 
-#pragma mark - lazy
-
 
 
 
@@ -59,25 +57,9 @@ static CGFloat floatBtnH = 49;
         //添加到window上
         [_floatWindow addSubview:_floatBtn];
         _floatBtn.frame = _floatWindow.bounds;
-//        _floatWindow.userInteractionEnabled = YES;
-//        _floatBtn.userInteractionEnabled = YES;
-        
-
-        [_floatBtn addTarget:[UIApplication sharedApplication].keyWindow action:@selector(p_clickBtn:) forControlEvents:UIControlEventTouchUpInside];
-//        [_floatBtn addTarget:self action:@selector(p_clickBtn:) forControlEvents:UIControlEventTouchUpInside];
-        
+       
     }
     return _floatBtn;
-}
-
-#pragma mark - Button Touch
-- (void)p_clickBtn:(UIButton *)sender{
-
-    NSLog(@"p_clickBtn");
-    
-//    if (self.btnClick) {
-//        self.btnClick(sender);
-//    }
 }
 
 
@@ -251,8 +233,8 @@ static CGFloat floatBtnH = 49;
         NSLog(@"move - btn");
         [self touchesCancelled:touches withEvent:event];
     }else{
-        NSLog(@"touch - btn");
         [super touchesEnded:touches withEvent:event];
+        
         if (_floatBtn.btnClick) {
             _floatBtn.btnClick(_floatBtn);
         }
@@ -346,8 +328,7 @@ static CGFloat floatBtnH = 49;
         self.titleLabel.font = [UIFont systemFontOfSize:11];
         [self setTitle:title forState:UIControlStateNormal];
         [self setBackgroundImage:image forState:UIControlStateNormal];
-        
-//        [self addTarget:self action:@selector(p_clickBtn:) forControlEvents:UIControlEventTouchUpInside];
+
     }
     return self;
 }
@@ -406,14 +387,6 @@ static CGFloat floatBtnH = 49;
     }
     return _environmentStr;
 }
-
-#pragma mark - Button Touch
-//- (void)p_clickBtn:(UIButton *)sender{
-//
-//    if (self.btnClick) {
-//        self.btnClick(sender);
-//    }
-//}
 
 
 #pragma mark - loadResourceImage

@@ -39,7 +39,7 @@
 - (void)pushToNext{
     
     OneViewController *nextVC = [[OneViewController alloc]init];
-    [self.navigationController pushViewController:nextVC animated:YES];
+    [self presentViewController:nextVC animated:YES completion:nil];
 }
 
 @end

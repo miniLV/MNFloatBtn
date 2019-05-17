@@ -45,19 +45,14 @@
     
     //设置不同环境下，要展示的不同title，以及当前的Host
     [[MNFloatBtn sharedBtn] setEnvironmentMap:envMap currentEnv:kAddress];
-//    [[MNFloatBtn sharedBtn] setEnvironmentMap:envMap currentEnv:kAddress];
-//    [MNFloatBtn setEnvironmentMap:envMap currentEnv:kAddress];
-    
+  
     [MNFloatBtn showDebugModeWithType:MNAssistiveTypeNone];
     
-//    UIButton *btn = [MNFloatBtn sharedBtn];
-//    [btn addTarget:self action:@selector(p_test)  forControlEvents:UIControlEventTouchUpInside];
-    
-    [MNFloatBtn new].btnClick = ^(UIButton *sender) {
-
+    //点击事件 - 用'[MNFloatBtn sharedBtn].btnClick'触发
+    [MNFloatBtn sharedBtn].btnClick = ^(UIButton *sender) {
+        
         NSLog(@" btn.btnClick ~");
     };
-    
 
 }
 

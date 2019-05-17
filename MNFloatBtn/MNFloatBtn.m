@@ -62,8 +62,9 @@ static CGFloat floatBtnH = 49;
 //        _floatWindow.userInteractionEnabled = YES;
 //        _floatBtn.userInteractionEnabled = YES;
         
-        
-        [_floatBtn addTarget:self action:@selector(p_clickBtn:) forControlEvents:UIControlEventTouchUpInside];
+
+        [_floatBtn addTarget:[UIApplication sharedApplication].keyWindow action:@selector(p_clickBtn:) forControlEvents:UIControlEventTouchUpInside];
+//        [_floatBtn addTarget:self action:@selector(p_clickBtn:) forControlEvents:UIControlEventTouchUpInside];
         
     }
     return _floatBtn;
@@ -72,9 +73,11 @@ static CGFloat floatBtnH = 49;
 #pragma mark - Button Touch
 - (void)p_clickBtn:(UIButton *)sender{
 
-    if (self.btnClick) {
-        self.btnClick(sender);
-    }
+    NSLog(@"p_clickBtn");
+    
+//    if (self.btnClick) {
+//        self.btnClick(sender);
+//    }
 }
 
 
@@ -245,9 +248,14 @@ static CGFloat floatBtnH = 49;
     
     if (isOverX || isOverY) {
         //超过移动范围就不响应点击 - 只做移动操作
+        NSLog(@"move - btn");
         [self touchesCancelled:touches withEvent:event];
     }else{
+        NSLog(@"touch - btn");
         [super touchesEnded:touches withEvent:event];
+        if (_floatBtn.btnClick) {
+            _floatBtn.btnClick(_floatBtn);
+        }
     }
     
     //按钮靠近右侧

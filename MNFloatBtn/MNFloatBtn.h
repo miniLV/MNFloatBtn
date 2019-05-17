@@ -36,7 +36,7 @@ typedef void (^floatBtnClick)(UIButton *sender);
 + (MNFloatContentBtn *)sharedBtn;
 
 //按钮点击事件
-@property (nonatomic, copy)floatBtnClick btnClick;
+//@property (nonatomic, copy)floatBtnClick btnClick;
 
 
 
@@ -77,6 +77,9 @@ typedef void (^floatBtnClick)(UIButton *sender);
 //@property (nonatomic, copy)floatBtnClick btnClick;
 
 - (void)setEnvironmentMap:(NSDictionary *)environmentMap currentEnv:(NSString *)currentEnv;
+
+
+@property (nonatomic, copy)floatBtnClick btnClick;
 
 
 @end

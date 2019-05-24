@@ -35,10 +35,6 @@ typedef void (^floatBtnClick)(UIButton *sender);
 //获取floatBtn对象
 + (MNFloatContentBtn *)sharedBtn;
 
-//按钮点击事件
-//@property (nonatomic, copy)floatBtnClick btnClick;
-
-
 
 
 

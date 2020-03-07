@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-@class MNFloatContentBtn;
+#import "MNFloatContentBtn.h"
 
 typedef NS_ENUM(NSInteger, MNAssistiveTouchType)
 {
@@ -17,8 +17,6 @@ typedef NS_ENUM(NSInteger, MNAssistiveTouchType)
 };
 
 @interface MNFloatBtn : UIWindow
-
-typedef void (^floatBtnClick)(UIButton *sender);
 
 //任何模式都显示floatBtn
 + (void)show;
@@ -34,13 +32,6 @@ typedef void (^floatBtnClick)(UIButton *sender);
 
 //获取floatBtn对象
 + (MNFloatContentBtn *)sharedBtn;
-
-//按钮点击事件
-//@property (nonatomic, copy)floatBtnClick btnClick;
-
-
-
-
 
 /**
  做的环境映射
@@ -59,30 +50,8 @@ typedef void (^floatBtnClick)(UIButton *sender);
  @param environmentMap 环境 - Host 的 映射
  @param currentEnv - 当前环境的Host
  */
-//- (void)setEnvironmentMap:(NSDictionary *)environmentMap currentEnv:(NSString *)currentEnv;
 
 @end
 
-
-@interface MNFloatContentBtn : UIButton
-
-/**
- Build是否显示当天日期 - 默认是
- 如果传NO - Build 显示 系统的Build - 需手动更新
- 如果传YES - 字段识别今天的日期
- */
-- (void)setBuildShowDate:(BOOL)isBuildShowDate;
-
-////按钮点击事件
-//@property (nonatomic, copy)floatBtnClick btnClick;
-
-- (void)setEnvironmentMap:(NSDictionary *)environmentMap currentEnv:(NSString *)currentEnv;
-
-- (void)changeEnvironment;
-
-@property (nonatomic, copy)floatBtnClick btnClick;
-
-
-@end
 
 

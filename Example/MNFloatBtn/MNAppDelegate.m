@@ -9,6 +9,7 @@
 #import "MNAppDelegate.h"
 #import "MNViewController.h"
 #import "MNFloatBtn.h"
+
 @implementation MNAppDelegate
 
 
@@ -31,16 +32,10 @@
     
     //是否显示系统的当天日期，如果选择NO，显示Build号
     [[MNFloatBtn sharedBtn] setBuildShowDate:YES];
-//    [[MNFloatWindow sharedBtn] setBuildShowDate:YES];
     
     //#define kAddress            @"testapi.miniLV.com"
     //#define kAddress            @"devapi.miniLV.com"
-//#if d
-//    #define kAddress            @"api.miniLV.com"
-// #if XXX
-//    #define kAddress            @"api.miniLV.com"
-//   #if XXX
-//    #define kAddress            @"api.miniLV.com"
+    //#define kAddress            @"api.miniLV.com"
     
     #define kAddress [[NSUserDefaults standardUserDefaults]objectForKey:@"kAddress"]
     
@@ -57,15 +52,12 @@
     [[MNFloatBtn sharedBtn] setEnvironmentMap:envMap currentEnv:baseUrl];
   
     [MNFloatBtn showDebugModeWithType:MNAssistiveTypeNone];
+    
     //点击事件 - 用'[MNFloatBtn sharedBtn].btnClick'触发
-//    [MNFloatBtn sharedBtn].btnClick = ^(UIButton *sender) {
-//
-//        NSLog(@" btn.btnClick ~");
-//    };
-
-
-    
-    
+    //    [MNFloatBtn sharedBtn].btnClick = ^(UIButton *sender) {
+    //
+    //        NSLog(@" btn.btnClick ~");
+    //    };
 }
 
 - (void)p_test{

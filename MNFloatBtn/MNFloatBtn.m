@@ -57,7 +57,7 @@ static CGFloat floatBtnH = 49;
         //添加到window上
         [_floatWindow addSubview:_floatBtn];
         _floatBtn.frame = _floatWindow.bounds;
-       
+        
     }
     return _floatBtn;
 }
@@ -217,6 +217,11 @@ static CGFloat floatBtnH = 49;
     }
 }
 
+- (void)changeEnv{
+    [self.floatBtn changeEnvironment];
+//    [[NSUserDefaults standardUserDefaults]objectForKey:@"kAddress"];
+}
+
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
     
     CGFloat btnY = self.frame.origin.y;
@@ -237,6 +242,8 @@ static CGFloat floatBtnH = 49;
         
         if (_floatBtn.btnClick) {
             _floatBtn.btnClick(_floatBtn);
+        }else{
+            [self changeEnv];
         }
     }
     
@@ -279,8 +286,6 @@ static CGFloat floatBtnH = 49;
             }];
         }
     }
-    
-    
 }
 
 
@@ -297,8 +302,9 @@ static CGFloat floatBtnH = 49;
 @property(nonatomic, copy)NSString *buildStr;
 
 //当前展示的环境
-@property (nonatomic, strong)NSString *environmentStr;
+@property (nonatomic, copy)NSString *environmentStr;
 
+@property (nonatomic, copy)NSDictionary *environmentMap;
 
 @end
 
@@ -342,6 +348,22 @@ static CGFloat floatBtnH = 49;
     [self p_updateBtnTitle];
 }
 
+- (void)changeEnvironment{
+
+    NSArray *envKeys = self.environmentMap.allKeys;
+    NSInteger currentIndex = 0;
+    if ([envKeys containsObject:self.environmentStr]) {
+        currentIndex = [envKeys indexOfObject:self.environmentStr];
+    }
+    NSInteger nextEnvIndex = (currentIndex + 1) % envKeys.count;
+    self.environmentStr = envKeys[nextEnvIndex];
+    [self p_updateBtnTitle];
+    
+    NSString *envBaseUrl = self.environmentMap[self.environmentStr];
+    [[NSUserDefaults standardUserDefaults]setObject:envBaseUrl forKey:@"kAddress"];
+    
+}
+
 
 - (void)setEnvironmentMap:(NSDictionary *)environmentMap currentEnv:(NSString *)currentEnv{
     
@@ -356,7 +378,7 @@ static CGFloat floatBtnH = 49;
     }];
     
     self.environmentStr = envStr;
-    
+    self.environmentMap = environmentMap;
     [self p_updateBtnTitle];
 }
 

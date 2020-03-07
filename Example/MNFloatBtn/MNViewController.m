@@ -37,7 +37,10 @@
 }
 
 - (void)pushToNext{
+    #define kAddress [[NSUserDefaults standardUserDefaults]objectForKey:@"kAddress"]
+    NSLog(@"envUrl = %@", kAddress);
     
+    return;
     OneViewController *nextVC = [[OneViewController alloc]init];
     [self presentViewController:nextVC animated:YES completion:nil];
 }

@@ -78,6 +78,7 @@ typedef void (^floatBtnClick)(UIButton *sender);
 
 - (void)setEnvironmentMap:(NSDictionary *)environmentMap currentEnv:(NSString *)currentEnv;
 
+- (void)changeEnvironment;
 
 @property (nonatomic, copy)floatBtnClick btnClick;
 

@@ -12,8 +12,6 @@
 
 @interface MNFloatBtn()
 
-
-
 //悬浮的按钮
 @property (nonatomic, strong) MNFloatContentBtn *floatBtn;
 
@@ -40,13 +38,8 @@ static CGFloat floatBtnH = 49;
 #define screenW  [UIScreen mainScreen].bounds.size.width
 #define screenH  [UIScreen mainScreen].bounds.size.height
 
-
-
-
-
 - (MNFloatContentBtn *)floatBtn{
     if (!_floatBtn) {
-        
         _floatBtn = [[MNFloatContentBtn alloc]init];
         
         //添加到window上
@@ -60,22 +53,18 @@ static CGFloat floatBtnH = 49;
 
 #pragma mark - public Method
 + (UIButton *)sharedBtn{
-    
     return _floatWindow.floatBtn;
 }
 
 + (void)show{
-    
     [self showWithType:MNAssistiveTypeNearRight];
 }
 
 + (void)hidden{
-    
     [_floatWindow setHidden:YES];
 }
 
 + (void)showDebugMode{
-    
 #ifdef DEBUG
     [self show];
 #else
@@ -98,7 +87,7 @@ static CGFloat floatBtnH = 49;
 
         _floatWindow = [[MNFloatBtn alloc] initWithType:type frame:CGRectZero];
         _floatWindow.rootViewController = [[UIViewController alloc]init];
-        [_floatWindow p_createFloatBtn];
+        [_floatWindow p_showFloatBtn];
     });
     
     [_floatWindow showWithType:type];
@@ -123,14 +112,12 @@ static CGFloat floatBtnH = 49;
     _floatWindow.windowLevel = kSystemKeyboardWindowLevel;
     
     [currentKeyWindow makeKeyWindow];
-    
 }
 
 
 - (instancetype)initWithType:(MNAssistiveTouchType)type
                        frame:(CGRect)frame{
 
-    
     if (self = [super init]) {
         _type = type;
         CGFloat floatBtnX = screenW - floatBtnW;
@@ -142,12 +129,9 @@ static CGFloat floatBtnH = 49;
     return self;
 }
 
-- (void)p_createFloatBtn{
+- (void)p_showFloatBtn{
     self.floatBtn.hidden = NO;
 }
-
-
-
 
 #pragma mark - button move
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
@@ -212,16 +196,10 @@ static CGFloat floatBtnH = 49;
     }
 }
 
-- (void)changeEnv{
-    [self.floatBtn changeEnvironment];
-//    [[NSUserDefaults standardUserDefaults]objectForKey:@"kAddress"];
-}
-
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
     
     CGFloat btnY = self.frame.origin.y;
     CGFloat btnX = self.frame.origin.x;
-    
     CGFloat minDistance = 2;
     
     //结束move的时候，计算移动的距离是>最低要求，如果没有，就调用按钮点击事件
@@ -242,11 +220,13 @@ static CGFloat floatBtnH = 49;
         }
     }
     
-    //按钮靠近右侧
+    //设置移动方法
+    [self setMovingDirectionWithBtnX:btnX btnY:btnY];
+}
+
+- (void)setMovingDirectionWithBtnX:(CGFloat)btnX btnY:(CGFloat)btnY{
     switch (_type) {
-
         case MNAssistiveTypeNone:{
-
             //自动识别贴边
             if (self.center.x >= screenW/2) {
 
@@ -283,6 +263,9 @@ static CGFloat floatBtnH = 49;
     }
 }
 
+- (void)changeEnv{
+    [self.floatBtn changeEnvironment];
+}
 
 @end
 

@@ -82,12 +82,13 @@
     [self p_updateBtnTitle];
     
     NSString *envBaseUrl = self.environmentMap[self.environmentStr];
-    [[NSUserDefaults standardUserDefaults]setObject:envBaseUrl forKey:@"kAddress"];
     
+    NSString *saveBaseUrlKey = @"MNBaseUrl";
+    [[NSUserDefaults standardUserDefaults]setObject:envBaseUrl forKey:saveBaseUrlKey];
 }
 
-
-- (void)setEnvironmentMap:(NSDictionary *)environmentMap currentEnv:(NSString *)currentEnv{
+- (void)setEnvironmentMap:(NSDictionary *)environmentMap
+               currentEnv:(NSString *)currentEnv{
     
     __block NSString *envStr = @"测试";
     
@@ -126,7 +127,6 @@
 
 - (NSString *)environmentStr{
     if (!_environmentStr) {
-        
         _environmentStr = @"测试";
     }
     return _environmentStr;
@@ -137,12 +137,9 @@
 - (UIImage *)p_loadResourceImage{
     
     NSBundle *bundle = [NSBundle bundleForClass:[MNFloatBtn class]];
-    
     NSURL *url = [bundle URLForResource:@"MNFloatBtn" withExtension:@"bundle"];
     NSBundle *imageBundle = [NSBundle bundleWithURL:url];
-    
     NSString *path = [imageBundle pathForResource:@"mn_placeholder@3x" ofType:@"png"];
-    
     UIImage *image = [UIImage imageWithContentsOfFile:path];
     
     return image;

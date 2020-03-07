@@ -37,7 +37,7 @@
     //#define kAddress            @"devapi.miniLV.com"
     //#define kAddress            @"api.miniLV.com"
     
-    #define kAddress [[NSUserDefaults standardUserDefaults]objectForKey:@"kAddress"]
+    #define kAddress [[NSUserDefaults standardUserDefaults]objectForKey:@"MNBaseUrl"]
     
     NSDictionary *envMap = @{
                              @"测试":@"testapi.miniLV.com",

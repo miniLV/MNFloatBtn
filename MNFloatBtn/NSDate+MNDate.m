@@ -13,11 +13,9 @@
 + (NSString *)currentDate{
     
     //获取系统时间戳
-//    NSDate* date1 = [NSDate date];
-//    NSTimeInterval time1 =[date1 timeIntervalSince1970];
-//    NSString *timeString = [NSString stringWithFormat:@"%.0f",time1];
-
-    NSString *timeString = [NSString stringWithFormat:@"%s %s",__DATE__, __TIME__];
+    NSDate* date1 = [NSDate date];
+    NSTimeInterval time1 =[date1 timeIntervalSince1970];
+    NSString *timeString = [NSString stringWithFormat:@"%.0f",time1];
     
     //时间戳转换成时间
     NSTimeInterval time2 =[timeString doubleValue];

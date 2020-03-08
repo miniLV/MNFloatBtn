@@ -91,7 +91,11 @@ static CGFloat floatBtnH = 49;
     });
     
     [_floatWindow showWithType:type];
-    
+}
+
++ (void)setEnvironmentMap:(NSDictionary *)environmentMap
+               currentEnv:(NSString *)currentEnv{
+    [[self sharedBtn]setEnvironmentMap:environmentMap currentEnv:currentEnv];
 }
 
 #pragma mark - private Method

@@ -37,7 +37,13 @@
     //#define kAddress            @"devapi.miniLV.com"
     //#define kAddress            @"api.miniLV.com"
     
+#ifdef DEBUG
+    //如果要实现MNFloatBtn 的切换环境功能，必须这样设置
     #define kAddress [[NSUserDefaults standardUserDefaults]objectForKey:@"MNBaseUrl"]
+#else
+    //正式环境地址
+    #define kAddress @"api.miniLV.com"
+#endif
     
     NSDictionary *envMap = @{
                              @"测试":@"testapi.miniLV.com",
@@ -48,20 +54,18 @@
     [MNFloatBtn showDebugModeWithType:MNAssistiveTypeNone];
     
     //设置不同环境下，要展示的不同title，以及当前的Host
-    NSString *baseUrl = @"testapi.miniLV.com";
-    [[MNFloatBtn sharedBtn] setEnvironmentMap:envMap currentEnv:baseUrl];
+    NSString *baseUrl = @"api.miniLV.com";
+    [MNFloatBtn setEnvironmentMap:envMap currentEnv:baseUrl];
   
-    [MNFloatBtn showDebugModeWithType:MNAssistiveTypeNone];
+    /**点击事件 - 用'[MNFloatBtn sharedBtn].btnClick'触发
+     如果不需要自定义点击事件的话，可以不赋值.
+     ==> 这样会实现内部的点击事件操作：点击按钮==>自动切换开发环境
+     */
     
-    //点击事件 - 用'[MNFloatBtn sharedBtn].btnClick'触发
-    //    [MNFloatBtn sharedBtn].btnClick = ^(UIButton *sender) {
-    //
-    //        NSLog(@" btn.btnClick ~");
-    //    };
-}
-
-- (void)p_test{
-    NSLog(@"p_test");
+    //自定义点击事件
+    //[MNFloatBtn sharedBtn].btnClick = ^(UIButton *sender) {
+    //    NSLog(@" btn.btnClick ~");
+    //};
 }
 
 

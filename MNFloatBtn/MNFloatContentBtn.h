@@ -14,7 +14,7 @@ typedef void (^floatBtnClick)(UIButton *sender);
 @interface MNFloatContentBtn : UIButton
 
 /**
- Build是否显示当天日期 - 默认是
+ Build是否显示截屏当天日期
  如果传NO - Build 显示 系统的Build - 需手动更新
  如果传YES - 字段识别今天的日期
  */
@@ -26,7 +26,6 @@ typedef void (^floatBtnClick)(UIButton *sender);
 
 //按钮点击事件
 @property (nonatomic, copy)floatBtnClick btnClick;
-
 
 @end
 

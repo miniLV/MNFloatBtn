@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0847CB3E516C4B0A3F7E29C1820FDAE8 /* Pods-MNFloatBtn_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 009B42AAF99AA84DDE06C2B0F17C6BB3 /* Pods-MNFloatBtn_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0A9F756F2413A9C200657C8A /* MNFloatContentBtn.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A9F756D2413A9C200657C8A /* MNFloatContentBtn.h */; };
+		0A9F75702413A9C200657C8A /* MNFloatContentBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A9F756E2413A9C200657C8A /* MNFloatContentBtn.m */; };
 		10C19BB1E5E920DB388CF50A87533F4D /* Pods-MNFloatBtn_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A26F44DD6B1B5B0D62281408B6A60BB /* Pods-MNFloatBtn_Example-dummy.m */; };
 		1B05B796B5FE5136DA9D3134765413C1 /* MNFloatBtn-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B999F56B903734E868FAF30844F953D4 /* MNFloatBtn-dummy.m */; };
 		235359F26140EE105E472F3129FD28BF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */; };
@@ -43,30 +45,32 @@
 /* Begin PBXFileReference section */
 		009B42AAF99AA84DDE06C2B0F17C6BB3 /* Pods-MNFloatBtn_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MNFloatBtn_Example-umbrella.h"; sourceTree = "<group>"; };
 		078598D8D905DB8FE9D044B9A343889A /* MNFloatBtn.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MNFloatBtn.xcconfig; sourceTree = "<group>"; };
+		0A9F756D2413A9C200657C8A /* MNFloatContentBtn.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MNFloatContentBtn.h; path = MNFloatBtn/MNFloatContentBtn.h; sourceTree = "<group>"; };
+		0A9F756E2413A9C200657C8A /* MNFloatContentBtn.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MNFloatContentBtn.m; path = MNFloatBtn/MNFloatContentBtn.m; sourceTree = "<group>"; };
 		0C13962F285F8060E235108F8015C83D /* Pods-MNFloatBtn_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MNFloatBtn_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		16C51D4511D05F37F82DA382206A67B4 /* Pods-MNFloatBtn_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MNFloatBtn_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		1A7CE8B9F0672AE195B3A106EED40A44 /* Pods-MNFloatBtn_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MNFloatBtn_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		3A26F44DD6B1B5B0D62281408B6A60BB /* Pods-MNFloatBtn_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MNFloatBtn_Example-dummy.m"; sourceTree = "<group>"; };
-		47A5D0E72076B85DEDE47525D63BE3EB /* Pods_MNFloatBtn_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MNFloatBtn_Tests.framework; path = "Pods-MNFloatBtn_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		47A5D0E72076B85DEDE47525D63BE3EB /* Pods_MNFloatBtn_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MNFloatBtn_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		489780340DF8ED80913D50F160BFC478 /* MNFloatBtn-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MNFloatBtn-umbrella.h"; sourceTree = "<group>"; };
 		4AFC806FC6731F340D6C0DDBD8B02EDB /* Pods-MNFloatBtn_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MNFloatBtn_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		556A7002D8694F1F6600E0F268CDED85 /* MNFloatBtn.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = MNFloatBtn.bundle; path = MNFloatBtn/MNFloatBtn.bundle; sourceTree = "<group>"; };
 		584FCB7B250ABF0E81EE5E25B73234C5 /* NSDate+MNDate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSDate+MNDate.m"; path = "MNFloatBtn/NSDate+MNDate.m"; sourceTree = "<group>"; };
-		58F2711AA03B38FCB4DA6F0996A0EDD8 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		58F2711AA03B38FCB4DA6F0996A0EDD8 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		62C2F0D1A899226DCC3111569C8C6F7D /* MNFloatBtn.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MNFloatBtn.h; path = MNFloatBtn/MNFloatBtn.h; sourceTree = "<group>"; };
 		67C0E12AA3CDC08DD7C693AE23E9AF76 /* Pods-MNFloatBtn_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MNFloatBtn_Example-frameworks.sh"; sourceTree = "<group>"; };
 		688736D61DE51337647EC510D2CAF24A /* MNFloatBtn.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MNFloatBtn.m; path = MNFloatBtn/MNFloatBtn.m; sourceTree = "<group>"; };
 		6B977345A05940F16B98DB595B3D916B /* Pods-MNFloatBtn_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MNFloatBtn_Tests-Info.plist"; sourceTree = "<group>"; };
 		6C2E7E52972034F156D6629D5A14FCBB /* Pods-MNFloatBtn_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MNFloatBtn_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		7161D8EA820591BD7144640D3736B11D /* MNFloatBtn.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = MNFloatBtn.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		7161D8EA820591BD7144640D3736B11D /* MNFloatBtn.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = MNFloatBtn.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		7CDF7C3EBD3F9B8EDECF86EC1F03D47B /* Pods-MNFloatBtn_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MNFloatBtn_Tests-umbrella.h"; sourceTree = "<group>"; };
 		8980E102A487282EE1B8667FF7D4EB2F /* MNFloatBtn.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MNFloatBtn.modulemap; sourceTree = "<group>"; };
-		8CE55A9A0AB0D5CFB8EAE5F363B862E2 /* MNFloatBtn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MNFloatBtn.framework; path = MNFloatBtn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CE55A9A0AB0D5CFB8EAE5F363B862E2 /* MNFloatBtn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MNFloatBtn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F797BA7D50BF9AD8094F4A28758BDBF /* Pods-MNFloatBtn_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MNFloatBtn_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		9D0C74DE870FAB17E6DBB26CD4B1557C /* Pods_MNFloatBtn_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MNFloatBtn_Example.framework; path = "Pods-MNFloatBtn_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D0C74DE870FAB17E6DBB26CD4B1557C /* Pods_MNFloatBtn_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MNFloatBtn_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D9D1776E4450AB187BFEB12777337A7 /* Pods-MNFloatBtn_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MNFloatBtn_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		AA512588A7CE6D994EE5605333B11726 /* Pods-MNFloatBtn_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MNFloatBtn_Example.release.xcconfig"; sourceTree = "<group>"; };
-		B36AB396275697EEE1A5B13BA8A38FE3 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		B36AB396275697EEE1A5B13BA8A38FE3 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		B6839C96ED291BEAFAE8FEC0606E0D09 /* NSDate+MNDate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSDate+MNDate.h"; path = "MNFloatBtn/NSDate+MNDate.h"; sourceTree = "<group>"; };
 		B999F56B903734E868FAF30844F953D4 /* MNFloatBtn-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MNFloatBtn-dummy.m"; sourceTree = "<group>"; };
 		C58F245672C7EC357CF20C5C3E80D8C3 /* Pods-MNFloatBtn_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MNFloatBtn_Tests-dummy.m"; sourceTree = "<group>"; };
@@ -74,7 +78,7 @@
 		C9B43BEFE3F7BC0D0065AEF11C99A7FF /* Pods-MNFloatBtn_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MNFloatBtn_Example-Info.plist"; sourceTree = "<group>"; };
 		D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		DA16B309CF534A1468FC760904D23928 /* Pods-MNFloatBtn_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MNFloatBtn_Example.modulemap"; sourceTree = "<group>"; };
-		EB86D5711E7829BC8F4357EBADE17822 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		EB86D5711E7829BC8F4357EBADE17822 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		FA1BD70DA857DED4187A96289EC3EA67 /* MNFloatBtn-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "MNFloatBtn-Info.plist"; sourceTree = "<group>"; };
 		FECBFE5B4A6B343569C220BE92FE7F6D /* MNFloatBtn-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MNFloatBtn-prefix.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -207,6 +211,8 @@
 		CA83929C3AC156F6931B00DA33520369 /* MNFloatBtn */ = {
 			isa = PBXGroup;
 			children = (
+				0A9F756D2413A9C200657C8A /* MNFloatContentBtn.h */,
+				0A9F756E2413A9C200657C8A /* MNFloatContentBtn.m */,
 				62C2F0D1A899226DCC3111569C8C6F7D /* MNFloatBtn.h */,
 				688736D61DE51337647EC510D2CAF24A /* MNFloatBtn.m */,
 				B6839C96ED291BEAFAE8FEC0606E0D09 /* NSDate+MNDate.h */,
@@ -257,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3DB9B8C292E6E7744C1CA2E39005963E /* MNFloatBtn-umbrella.h in Headers */,
+				0A9F756F2413A9C200657C8A /* MNFloatContentBtn.h in Headers */,
 				58558806249AFF334F018AB3EE9FF530 /* MNFloatBtn.h in Headers */,
 				E42EA8DF82B543FD631A7CB3ACD14E72 /* NSDate+MNDate.h in Headers */,
 			);
@@ -343,6 +350,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
@@ -397,6 +405,7 @@
 			files = (
 				1B05B796B5FE5136DA9D3134765413C1 /* MNFloatBtn-dummy.m in Sources */,
 				81F651D3F82367AD3FF9A306058CF0DC /* MNFloatBtn.m in Sources */,
+				0A9F75702413A9C200657C8A /* MNFloatContentBtn.m in Sources */,
 				95D97CB0F96F1DE4E784A971DC9F638A /* NSDate+MNDate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -640,8 +649,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 4.2;
 				SYMROOT = "${SRCROOT}/../build";
 			};

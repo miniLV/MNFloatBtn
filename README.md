@@ -9,6 +9,10 @@
 
 ![demo示例](https://github.com/miniLV/MNFloatBtn/blob/master/Resources/demo.gif)
 
+<br>
+
+![切换环境示例](https://github.com/miniLV/MNFloatBtn/blob/master/Resources/demo2.gif)
+
 ## Installation
 
 #### Manually

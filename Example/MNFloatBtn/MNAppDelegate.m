@@ -33,6 +33,9 @@
     //最普通的显示
     [MNFloatBtn show];
     
+    //是否显示截图当天的日期
+    [[MNFloatBtn sharedBtn]setBuildShowDate:YES];
+    
     //假设是宏定义的Base url
     //#define kAddress            @"testapi.miniLV.com"
     //#define kAddress            @"devapi.miniLV.com"
@@ -58,8 +61,8 @@
     
     [MNFloatBtn showDebugModeWithType:MNAssistiveTypeNone];
     
-    //设置不同环境下，要展示的不同title，以及当前的Host
-    NSString *baseUrl = @"devapi.miniLV.com";
+    //设置不同环境下，要展示的不同title，以及当前的Base Url
+    NSString *baseUrl = kAddress;
     [MNFloatBtn setEnvironmentMap:envMap currentEnv:baseUrl];
   
     /**点击事件 - 用'[MNFloatBtn sharedBtn].btnClick'触发

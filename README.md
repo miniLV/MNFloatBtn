@@ -8,10 +8,11 @@
 </p>
 
 ![demo示例](https://github.com/miniLV/MNFloatBtn/blob/master/Resources/demo.gif)
-
 <br>
-
 ![切换环境示例](https://github.com/miniLV/MNFloatBtn/blob/master/Resources/demo2.gif)
+
+
+
 
 ## Installation
 
@@ -34,25 +35,30 @@ github "miniLV/MNFloatBtn"
 ## Usage
 
 - The floating button is displayed in any case
+
 ```
 [MNFloatBtn show];
 ```
+
 <br>
 
 - Display the floating button only in Debug mode (recommended)
+
 ```
 [MNFloatBtn showDebugModeWithType:MNAssistiveTypeNone];
 ```
+
 <br>
 
 - remove floating button
+
 ```
 [MNFloatBtn hidden];
 ```
 
-- touch event
+- touch event (*It is not recommended to use, there will be a function to switch the api environment.*)
 
-``` 
+```
 [MNFloatBtn sharedBtn].btnClick = ^(UIButton *sender) {
 
 	NSLog(@" btn.btnClick ~");
@@ -71,7 +77,6 @@ github "miniLV/MNFloatBtn"
 - Configure the api environment display
 
 ```
-
 #define kAddress            @"testapi.miniLV.com"
 //#define kAddress            @"devapi.miniLV.com"
 //#define kAddress            @"api.miniLV.com"
@@ -90,7 +95,23 @@ NSDictionary *envMap = @{
 
 <br>
 
----
+- **Updated after Version 2.3.0, built-in method for switching environment. (do not customize how to click the button ~)**
+
+  ```
+   /**Touch event - use'[MNFloatBtn sharedBtn].btnClick'
+       If you don't need to Custom click event.
+       ==> built-in method：click floating button ==> auto switch api enviroment.
+    */
+      
+      //Custom click event
+      //[MNFloatBtn sharedBtn].btnClick = ^(UIButton *sender) {
+      //    NSLog(@" btn.btnClick ~");
+      //};
+  ```
+
+
+
+------
 
 # 中文版使用说明
 
@@ -101,30 +122,37 @@ NSDictionary *envMap = @{
 2.手动导入 : 拖入`MNFloatBtn`文件夹 
 
 ## 使用方法
+
 1. 导入头文件,`#import <MNFloatBtn/MNFloatBtn.h>`
 2. 一行代码,显示悬浮按钮
 
----
+------
+
 - 任何情况都显示悬浮按钮
+
 ```
 [MNFloatBtn show];
 ```
+
 <br>
 
 - 仅在Debug模式下显示悬浮按钮(推荐使用)
+
 ```
 [MNFloatBtn showDebugModeWithType:MNAssistiveTypeNone];
 ```
+
 <br>
 
 - 移除悬浮按钮在界面上显示
+
 ```
 [MNFloatBtn hidden];
 ```
 
-- 按钮点击事件
+- 按钮点击事件（*推荐不要自定义，会有内置的切换环境功能*）
 
-``` 
+```
 [MNFloatBtn sharedBtn].btnClick = ^(UIButton *sender) {
 
 	NSLog(@" btn.btnClick ~");
@@ -132,11 +160,12 @@ NSDictionary *envMap = @{
 };
 ```
 
----
+------
 
 ## 进阶用法:
 
 - 默认显示当前日期
+
 ```
 [[MNFloatBtn sharedBtn] setBuildShowDate:YES];
 ```
@@ -144,7 +173,6 @@ NSDictionary *envMap = @{
 - 配置api环境显示
 
 ```
-
 #define kAddress            @"testapi.miniLV.com"
 //#define kAddress            @"devapi.miniLV.com"
 //#define kAddress            @"api.miniLV.com"
@@ -161,6 +189,21 @@ NSDictionary *envMap = @{
     
 ```
 
+- **Version 2.3.0 之后更新，内置切换环境的方法（不自定义实现按钮的点击方法~）**
 
-*如果你在天朝，可以看这篇中文博客*
+  ```
+   /**点击事件 - 用'[MNFloatBtn sharedBtn].btnClick'触发
+       如果不需要自定义点击事件的话，可以不赋值.
+       ==> 这样会实现内部的点击事件操作：点击按钮==>自动切换开发环境
+    */
+      
+      //自定义点击事件
+      //[MNFloatBtn sharedBtn].btnClick = ^(UIButton *sender) {
+      //    NSLog(@" btn.btnClick ~");
+      //};
+  ```
+
+  
+
+**如果你在天朝，可以看这篇中文博客*
 [文章介绍](https://www.jianshu.com/p/5a0ca7c4fd78)
